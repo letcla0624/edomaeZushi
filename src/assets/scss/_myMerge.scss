@@ -1,0 +1,17 @@
+// 文字尺寸
+$font-sizes: map-merge(
+  $font-sizes,
+  (
+    "5d5": $font-size-base * 1.125,
+    "7": $font-size-base * 0.875,
+    "8": $font-size-base * 0.75,
+  )
+);
+// 按鈕顏色
+$theme-colors: map-merge(
+  $theme-colors,
+  (
+    "deep-red": $deep-red,
+    "light-green": $light-green,
+  )
+);

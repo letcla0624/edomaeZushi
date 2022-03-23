@@ -1,0 +1,21 @@
+// 1
+@import "~bootstrap/scss/functions";
+
+// 2
+@import "myVariables";
+
+// 3
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
+// 4
+@import "myMerge";
+
+// 5
+@import "~bootstrap/scss/bootstrap";
+
+// 6
+@import "myUtilities";
+
+// 7
+@import "~bootstrap/scss/utilities/api";
