@@ -13,7 +13,6 @@ export default {
 
 <style lang="scss">
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400;500;600;700;900&family=Shippori+Mincho:wght@400;500;600;700;800&display=swap");
-@import url("http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css");
 
 body {
   font-family: "Shippori Mincho", "Noto Serif JP", serif !important;
