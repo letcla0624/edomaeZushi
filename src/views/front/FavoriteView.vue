@@ -128,6 +128,7 @@ export default {
       favoriteProdId: JSON.parse(localStorage.getItem("itemId")) || [],
     };
   },
+  inject: ["emitter"],
   methods: {
     getProducts() {
       let loader = this.$loading.show();
@@ -157,7 +158,7 @@ export default {
       } else {
         this.favoriteProdId.splice(itemIdx, 1);
       }
-
+      // 加入彈跳動畫
       this.$refs[`${id}`][0].classList.add("active");
 
       localStorage.setItem("itemId", JSON.stringify(this.favoriteProdId));
@@ -176,13 +177,20 @@ export default {
         )
         .then((res) => {
           this.isLoading = "";
-          setTimeout(() => {
-            alert(res.data.message);
-          }, 600);
           emitter.emit("get-cart");
+
+          // 全域的 emitter
+          this.emitter.emit("toast-message", {
+            style: "success",
+            content: res.data.message,
+          });
         })
         .catch((err) => {
-          console.dir(err);
+          this.isLoading = "";
+          this.emitter.emit("toast-message", {
+            style: "error",
+            content: err.response.data.message,
+          });
         });
     },
     deleteFavorite() {

@@ -7,7 +7,7 @@
           v-if="cart.carts.length !== 0"
           type="button"
           class="btn btn-link"
-          @click="openDelAllModal"
+          @click="openDelAllModal('cart')"
           :disabled="cart.carts.length === 0"
         >
           <i class="bi bi-trash3 me-1"></i>カートを削除する
@@ -221,7 +221,7 @@
         </div>
       </div>
       <DelModalComp :del-item="tempCart" @get-item="getCart"></DelModalComp>
-      <DelAllModalComp @get-item="getCart"></DelAllModalComp>
+      <DelAllModalComp :page="page" @get-item="getCart"></DelAllModalComp>
     </div>
   </div>
 </template>
@@ -243,6 +243,7 @@ export default {
         product: {},
       },
       length: 0,
+      page: "",
     };
   },
   components: {
@@ -319,10 +320,10 @@ export default {
       this.tempCart = { ...item };
       delModal.show();
     },
-    openDelAllModal() {
+    openDelAllModal(page) {
+      this.page = page;
       delAllModal.show();
     },
-
     // 回頂部
     toTop() {
       window.scrollTo({
