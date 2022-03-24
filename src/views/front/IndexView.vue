@@ -10,19 +10,21 @@
         src="https://images.unsplash.com/photo-1627462133149-167e7e9a91b7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3960&q=80"
       />
     </div>
-    <div class="box m-3 p-3" :style="{ opacity: bannerTextOpacity }">
-      <div class="border border-dark" style="padding: 3rem">
-        <h2>没入型の寿司</h2>
-        <p class="lh-base">
-          日本の大正時代には、美学、色彩芸術、そしてシェフの精神が守られていました。伝統的な日本料理を食べても、スタイリッシュに食べる必要があります。
-        </p>
+    <div class="box p-3 mx-auto" :style="{ opacity: bannerTextOpacity }">
+      <div class="border border-dark p-4">
+        <div class="mt-3 mb-5">
+          <h2>没入型の寿司</h2>
+          <p class="lh-base">
+            日本の大正時代には、美学、色彩芸術、そしてシェフの精神が守られていました。伝統的な日本料理を食べても、スタイリッシュに食べる必要があります。
+          </p>
+        </div>
+        <div class="scrolling text-center">
+          <div class="mouse border border-dark">
+            <div class="dot"></div>
+          </div>
+          <p class="fw-bold mt-1 fs-8">下へスクロール</p>
+        </div>
       </div>
-    </div>
-    <div class="scrolling text-center">
-      <div class="mouse border">
-        <div class="dot"></div>
-      </div>
-      <p class="text-light mt-1">下へスクロール</p>
     </div>
   </div>
   <div class="banner" id="banner2" :class="{ static: fixClass }">
@@ -46,7 +48,7 @@
     <!-- 關於 -->
     <div class="container-fluid paper">
       <div class="container py-5">
-        <div class="row" :class="{ 'pt-5': fixed, 'mt-lg-4': fixed }">
+        <div class="row">
           <div class="col-lg-12 col-xl-6 offset-xl-3">
             <article
               class="py-4 py-lg-5 lh-xl mx-auto"
@@ -71,7 +73,7 @@
             </article>
           </div>
         </div>
-        <div class="row g-3 py-5">
+        <div class="row g-3 pt-5">
           <div class="col-md-6">
             <img
               src="https://images.unsplash.com/photo-1621871908119-295c8ce5cee4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1587&q=80"
@@ -103,8 +105,8 @@
     </div>
 
     <!-- 商品 -->
-    <div class="container py-5">
-      <div class="row py-5">
+    <div class="container pb-5 pt-lg-5">
+      <div class="row pb-5 pt-lg-5">
         <div class="col-lg-6 offset-lg-3">
           <h3 class="h2 text-center">人気が高い</h3>
           <p class="lh-lg mb-5">
@@ -114,7 +116,7 @@
       </div>
       <div class="row py-lg-5">
         <div class="col-lg-8 offset-lg-2">
-          <div class="row align-items-center g-4 pb-5">
+          <div class="row align-items-center g-4 pb-5 mb-5">
             <div class="col-md-6 order-md-1">
               <img
                 src="https://images.unsplash.com/photo-1635451778386-e5778e66f61e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1587&q=80"
@@ -141,7 +143,7 @@
               </router-link>
             </div>
           </div>
-          <div class="row align-items-center g-4 pb-5">
+          <div class="row align-items-center g-4 pb-5 mb-5">
             <div class="col-md-6">
               <img
                 src="https://images.unsplash.com/photo-1635452273191-f08ce9934102?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDN8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
@@ -264,6 +266,14 @@ export default {
   },
   mounted() {
     const app = document.querySelector("#app");
+
+    // 初判斷一進入的螢幕寬度
+    this.detectWidth = window.innerWidth;
+    // 螢幕寬度縮放
+    window.addEventListener("resize", () => {
+      this.detectWidth = window.innerWidth;
+    });
+
     // 視窗捲動時
     app.addEventListener("scroll", () => {
       // 首頁 Banner 開頭文字慢慢消失
@@ -285,18 +295,19 @@ export default {
       }
 
       // 判斷首頁 Navbar 要不要置頂
-      if (app.scrollTop > window.innerHeight * 2) {
-        return (this.fixed = true);
+      if (this.detectWidth <= 415) {
+        if (app.scrollTop > window.outerHeight * 2) {
+          return (this.fixed = true);
+        } else {
+          return (this.fixed = false);
+        }
       } else {
-        return (this.fixed = false);
+        if (app.scrollTop > window.innerHeight * 2) {
+          return (this.fixed = true);
+        } else {
+          return (this.fixed = false);
+        }
       }
-    });
-
-    // 初判斷一進入的螢幕寬度
-    this.detectWidth = window.innerWidth;
-    // 螢幕寬度縮放
-    window.addEventListener("resize", () => {
-      this.detectWidth = window.innerWidth;
     });
 
     // new WOW().init();
@@ -366,13 +377,13 @@ body {
 }
 // 滑鼠動畫
 .scrolling {
-  position: absolute;
+  // position: absolute;
   z-index: 1;
   bottom: 1rem;
   .mouse {
     position: relative;
-    width: 32px;
-    height: 48px;
+    width: 28px;
+    height: 44px;
     border-radius: 50px;
     margin: auto;
     .dot {
@@ -385,7 +396,8 @@ body {
       left: 0;
       right: 0;
       margin: auto;
-      background-color: #fff;
+      background-color: var(--bs-dark);
+      border-radius: 2px;
       animation: roller 0.5s infinite alternate ease-in-out;
     }
   }

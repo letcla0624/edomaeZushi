@@ -1,7 +1,7 @@
 <template>
   <nav
     class="navbar navbar-expand-lg navbar-light bg-light py-2 py-lg-0"
-    :class="{ 'fixed-top': fixed }"
+    :class="{ 'sticky-top': fixed }"
   >
     <div class="container">
       <LogoComp></LogoComp>
@@ -114,18 +114,18 @@
           </ul>
           <div class="offcanvas-social mt-5 d-lg-none">
             <ul
-              class="list-unstyled d-flex justify-content-center justify-content-lg-end mb-lg-0 gap-5"
+              class="list-unstyled d-flex justify-content-center justify-content-lg-end mb-lg-0"
             >
-              <li class="">
+              <li class="mx-4">
                 <a href="#"><i class="bi bi-facebook text-light"></i></a>
               </li>
-              <li class="">
+              <li class="mx-4">
                 <a href="#"><i class="bi bi-instagram text-light"></i></a>
               </li>
-              <li class="">
+              <li class="mx-4">
                 <a href="#"><i class="bi bi-line text-light"></i></a>
               </li>
-              <li class="">
+              <li class="mx-4">
                 <a href="#"><i class="bi bi-twitter text-light"></i></a>
               </li>
             </ul>

@@ -144,7 +144,7 @@ export default {
 .swiper-button-prev::after {
   content: "\F12C" !important;
 }
-@media (max-width: 339.98px) {
+@media (max-width: 414.98px) {
   .swiper-button-next,
   .swiper-button-prev {
     display: none !important;
