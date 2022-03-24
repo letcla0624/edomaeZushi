@@ -40,8 +40,8 @@
                 />
                 <span
                   v-if="item.origin_price !== item.price"
-                  class="badge rounded-pill bg-deep-red px-1 py-2 position-absolute vrl-text ls-xl start-3"
-                  style="height: fit-content; left: 1rem; top: 1rem"
+                  class="badge rounded-pill bg-deep-red px-1 py-2 position-absolute vrl-text ls-xl"
+                  style="height: auto; left: 1rem; top: 1rem"
                 >
                   特別価格
                 </span>
