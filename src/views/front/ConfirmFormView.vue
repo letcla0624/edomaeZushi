@@ -89,14 +89,14 @@
           >
             <router-link
               to="/myOrders"
-              class="w-100 d-flex justify-content-center justify-content-md-start align-items-center"
+              class="btn btn-link w-100 mb-3 d-flex justify-content-center justify-content-md-start align-items-center"
             >
               <i class="bi bi-chevron-left me-1"></i>
               支払うのを待つ
             </router-link>
             <router-link
               :to="`/finished/${order.id}`"
-              class="btn btn-dark w-100 d-flex justify-content-center align-items-center"
+              class="btn btn-dark w-100 mb-3 d-flex justify-content-center align-items-center"
               @click="toPay"
             >
               支払いを確認する
@@ -105,7 +105,7 @@
           <router-link
             v-else
             to="/myOrders"
-            class="btn btn-dark w-100 d-flex justify-content-center align-items-center"
+            class="btn btn-dark mb-3 w-100 d-flex justify-content-center align-items-center"
           >
             注文に戻る
           </router-link>

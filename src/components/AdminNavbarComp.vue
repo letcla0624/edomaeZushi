@@ -51,7 +51,7 @@
     </div>
     <a
       href="#"
-      class="nav-link ms-1 ms-md-3 py-3 w-100"
+      class="nav-link ms-1 ms-md-3 py-5 w-100"
       :class="{ 'text-center': detectWidth < 768 }"
       @click.prevent="logOut"
     >

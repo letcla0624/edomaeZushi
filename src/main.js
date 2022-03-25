@@ -62,17 +62,17 @@ app.component("ErrorMessage", ErrorMessage);
 app.config.globalProperties.$filters = {
   // 金額加入日幣符號和千分位
   currencyJPY(value) {
-    return "¥ " + value;
+    // return "¥ " + value;
     // value = "¥ " + value;
     // let comma = /\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g;
     // return value.replace(comma, ",");
+    let newVal = Number(parseFloat(value).toFixed(3)).toLocaleString("jp");
+    return "¥ " + newVal;
   },
   // 單一金額加入千分位
   thousandths(value) {
-    return "" + value;
-    // value = "" + value;
-    // let comma = /\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g;
-    // return value.replace(comma, ",");
+    let newVal = Number(parseFloat(value).toFixed(3)).toLocaleString("jp");
+    return "" + newVal;
   },
 };
 

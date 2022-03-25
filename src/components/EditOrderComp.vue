@@ -49,8 +49,8 @@
                     <thead>
                       <tr>
                         <th>商品</th>
-                        <th>數量</th>
-                        <th class="text-end">價格</th>
+                        <th width="70">數量</th>
+                        <th width="70" class="text-end">價格</th>
                       </tr>
                     </thead>
                     <tbody>

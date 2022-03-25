@@ -5,6 +5,10 @@
     :class="{ sticky: fixClass }"
     :style="{ '--scale': progress }"
   >
+    <div
+      class="bg-black w-100 bg-opacity-25 d-flex justify-content-center align-items-center"
+      style="height: 100vh; z-index: 1"
+    ></div>
     <div class="bannerBg">
       <img
         src="https://images.unsplash.com/photo-1627462133149-167e7e9a91b7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3960&q=80"
@@ -28,6 +32,10 @@
     </div>
   </div>
   <div class="banner" id="banner2" :class="{ static: fixClass }">
+    <div
+      class="bg-black w-100 bg-opacity-25 d-flex justify-content-center align-items-center"
+      style="height: 100vh; z-index: 1"
+    ></div>
     <div class="bannerBg">
       <img
         src="https://images.unsplash.com/photo-1627462133149-167e7e9a91b7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3960&q=80"
