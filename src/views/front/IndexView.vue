@@ -331,18 +331,10 @@ export default {
       }
 
       // 判斷首頁 Navbar 要不要置頂
-      if (this.detectWidth <= 415) {
-        if (document.scrollingElement.scrollTop > window.outerHeight * 2) {
-          return (this.fixed = true);
-        } else {
-          return (this.fixed = false);
-        }
+      if (document.scrollingElement.scrollTop > window.innerHeight * 2) {
+        return (this.fixed = true);
       } else {
-        if (document.scrollingElement.scrollTop > window.innerHeight * 2) {
-          return (this.fixed = true);
-        } else {
-          return (this.fixed = false);
-        }
+        return (this.fixed = false);
       }
     });
   },
@@ -350,14 +342,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// body {
-//   overflow: hidden;
-// }
-// #app {
-//   width: 100vw;
-//   height: 100vh;
-//   overflow: auto;
-// }
 .banner {
   position: relative;
   width: 100%;

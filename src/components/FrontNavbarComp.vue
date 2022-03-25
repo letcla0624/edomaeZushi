@@ -116,16 +116,16 @@
             <ul
               class="list-unstyled d-flex justify-content-center justify-content-lg-end mb-lg-0"
             >
-              <li class="mx-4">
+              <li class="mx-3">
                 <a href="#"><i class="bi bi-facebook text-light"></i></a>
               </li>
-              <li class="mx-4">
+              <li class="mx-3">
                 <a href="#"><i class="bi bi-instagram text-light"></i></a>
               </li>
-              <li class="mx-4">
+              <li class="mx-3">
                 <a href="#"><i class="bi bi-line text-light"></i></a>
               </li>
-              <li class="mx-4">
+              <li class="mx-3">
                 <a href="#"><i class="bi bi-twitter text-light"></i></a>
               </li>
             </ul>

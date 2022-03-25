@@ -17,6 +17,7 @@ import VueAxios from "vue-axios";
 import VueLoading from "vue-loading-overlay";
 import "vue-loading-overlay/dist/vue-loading.css";
 
+// 引入 aos
 import "aos/dist/aos.css";
 
 // 引入 Vee-Validate
