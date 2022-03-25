@@ -15,7 +15,12 @@
         </div>
       </div>
       <div v-if="products.length === 0" class="row">
-        <div class="text-center my-5">
+        <div
+          class="text-center my-5"
+          data-aos="fade-down"
+          data-aos-delay="300"
+          data-aos-duration="1000"
+        >
           <i class="bi bi-balloon-heart-fill text-danger fs-2"></i>
           <h3 class="h5 mb-5">
             お気に入りとして追加すると、この画面に保存されます。

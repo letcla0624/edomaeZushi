@@ -76,14 +76,15 @@
           </div>
           <div class="col-lg-4">
             <h5 class="my-4">地図</h5>
-            <iframe
+            <!-- <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2915.4120143281566!2d141.3529103162209!3d43.05380139899852!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f0b29868bfe21d5%3A0xbc51a124cdfeff35!2z6a6o5Yem44GG44GI44Gu!5e0!3m2!1szh-TW!2stw!4v1646748937964!5m2!1szh-TW!2stw"
               height="250"
               style="border: 0; filter: grayscale(1)"
               allowfullscreen="true"
               loading="lazy"
               class="w-100"
-            ></iframe>
+            ></iframe> -->
+            <div id="map"></div>
           </div>
         </div>
       </div>
@@ -122,6 +123,13 @@
 </template>
 
 <script>
+import "leaflet/dist/leaflet.css";
+import L from "leaflet";
+import icon from "@/assets/images/sushi.png";
+// leaflet 預設 icon
+// import icon from "leaflet/dist/images/marker-icon.png";
+// import iconShadow from "leaflet/dist/images/marker-shadow.png";
+
 export default {
   data() {
     return {
@@ -136,6 +144,54 @@ export default {
   },
   mounted() {
     this.getDate();
+
+    var map = L.map("map").setView([43.054456, 141.354884], 17);
+    L.tileLayer(
+      "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
+      {
+        attribution:
+          'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        maxZoom: 21,
+        id: "mapbox/light-v10",
+        tileSize: 512,
+        zoomOffset: -1,
+        accessToken:
+          "pk.eyJ1IjoibGV0Y2xhIiwiYSI6ImNsMTZqdDB3MTBxcjgzanA4aXh1dDlpbGwifQ.-dZJhjOm2AFoOFL6JHyLVA",
+      }
+    ).addTo(map);
+
+    // let DefaultIcon = L.icon({
+    //   iconUrl: icon,
+    //   shadowUrl: iconShadow,
+    // });
+    // L.Marker.prototype.options.icon = DefaultIcon;
+
+    const customerIcon = L.icon({
+      iconUrl: icon,
+      iconSize: [36, 36],
+    });
+
+    L.marker([43.054456, 141.354884], { icon: customerIcon })
+      .addTo(map)
+      .bindPopup("<strong class='fs-7'>江戸前寿司</strong>")
+      .openPopup();
   },
 };
 </script>
+
+<style>
+#map {
+  height: 250px;
+}
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+  background: white;
+  color: #333;
+  box-shadow: 0 2px 5px rgb(0 0 0 / 20%);
+  border-radius: 0;
+}
+.leaflet-bar {
+  border: 1px solid var(--bs-gray-300) !important;
+  border-radius: 0;
+}
+</style>

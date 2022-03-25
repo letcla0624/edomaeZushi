@@ -19,6 +19,8 @@ import "vue-loading-overlay/dist/vue-loading.css";
 
 // 引入 aos
 import "aos/dist/aos.css";
+import AOS from "aos";
+AOS.init();
 
 // 引入 Vee-Validate
 import { Form, Field, ErrorMessage, defineRule, configure } from "vee-validate";

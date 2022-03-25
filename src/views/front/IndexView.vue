@@ -18,6 +18,8 @@
       class="box p-3 mx-auto"
       style="width: 90%"
       :style="{ opacity: bannerTextOpacity }"
+      data-aos="fade-down"
+      data-aos-duration="1000"
     >
       <div class="border border-dark p-4">
         <div class="mt-3 mb-5">
@@ -225,6 +227,7 @@
       <div
         class="text-white text-center p-3"
         data-aos="fade-down"
+        data-aos-delay="300"
         data-aos-duration="1000"
       >
         <div class="mb-3">
@@ -271,7 +274,6 @@ import FrontNavbarComp from "@/components/FrontNavbarComp.vue";
 import LogoWhiteCubeComp from "@/components/LogoWhiteCubeComp.vue";
 import FooterComp from "@/components/FooterComp.vue";
 import SwiperComp from "@/components/SwiperComp.vue";
-import AOS from "aos";
 
 export default {
   data() {
@@ -302,8 +304,6 @@ export default {
     window.addEventListener("resize", () => {
       this.detectWidth = window.innerWidth;
     });
-
-    AOS.init();
 
     // 視窗捲動時
     document.addEventListener("scroll", () => {

@@ -4,7 +4,12 @@
       <div
         class="bg-black w-100 h-100 bg-opacity-25 d-flex justify-content-center align-items-center"
       >
-        <div class="text-white text-center p-3">
+        <div
+          class="text-white text-center p-3"
+          data-aos="fade-down"
+          data-aos-delay="300"
+          data-aos-duration="1000"
+        >
           <div class="mb-3">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -346,9 +351,9 @@ export default {
   .nav-link.getSushi {
     flex-shrink: 0;
     padding: 1rem;
+    color: #fff;
     &:hover {
-      // background-color: var(--bs-light-green);
-      color: var(--bs-light-green);
+      background-color: var(--bs-light-green);
     }
   }
 }
@@ -360,11 +365,28 @@ export default {
   .nav-pills-sticky {
     overflow-x: scroll;
     background-color: var(--bs-dark);
+    &::after {
+      position: absolute;
+      font-family: "bootstrap-icons" !important;
+      content: "\F138" !important;
+      // color: #fff;
+      right: 0;
+      border: 1px solid #f00;
+      width: 26px;
+    }
   }
   .nav-parent {
     position: sticky;
     top: 64px;
     z-index: 4;
+  }
+  .nav-link.getSushi {
+    &:hover {
+      background-color: transparent !important;
+    }
+    &.active {
+      background-color: var(--bs-light-green) !important;
+    }
   }
 }
 </style>

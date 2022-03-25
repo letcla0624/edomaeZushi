@@ -104,16 +104,6 @@ export default {
 .swiper-pagination {
   z-index: 0 !important;
 }
-// .swiper-pagination {
-//   bottom: 0;
-//   .swiper-pagination-bullet {
-//     opacity: 1;
-//     background-color: var(--bs-secondary);
-//   }
-//   .swiper-pagination-bullet-active {
-//     background-color: var(--bs-success);
-//   }
-// }
 .swiper-button-next,
 .swiper-button-prev {
   top: 92% !important;
