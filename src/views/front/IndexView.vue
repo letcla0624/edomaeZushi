@@ -93,9 +93,7 @@
               src="https://images.unsplash.com/photo-1621871908119-295c8ce5cee4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1587&q=80"
               alt="江戸前寿司"
               class="w-100"
-              data-aos="fade-up"
-              data-aos-anchor-placement="top-center"
-              data-aos-delay="1000"
+              data-aos="fade-down"
               data-aos-duration="1000"
             />
           </div>
@@ -107,8 +105,7 @@
                     src="https://images.unsplash.com/photo-1537154259951-00da64098b37?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3540&q=80"
                     alt="江戸前寿司"
                     class="w-100"
-                    data-aos="fade-up"
-                    data-aos-anchor-placement="top-center"
+                    data-aos="fade-down"
                     data-aos-delay="600"
                     data-aos-duration="1000"
                   />
@@ -150,8 +147,6 @@
                 class="w-100"
                 style="max-height: 636px; object-fit: cover"
                 data-aos="fade-down"
-                data-aos-anchor-placement="center-bottom"
-                data-aos-delay="1000"
                 data-aos-duration="1000"
               />
             </div>
@@ -181,8 +176,6 @@
                 class="w-100"
                 style="max-height: 636px; object-fit: cover"
                 data-aos="fade-down"
-                data-aos-anchor-placement="center-bottom"
-                data-aos-delay="600"
                 data-aos-duration="1000"
               />
             </div>
@@ -213,11 +206,7 @@
 
       <!-- Swiper -->
       <div class="row py-5">
-        <div
-          class="col-lg-6 offset-lg-3"
-          data-aos="fade-down"
-          data-aos-duration="1000"
-        >
+        <div class="col-lg-6 offset-lg-3">
           <h3 class="h2 text-center">ランダムな推奨</h3>
           <p class="lh-lg mb-3">
             ミシュラン賞を受賞した江戸前寿司の作り方の細部は、すべてのシェフが真剣に取り組み、何年もの努力を要し、「1回のセッション、1回のセッション」でしか成功できないことを示しています。
@@ -233,7 +222,11 @@
     <div
       class="bg-black w-100 h-100 bg-opacity-25 d-flex justify-content-center align-items-center"
     >
-      <div class="text-white text-center p-3">
+      <div
+        class="text-white text-center p-3"
+        data-aos="fade-down"
+        data-aos-duration="1000"
+      >
         <div class="mb-3">
           <svg
             xmlns="http://www.w3.org/2000/svg"
