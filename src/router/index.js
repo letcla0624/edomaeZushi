@@ -144,7 +144,7 @@ const router = createRouter({
     if (savedPosition) {
       return savedPosition;
     } else {
-      return { x: 0, y: to.meta.savedPosition || 0 };
+      return { left: 0, top: to.meta.savedPosition || 0 };
     }
   },
 });

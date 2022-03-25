@@ -14,7 +14,11 @@
         src="https://images.unsplash.com/photo-1627462133149-167e7e9a91b7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3960&q=80"
       />
     </div>
-    <div class="box p-3 mx-auto" :style="{ opacity: bannerTextOpacity }">
+    <div
+      class="box p-3 mx-auto"
+      style="width: 90%"
+      :style="{ opacity: bannerTextOpacity }"
+    >
       <div class="border border-dark p-4">
         <div class="mt-3 mb-5">
           <h2>没入型の寿司</h2>
@@ -42,7 +46,7 @@
       />
     </div>
     <div class="box bg-transparent m-3 p-3" :style="{ opacity: logoOpacity }">
-      <div class="logo" style="padding: 3rem">
+      <div class="logo">
         <LogoWhiteCubeComp></LogoWhiteCubeComp>
       </div>
     </div>
@@ -61,6 +65,8 @@
             <article
               class="py-4 py-lg-5 lh-xl mx-auto"
               :class="{ 'vrl-text': detectWidth > 992 }"
+              data-aos="fade-down"
+              data-aos-duration="1000"
             >
               <h3 class="h2 text-center mb-3">江戸前寿司について</h3>
               <p class="">
@@ -87,6 +93,10 @@
               src="https://images.unsplash.com/photo-1621871908119-295c8ce5cee4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1587&q=80"
               alt="江戸前寿司"
               class="w-100"
+              data-aos="fade-up"
+              data-aos-anchor-placement="top-center"
+              data-aos-delay="1000"
+              data-aos-duration="1000"
             />
           </div>
           <div class="col-md-6">
@@ -97,6 +107,10 @@
                     src="https://images.unsplash.com/photo-1537154259951-00da64098b37?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3540&q=80"
                     alt="江戸前寿司"
                     class="w-100"
+                    data-aos="fade-up"
+                    data-aos-anchor-placement="top-center"
+                    data-aos-delay="600"
+                    data-aos-duration="1000"
                   />
                   <div class="about-icon">
                     <img
@@ -115,7 +129,11 @@
     <!-- 商品 -->
     <div class="container pb-5 pt-lg-5">
       <div class="row pb-5 pt-lg-5">
-        <div class="col-lg-6 offset-lg-3">
+        <div
+          class="col-lg-6 offset-lg-3"
+          data-aos="fade-down"
+          data-aos-duration="1000"
+        >
           <h3 class="h2 text-center">人気が高い</h3>
           <p class="lh-lg mb-5">
             「江戸前寿司」で変わっていないのは、酢漬け、蒸し、茹で、広げなどの塩漬けや酢など、酢飯にかけられた具材が今でも手間がかかることです。これが最大の違いです今日の握り寿司と江戸前寿司の間。
@@ -131,6 +149,10 @@
                 alt=""
                 class="w-100"
                 style="max-height: 636px; object-fit: cover"
+                data-aos="fade-down"
+                data-aos-anchor-placement="center-bottom"
+                data-aos-delay="1000"
+                data-aos-duration="1000"
               />
             </div>
             <div class="col-md-6 order-md-6">
@@ -158,6 +180,10 @@
                 alt=""
                 class="w-100"
                 style="max-height: 636px; object-fit: cover"
+                data-aos="fade-down"
+                data-aos-anchor-placement="center-bottom"
+                data-aos-delay="600"
+                data-aos-duration="1000"
               />
             </div>
             <div class="col-md-6">
@@ -187,7 +213,11 @@
 
       <!-- Swiper -->
       <div class="row py-5">
-        <div class="col-lg-6 offset-lg-3">
+        <div
+          class="col-lg-6 offset-lg-3"
+          data-aos="fade-down"
+          data-aos-duration="1000"
+        >
           <h3 class="h2 text-center">ランダムな推奨</h3>
           <p class="lh-lg mb-3">
             ミシュラン賞を受賞した江戸前寿司の作り方の細部は、すべてのシェフが真剣に取り組み、何年もの努力を要し、「1回のセッション、1回のセッション」でしか成功できないことを示しています。
@@ -248,7 +278,7 @@ import FrontNavbarComp from "@/components/FrontNavbarComp.vue";
 import LogoWhiteCubeComp from "@/components/LogoWhiteCubeComp.vue";
 import FooterComp from "@/components/FooterComp.vue";
 import SwiperComp from "@/components/SwiperComp.vue";
-// import WOW from "wow.js";
+import AOS from "aos";
 
 export default {
   data() {
@@ -273,8 +303,6 @@ export default {
     },
   },
   mounted() {
-    const app = document.querySelector("#app");
-
     // 初判斷一進入的螢幕寬度
     this.detectWidth = window.innerWidth;
     // 螢幕寬度縮放
@@ -282,56 +310,61 @@ export default {
       this.detectWidth = window.innerWidth;
     });
 
+    AOS.init();
+
     // 視窗捲動時
-    app.addEventListener("scroll", () => {
+    document.addEventListener("scroll", () => {
       // 首頁 Banner 開頭文字慢慢消失
       this.bannerTextOpacity =
-        -(app.scrollTop - window.innerHeight) / window.innerHeight;
+        -(document.scrollingElement.scrollTop - window.innerHeight) /
+        window.innerHeight;
 
       // 首頁 Logo 出現
       this.logoOpacity =
-        0.8 + (app.scrollTop - window.innerHeight) / window.innerHeight;
+        0.8 +
+        (document.scrollingElement.scrollTop - window.innerHeight) /
+          window.innerHeight;
 
       // 首頁 Banner 捲動縮放
-      if (app.scrollTop === 0) {
+      if (document.scrollingElement.scrollTop === 0) {
         this.progress = 2;
-      } else if (app.scrollTop > window.innerHeight) {
+      } else if (document.scrollingElement.scrollTop > window.innerHeight) {
         this.progress = 1;
       } else {
         this.progress =
-          1 - (app.scrollTop - window.innerHeight) / window.innerHeight;
+          1 -
+          (document.scrollingElement.scrollTop - window.innerHeight) /
+            window.innerHeight;
       }
 
       // 判斷首頁 Navbar 要不要置頂
       if (this.detectWidth <= 415) {
-        if (app.scrollTop > window.outerHeight * 2) {
+        if (document.scrollingElement.scrollTop > window.outerHeight * 2) {
           return (this.fixed = true);
         } else {
           return (this.fixed = false);
         }
       } else {
-        if (app.scrollTop > window.innerHeight * 2) {
+        if (document.scrollingElement.scrollTop > window.innerHeight * 2) {
           return (this.fixed = true);
         } else {
           return (this.fixed = false);
         }
       }
     });
-
-    // new WOW().init();
   },
 };
 </script>
 
-<style lang="scss" scope>
-body {
-  overflow: hidden;
-}
-#app {
-  width: 100vw;
-  height: 100vh;
-  overflow: auto;
-}
+<style lang="scss" scoped>
+// body {
+//   overflow: hidden;
+// }
+// #app {
+//   width: 100vw;
+//   height: 100vh;
+//   overflow: auto;
+// }
 .banner {
   position: relative;
   width: 100%;
@@ -346,7 +379,6 @@ body {
 .sticky {
   position: sticky !important;
   top: 0;
-  left: 0;
 }
 .static {
   position: static !important;

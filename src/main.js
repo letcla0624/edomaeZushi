@@ -17,7 +17,7 @@ import VueAxios from "vue-axios";
 import VueLoading from "vue-loading-overlay";
 import "vue-loading-overlay/dist/vue-loading.css";
 
-// import animated from "animate.css";
+import "aos/dist/aos.css";
 
 // 引入 Vee-Validate
 import { Form, Field, ErrorMessage, defineRule, configure } from "vee-validate";
@@ -50,8 +50,6 @@ app.use(VueLoading, {
   color: "var(--bs-success)",
   loader: "dots",
 });
-
-// app.use(animated);
 
 // 加入 Vee-Validate 元件
 app.component("VForm", Form);

@@ -15,6 +15,7 @@
               <li class="mb-3">
                 <a
                   href="https://www.google.com/maps/place/%E9%AE%A8%E5%87%A6%E3%81%86%E3%81%88%E3%81%AE/@43.054456,141.354884,15z/data=!4m5!3m4!1s0x0:0xbc51a124cdfeff35!8m2!3d43.0537975!4d141.355099?hl=zh-TW"
+                  target="_blank"
                 >
                   <div class="d-flex align-items-start">
                     <i class="bi bi-pin-map me-2"></i>
@@ -87,7 +88,7 @@
         </div>
       </div>
     </div>
-    <div class="container-fluid paper bg-light py-3">
+    <div class="container-fluid paper bg-light pb-5 py-lg-3">
       <div class="container">
         <div class="row align-items-center text-center">
           <div class="col-lg-4 order-lg-1">
@@ -109,7 +110,7 @@
             </ul>
           </div>
           <div class="col-lg-8 order-lg-6">
-            <p class="mb-0 fs-7 text-lg-start">
+            <p class="mb-0 fs-8 text-lg-start">
               &copy; {{ year }} <strong>edomaezushi.</strong> All Rights
               Reserved. Designed by Will Wu.
             </p>
