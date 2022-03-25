@@ -114,6 +114,7 @@
             <p class="mb-0 fs-8 text-lg-start">
               &copy; {{ year }} <strong>edomaezushi.</strong> All Rights
               Reserved. Designed by Will Wu.
+              このウェブサイトは個人的な使用のみを目的としており、商用目的ではありません。
             </p>
           </div>
         </div>
