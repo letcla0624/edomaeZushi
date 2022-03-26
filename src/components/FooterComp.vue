@@ -76,14 +76,6 @@
           </div>
           <div class="col-lg-4">
             <h5 class="my-4">地図</h5>
-            <!-- <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2915.4120143281566!2d141.3529103162209!3d43.05380139899852!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f0b29868bfe21d5%3A0xbc51a124cdfeff35!2z6a6o5Yem44GG44GI44Gu!5e0!3m2!1szh-TW!2stw!4v1646748937964!5m2!1szh-TW!2stw"
-              height="250"
-              style="border: 0; filter: grayscale(1)"
-              allowfullscreen="true"
-              loading="lazy"
-              class="w-100"
-            ></iframe> -->
             <div id="map"></div>
           </div>
         </div>
