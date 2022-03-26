@@ -156,11 +156,11 @@ export default {
         id: "mapbox/light-v10",
         tileSize: 512,
         zoomOffset: -1,
-        accessToken:
-          "pk.eyJ1IjoibGV0Y2xhIiwiYSI6ImNsMTZqdDB3MTBxcjgzanA4aXh1dDlpbGwifQ.-dZJhjOm2AFoOFL6JHyLVA",
+        accessToken: `${process.env.VUE_APP_ACCESSTOKEN}`,
       }
     ).addTo(map);
 
+    // leaflet 預設 icon
     // let DefaultIcon = L.icon({
     //   iconUrl: icon,
     //   shadowUrl: iconShadow,
