@@ -61,6 +61,7 @@
       class="row g-3 mx-1 my-3 my-lg-0 border-bottom py-3 py-lg-0 customer-card"
       v-for="(adminProd, idx) in copyProds"
       :key="adminProd.id"
+      :class="{ 'text-gray-500': adminProd.is_enabled !== 1 }"
     >
       <div class="col-lg-1">
         <p class="mb-0 fw-bold">
@@ -76,9 +77,16 @@
           <h3 class="h6 fw-bold d-lg-none">名稱</h3>
           <p
             class="fw-bold text-decoration-underline cursor-pointer"
-            :class="{
-              'text-danger': adminProd.origin_price !== adminProd.price,
-            }"
+            :class="[
+              {
+                'text-danger':
+                  adminProd.origin_price !== adminProd.price &&
+                  adminProd.is_enabled === 1,
+              },
+              {
+                'text-gray-500': adminProd.is_enabled !== 1,
+              },
+            ]"
             @click="openModal('detail', adminProd)"
           >
             {{ adminProd.title }}
@@ -90,12 +98,32 @@
             <del>
               原價：{{ $filters.currencyJPY(adminProd.origin_price) }}
             </del>
-            <p class="text-danger fw-bold mb-3">
+            <p
+              class="fw-bold mb-3"
+              :class="[
+                {
+                  'text-danger': adminProd.is_enabled === 1,
+                },
+                {
+                  'text-gray-500': adminProd.is_enabled !== 1,
+                },
+              ]"
+            >
               售價：{{ $filters.currencyJPY(adminProd.price) }}
             </p>
           </div>
           <div v-else class="fs-7">
-            <p class="text-light-green fw-bold mb-3">
+            <p
+              class="fw-bold mb-3"
+              :class="[
+                {
+                  'text-light-green': adminProd.is_enabled === 1,
+                },
+                {
+                  'text-gray-500': adminProd.is_enabled !== 1,
+                },
+              ]"
+            >
               售價：{{ $filters.currencyJPY(adminProd.price) }}
             </p>
           </div>
@@ -115,7 +143,7 @@
             @change="updateEnabled(adminProd)"
           />
           <label
-            class="form-check-label cursor-pointer mb-3"
+            class="form-check-label cursor-pointer fw-bold mb-3"
             :for="adminProd.id"
             ><span class="text-light-green fw-bold" v-if="adminProd.is_enabled"
               >啟用</span
