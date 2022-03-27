@@ -40,14 +40,6 @@ export default {
 </script>
 
 <style lang="scss">
-// .main {
-//   margin-top: 71px;
-// }
-// @media (max-width: 991.98px) {
-//   .main {
-//     margin-top: 56px;
-//   }
-// }
 // 壽司們
 .sushi-card {
   transition: all 0.4s;
