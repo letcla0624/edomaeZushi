@@ -27,7 +27,7 @@
                 />
                 <button
                   v-if="searchItem !== ''"
-                  type="reset"
+                  type="button"
                   class="btn btn-link position-absolute"
                   style="right: 6rem; z-index: 3"
                   @click="cleanText"
@@ -127,8 +127,8 @@ export default {
   data() {
     return {
       orders: {},
-      copyOrders: {},
       pagination: {},
+      copyOrders: {},
       searchItem: "",
     };
   },
@@ -145,7 +145,6 @@ export default {
         .then((res) => {
           loader.hide();
           this.orders = res.data.orders;
-          // this.copyOrders = this.orders;
           this.pagination = res.data.pagination;
         })
         .catch((err) => {
