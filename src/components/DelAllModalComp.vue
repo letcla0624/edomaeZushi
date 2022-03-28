@@ -28,7 +28,7 @@
             </span>
           </h5>
         </div>
-        <div class="modal-footer border-top-0 justify-content-center">
+        <div class="modal-footer border-top-0 justify-content-center mb-4">
           <button
             type="button"
             class="btn btn-link"
@@ -56,20 +56,23 @@
 
 export let delAllModal = null;
 export default {
+  props: ["page"],
   methods: {
     deleteCarts() {
       let loader = this.$loading.show();
+
+      let url = "";
+      if (this.page === "cart") {
+        url = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/carts`;
+      } else if (this.page === "adminOrders") {
+        url = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/admin/orders/all`;
+      }
       this.$http
-        .delete(
-          `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/carts`
-        )
+        .delete(url)
         .then(() => {
           loader.hide();
           this.$emit("get-item");
           delAllModal.hide();
-          // setTimeout(() => {
-          //   alert(res.data.message);
-          // }, 600);
         })
         .catch((err) => {
           loader.hide();

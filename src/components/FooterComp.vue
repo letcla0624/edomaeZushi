@@ -37,10 +37,10 @@
                   <span>今月の割引コード：</span>
                   <a
                     href="#"
-                    @click.prevent="copyCouponCode"
+                    @click.prevent="copyTxt"
                     title="クリックしてコピー"
                   >
-                    <strong ref="couponCode">peace2022</strong>
+                    <strong ref="copyText">peace2022</strong>
                     <i class="bi bi-files ms-1"></i>
                   </a>
                 </div>
@@ -130,6 +130,7 @@
 </template>
 
 <script>
+import copyText from "@/utility/copyText";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import icon from "@/assets/images/sushi.png";
@@ -149,16 +150,10 @@ export default {
       let date = new Date();
       this.year = date.getFullYear();
     },
-    // 複製折扣碼
-    copyCouponCode() {
-      const couponCode = this.$refs.couponCode.innerText;
-      // 一定要建立一個隱藏的文字區域
-      const textArea = document.createElement("textarea");
-      textArea.value = couponCode;
-      document.body.appendChild(textArea);
-      textArea.select();
-      document.execCommand("Copy");
-      textArea.remove();
+    // 複製文字
+    copyTxt() {
+      const txt = this.$refs.copyText.innerText;
+      copyText(txt);
       // 全域的 emitter
       this.emitter.emit("toast-message", {
         style: "success",

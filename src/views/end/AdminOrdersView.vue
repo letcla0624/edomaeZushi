@@ -1,6 +1,18 @@
 <template>
   <div class="container">
-    <h2 class="text-center my-3">顧客訂單</h2>
+    <div class="text-center my-3">
+      <div class="mb-3">
+        <h2>顧客訂單</h2>
+      </div>
+      <button
+        type="button"
+        class="btn btn-outline-danger"
+        @click="openDelAllModal('adminOrders')"
+      >
+        <i class="bi bi-trash-fill me-1"></i>
+        <span>全部刪除</span>
+      </button>
+    </div>
     <div v-if="orders.length === 0">
       <div class="text-center">
         <p>尚無訂單，需多加努力！</p>
@@ -18,7 +30,7 @@
               <input
                 type="text"
                 class="form-control"
-                placeholder="搜尋訂購人姓名"
+                placeholder="搜尋訂單編號或訂購人姓名"
                 aria-label="search"
                 aria-describedby="search"
                 v-model.trim="searchItem"
@@ -159,6 +171,7 @@
       :page-name="pageName"
       @get-item="getOrders"
     ></DelAdminComp>
+    <DelAllModalComp :page="page" @get-item="getOrders"></DelAllModalComp>
   </div>
 </template>
 
@@ -166,6 +179,7 @@
 import PageComp from "@/components/PageComp.vue";
 import EditOrderComp, { orderModal } from "@/components/EditOrderComp.vue";
 import DelAdminComp, { delModal } from "@/components/DelAdminComp.vue";
+import DelAllModalComp, { delAllModal } from "@/components/DelAllModalComp.vue";
 
 export default {
   data() {
@@ -176,6 +190,7 @@ export default {
       tempOrder: {},
       pageName: "orders",
       searchItem: "",
+      page: "",
     };
   },
   watch: {
@@ -187,6 +202,7 @@ export default {
     PageComp,
     EditOrderComp,
     DelAdminComp,
+    DelAllModalComp,
   },
   methods: {
     getOrders(page = 1) {
@@ -238,13 +254,20 @@ export default {
         delModal.show();
       }
     },
-    // 搜尋姓名
+    openDelAllModal(page) {
+      this.page = page;
+      delAllModal.show();
+    },
+    // 搜尋訂單
     filterSearch() {
       const newList = JSON.parse(JSON.stringify(this.orders));
       const newArr = [];
 
       newList.filter((item) => {
-        if (item.user.name.includes(this.searchItem)) {
+        if (
+          item.id.includes(this.searchItem) ||
+          item.user.name.includes(this.searchItem)
+        ) {
           newArr.push(item);
         } else if (this.searchItem === "") {
           newArr.push(this.orders);
@@ -258,5 +281,3 @@ export default {
   },
 };
 </script>
-
-<style></style>

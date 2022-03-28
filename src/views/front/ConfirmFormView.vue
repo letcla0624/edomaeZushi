@@ -29,14 +29,23 @@
     <div class="col-lg-11 col-xl-10 col-xxl-8">
       <div class="mb-5">
         <h2 class="h5 fw-bold">購入情報</h2>
-        <p class="mb-2">
-          未払いの注文は、後で
-          <router-link to="/myOrders">[私の注文]</router-link>
-          で確認できます。
-        </p>
-        <small>
-          現在の出来事による当社の運送業者からの制約により、出荷が遅れたり、在庫が制限されたりする場合があります。
-        </small>
+        <ol class="ps-3">
+          <li>
+            <p class="fw-bold">
+              * [私の注文]
+              ページで検索または支払いを行うために、注文番号をコピーするか覚えておいてください。
+            </p>
+          </li>
+          <li>
+            <p>未払いの注文は、後で [私の注文] で確認できます。</p>
+          </li>
+
+          <li>
+            <p>
+              現在の出来事による当社の運送業者からの制約により、出荷が遅れたり、在庫が制限されたりする場合があります。
+            </p>
+          </li>
+        </ol>
       </div>
       <div class="mb-5">
         <div class="row g-2 my-3">
@@ -52,7 +61,17 @@
         </div>
         <div class="row g-2 my-3">
           <div class="col-sm-4"><b>注文番号：</b></div>
-          <div class="col-sm-8">{{ order.id }}</div>
+          <div class="col-sm-8">
+            <a
+              href="#"
+              @click.prevent="copyTxt"
+              class="px-3 py-2 border border-dark border-dashed"
+              title="クリックしてコピー"
+            >
+              <strong ref="copyText">{{ order.id }}</strong>
+              <i class="bi bi-files ms-1"></i>
+            </a>
+          </div>
         </div>
         <div class="row g-2 my-3">
           <div class="col-sm-4"><b>注文時間：</b></div>
@@ -116,6 +135,8 @@
 </template>
 
 <script>
+import copyText from "@/utility/copyText";
+
 export default {
   data() {
     return {
@@ -125,6 +146,7 @@ export default {
       orderId: this.$route.params,
     };
   },
+  inject: ["emitter"],
   methods: {
     // 取得訂單
     getOrder() {
@@ -159,6 +181,16 @@ export default {
           loader.hide();
           alert(err.response.data.message);
         });
+    },
+    // 複製文字
+    copyTxt() {
+      const txt = this.$refs.copyText.innerText;
+      copyText(txt);
+      // 全域的 emitter
+      this.emitter.emit("toast-message", {
+        style: "success",
+        content: "コピーされた注文番号",
+      });
     },
   },
   mounted() {

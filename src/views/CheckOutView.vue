@@ -13,14 +13,26 @@
       </div>
     </div>
   </div>
+  <ToastComp></ToastComp>
 </template>
 
 <script>
+import emitter from "@/utility/emitter.js";
+import ToastComp from "@/components/ToastComp.vue";
+
 export default {
   data() {
     return {
       detectWidth: null,
     };
+  },
+  provide() {
+    return {
+      emitter,
+    };
+  },
+  components: {
+    ToastComp,
   },
   mounted() {
     // 初判斷一進入的螢幕寬度

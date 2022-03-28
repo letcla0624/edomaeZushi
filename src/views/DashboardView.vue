@@ -103,20 +103,6 @@ export default {
 </script>
 
 <style lang="scss">
-.search {
-  .input-group-text {
-    background-color: #fff;
-    border-radius: 50px;
-  }
-  input.form-control {
-    border-radius: 50px;
-    border-left: 0;
-    padding-left: 0;
-    &:focus {
-      border-color: var(--bs-gray-400);
-    }
-  }
-}
 // 手機版列表
 @media (max-width: 992px) {
   .customer-card {

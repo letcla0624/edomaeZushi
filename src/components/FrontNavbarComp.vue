@@ -106,7 +106,7 @@
                 <i class="bi bi-basket position-relative">
                   <span
                     class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
-                    >{{ cart.carts.length }}
+                    >{{ cartsTotal }}
                   </span>
                 </i>
               </router-link>
@@ -150,6 +150,7 @@ export default {
       cart: {
         carts: [],
       },
+      cartsTotal: 0,
       appsSharp,
     };
   },
@@ -164,10 +165,19 @@ export default {
         .get(`${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/cart`)
         .then((res) => {
           this.cart = res.data.data;
+          this.cartsTotal = this.sumCartsTotal(this.cart.carts);
         })
         .catch((err) => {
           console.dir(err);
         });
+    },
+    // 購物車數量加總
+    sumCartsTotal(arr) {
+      let sum = 0;
+      arr.forEach(function (item) {
+        sum += item.qty;
+      });
+      return sum;
     },
   },
   mounted() {
