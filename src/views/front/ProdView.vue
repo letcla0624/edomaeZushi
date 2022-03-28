@@ -62,7 +62,7 @@
                 <div class="d-flex mt-3">
                   <button
                     type="button"
-                    class="btn btn-dark w-100 d-flex justify-content-center align-items-center"
+                    class="btn hvr-btn-dark w-100 d-flex justify-content-center align-items-center"
                     @click="addCart(prod.id, qty)"
                     :disabled="isLoading === prod.id"
                   >

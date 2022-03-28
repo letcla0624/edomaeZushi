@@ -1,5 +1,5 @@
 <template>
-  <div class="main paper">
+  <div class="main">
     <div class="container py-5">
       <div class="text-center py-5">
         <h2 class="display-6">＼お気に入りアイテム／</h2>
@@ -25,7 +25,7 @@
           <h3 class="h5 mb-5">
             お気に入りとして追加すると、この画面に保存されます。
           </h3>
-          <router-link to="/products" class="btn btn-dark">
+          <router-link to="/products" class="btn hvr-btn-dark">
             今人気のアイテムを見る
           </router-link>
         </div>

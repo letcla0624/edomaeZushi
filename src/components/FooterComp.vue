@@ -31,6 +31,20 @@
                   <span>月曜日～土曜日 15：00〜22：00 日曜日定休</span>
                 </div>
               </li>
+              <li class="mb-3">
+                <div class="d-flex align-items-start">
+                  <i class="bi bi-percent me-2"></i>
+                  <span>今月の割引コード：</span>
+                  <a
+                    href="#"
+                    @click.prevent="copyCouponCode"
+                    title="クリックしてコピー"
+                  >
+                    <strong ref="couponCode">peace2022</strong>
+                    <i class="bi bi-files ms-1"></i>
+                  </a>
+                </div>
+              </li>
             </ul>
           </div>
           <div class="col-lg-4">
@@ -67,7 +81,7 @@
               <h5 class="my-4">スタッフエリア</h5>
               <ul class="list-unstyled fs-7">
                 <li class="">
-                  <router-link to="/admin" class="btn btn-outline-dark">
+                  <router-link to="/admin" class="btn hvr-btn-outline-dark">
                     バックグラウンドログイン
                   </router-link>
                 </li>
@@ -129,15 +143,33 @@ export default {
       year: null,
     };
   },
+  inject: ["emitter"],
   methods: {
     getDate() {
       let date = new Date();
       this.year = date.getFullYear();
     },
+    // 複製折扣碼
+    copyCouponCode() {
+      const couponCode = this.$refs.couponCode.innerText;
+      // 一定要建立一個隱藏的文字區域
+      const textArea = document.createElement("textarea");
+      textArea.value = couponCode;
+      document.body.appendChild(textArea);
+      textArea.select();
+      document.execCommand("Copy");
+      textArea.remove();
+      // 全域的 emitter
+      this.emitter.emit("toast-message", {
+        style: "success",
+        content: "割引コードがコピーされました",
+      });
+    },
   },
   mounted() {
     this.getDate();
 
+    // leaflet & mapbox
     var map = L.map("map").setView([43.054456, 141.354884], 17);
     L.tileLayer(
       "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",

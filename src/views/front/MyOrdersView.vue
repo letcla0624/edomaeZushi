@@ -1,5 +1,5 @@
 <template>
-  <div class="main paper">
+  <div class="main">
     <div class="container py-3 pt-lg-5">
       <div class="row">
         <div class="col-lg-8 col-xl-6 offset-lg-2 offset-xl-3">
@@ -21,7 +21,7 @@
         >
           <i class="bi bi-file-text-fill text-secondary fs-2"></i>
           <h3 class="h5 mt-2 mb-5">注文がありません。</h3>
-          <router-link to="/products" class="btn btn-dark">
+          <router-link to="/products" class="btn hvr-btn-dark">
             買い物に行く
           </router-link>
         </div>
@@ -71,7 +71,7 @@
               <div class="d-flex justify-content-center align-items-center">
                 <router-link
                   :to="`/checkout/pay/${item.id}`"
-                  class="btn btn-outline-dark"
+                  class="btn hvr-btn-outline-dark"
                 >
                   詳しくはこちら
                 </router-link>

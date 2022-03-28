@@ -22,7 +22,7 @@
         >
           <i class="bi bi-basket-fill text-light-green fs-2"></i>
           <h3 class="h5 mt-2 mb-5">カートに商品は入っていません。</h3>
-          <router-link to="/products" class="btn btn-dark">
+          <router-link to="/products" class="btn hvr-btn-dark">
             ショッピングを続ける
           </router-link>
         </div>
@@ -216,7 +216,7 @@
               </router-link>
               <router-link
                 to="/checkout"
-                class="btn btn-dark w-100 d-flex justify-content-center align-items-center"
+                class="btn hvr-btn-dark w-100 d-flex justify-content-center align-items-center"
                 :class="{ disabled: cart.carts.length === 0 }"
               >
                 チェックアウト

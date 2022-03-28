@@ -3,7 +3,7 @@
     <div
       v-for="(msg, key) in messages"
       :key="key"
-      class="toast border-0 rounded-xl mb-2 fade show"
+      class="toast border border-dark bg-white rounded-xl mb-2 fade show"
       role="alert"
       aria-live="assertive"
       aria-atomic="true"
@@ -78,11 +78,11 @@ export default {
   z-index: 100;
 }
 
-@media (max-width: 575.98px) {
-  .toast-container {
-    padding: 0.5rem;
-    top: auto;
-    bottom: 0;
-  }
-}
+// @media (max-width: 575.98px) {
+//   .toast-container {
+//     padding: 0.5rem;
+//     top: auto;
+//     bottom: 0;
+//   }
+// }
 </style>

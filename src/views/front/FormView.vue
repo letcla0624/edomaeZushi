@@ -147,7 +147,7 @@
             >
             <button
               type="submit"
-              class="btn btn-dark w-100 d-flex justify-content-center align-items-center"
+              class="btn hvr-btn-dark w-100 d-flex justify-content-center align-items-center"
             >
               チェックアウト
             </button>

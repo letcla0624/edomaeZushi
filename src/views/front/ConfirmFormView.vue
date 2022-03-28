@@ -96,7 +96,7 @@
             </router-link>
             <router-link
               :to="`/finished/${order.id}`"
-              class="btn btn-dark w-100 mb-3 d-flex justify-content-center align-items-center"
+              class="btn hvr-btn-dark w-100 mb-3 d-flex justify-content-center align-items-center"
               @click="toPay"
             >
               支払いを確認する
@@ -105,7 +105,7 @@
           <router-link
             v-else
             to="/myOrders"
-            class="btn btn-dark mb-3 w-100 d-flex justify-content-center align-items-center"
+            class="btn hvr-btn-dark mb-3 w-100 d-flex justify-content-center align-items-center"
           >
             注文に戻る
           </router-link>

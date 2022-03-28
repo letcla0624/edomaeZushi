@@ -18,8 +18,6 @@
       class="box p-3 mx-auto"
       style="width: 90%"
       :style="{ opacity: bannerTextOpacity }"
-      data-aos="fade-down"
-      data-aos-duration="1000"
     >
       <div class="border border-dark p-4">
         <div class="mt-3 mb-5">
@@ -164,7 +162,7 @@
               </div>
               <router-link
                 :to="`/prod/-MxrMaWm-dDFXbAZI7Cz`"
-                class="btn btn-outline-dark w-100 d-flex justify-content-center align-items-center"
+                class="btn hvr-btn-outline-dark w-100 d-flex justify-content-center align-items-center"
               >
                 詳しくはこちら
               </router-link>
@@ -197,7 +195,7 @@
               </div>
               <router-link
                 :to="`/prod/-MxrMxWZoPzUjz0al_K1`"
-                class="btn btn-outline-dark w-100 d-flex justify-content-center align-items-center"
+                class="btn hvr-btn-outline-dark w-100 d-flex justify-content-center align-items-center"
               >
                 詳しくはこちら
               </router-link>
@@ -265,8 +263,8 @@
     </div>
   </div>
 
-  <!-- footer -->
   <FooterComp></FooterComp>
+  <ToastComp></ToastComp>
 </template>
 
 <script>
@@ -274,6 +272,8 @@ import FrontNavbarComp from "@/components/FrontNavbarComp.vue";
 import LogoWhiteCubeComp from "@/components/LogoWhiteCubeComp.vue";
 import FooterComp from "@/components/FooterComp.vue";
 import SwiperComp from "@/components/SwiperComp.vue";
+import emitter from "@/utility/emitter.js";
+import ToastComp from "@/components/ToastComp.vue";
 
 export default {
   data() {
@@ -286,11 +286,17 @@ export default {
       detectWidth: null,
     };
   },
+  provide() {
+    return {
+      emitter,
+    };
+  },
   components: {
     FrontNavbarComp,
     LogoWhiteCubeComp,
     FooterComp,
     SwiperComp,
+    ToastComp,
   },
   computed: {
     fixClass() {
