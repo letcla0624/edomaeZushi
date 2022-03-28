@@ -60,13 +60,14 @@ export default {
   methods: {
     deleteCarts() {
       let loader = this.$loading.show();
-
       let url = "";
+
       if (this.page === "cart") {
         url = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/carts`;
       } else if (this.page === "adminOrders") {
         url = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/admin/orders/all`;
       }
+
       this.$http
         .delete(url)
         .then(() => {

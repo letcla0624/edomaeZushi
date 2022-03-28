@@ -40,7 +40,14 @@
                   style="border-radius: 0 50px 50px 0"
                   @click="filterSearch"
                 >
-                  <i class="bi bi-search me-1"></i>
+                  <div
+                    v-if="isLoading !== ''"
+                    class="spinner-border spinner-border-sm me-1"
+                    role="status"
+                  >
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
+                  <i v-else class="bi bi-search me-1"></i>
                   検索
                 </button>
               </div>
@@ -127,9 +134,10 @@ export default {
   data() {
     return {
       orders: {},
-      pagination: {},
       copyOrders: {},
+      pagination: {},
       searchItem: "",
+      isLoading: "",
     };
   },
   // components: {
@@ -154,15 +162,20 @@ export default {
     },
     // 搜尋訂單
     filterSearch() {
+      this.isLoading = "0";
       const newList = JSON.parse(JSON.stringify(this.orders));
       const newArr = [];
 
       if (this.searchItem === "") {
         newArr.length = 0;
+        this.isLoading = "";
       } else {
         newList.filter((item) => {
           if (item.id === this.searchItem) {
             newArr.push(item);
+            this.isLoading = "";
+          } else {
+            this.isLoading = "";
           }
         });
       }
@@ -170,6 +183,7 @@ export default {
     },
     cleanText() {
       this.searchItem = "";
+      this.isLoading = "";
     },
   },
   mounted() {
@@ -223,8 +237,6 @@ export default {
     transform: rotate(180deg);
     opacity: 0.035;
     bottom: -20px;
-    // left: 100%;
-    // width: 30%;
   }
   &::after {
     bottom: -10px;

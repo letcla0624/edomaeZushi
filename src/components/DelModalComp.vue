@@ -29,7 +29,7 @@
             を削除してもよろしいですか？食べない心はありますか？
           </h5>
         </div>
-        <div class="modal-footer border-top-0 justify-content-center">
+        <div class="modal-footer border-top-0 justify-content-center mb-4">
           <button
             type="button"
             class="btn btn-link"
