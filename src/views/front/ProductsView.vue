@@ -365,14 +365,6 @@ export default {
   .nav-pills-sticky {
     overflow-x: scroll;
     background-color: var(--bs-dark);
-    &::after {
-      position: absolute;
-      font-family: "bootstrap-icons" !important;
-      content: "\F138" !important;
-      right: 0;
-      border: 1px solid #f00;
-      width: 26px;
-    }
   }
   .nav-parent {
     position: sticky;
