@@ -63,7 +63,6 @@ app.component("ErrorMessage", ErrorMessage);
 app.config.globalProperties.$filters = {
   // 金額加入日幣符號和千分位
   currencyJPY(value) {
-    // return "¥ " + value;
     // value = "¥ " + value;
     // let comma = /\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g;
     // return value.replace(comma, ",");
