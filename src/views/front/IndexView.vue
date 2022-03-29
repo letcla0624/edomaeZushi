@@ -22,7 +22,7 @@
       <div class="border border-dark p-4">
         <div class="mt-3 mb-5">
           <h2>没入型の寿司</h2>
-          <p class="lh-base">
+          <p class="lh-base py-3">
             日本の大正時代には、美学、色彩芸術、そしてシェフの精神が守られていました。伝統的な日本料理を食べても、スタイリッシュに食べる必要があります。
           </p>
         </div>
