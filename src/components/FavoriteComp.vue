@@ -47,10 +47,5 @@ export default {
       }, 600);
     },
   },
-  mounted() {
-    // new Tooltip(this.$refs.info);
-  },
 };
 </script>
-
-<style></style>

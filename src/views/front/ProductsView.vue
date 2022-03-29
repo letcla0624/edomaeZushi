@@ -369,7 +369,6 @@ export default {
       position: absolute;
       font-family: "bootstrap-icons" !important;
       content: "\F138" !important;
-      // color: #fff;
       right: 0;
       border: 1px solid #f00;
       width: 26px;
@@ -386,6 +385,27 @@ export default {
     }
     &.active {
       background-color: var(--bs-light-green) !important;
+    }
+  }
+}
+@media (max-width: 509.98px) {
+  .nav-parent {
+    &::before {
+      font-family: "bootstrap-icons" !important;
+      content: "\F231" !important;
+      color: var(--bs-gray-300);
+      position: absolute;
+      width: 2rem;
+      height: 100%;
+      right: 0;
+      font-size: 1rem;
+      text-align: center;
+      line-height: 3.7rem;
+      background: linear-gradient(to right, transparent, var(--bs-dark));
+      z-index: 4;
+    }
+    .nav-pills {
+      padding-right: 2rem;
     }
   }
 }

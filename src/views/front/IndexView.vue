@@ -69,18 +69,19 @@
               data-aos-duration="1000"
             >
               <h3 class="h2 text-center mb-3">江戸前寿司について</h3>
-              <p class="">
+              <p>
                 2021 年、24
                 歳のウィル氏は、伝統的な握りスタイルで新鮮な寿司を提供する寿司レストランを開くことを夢見ていました。
                 同年 12
                 月、江戸前寿司の設立に成功し、夢を実現し、日本の伝統文化を新しい時代へと導きました。
               </p>
-              <p class="">
+              <p>
                 ウィル氏のリーダーシップのもと、2022
                 年に江戸前寿司が正式に設立され、一瞬にして高品質な寿司のシンボルとなった新鮮な寿司のブランド名が付けられました。
-                3年後、台湾、日本、香港、中国、オーストラリアなどの海外に事業を拡大しました。
+                3
+                年後、台湾、日本、香港、中国、オーストラリアなどの海外に事業を拡大しました。
               </p>
-              <p class="">
+              <p>
                 江戸前寿司は、日本の伝統的な寿司文化を継承し、国境を越え、世界に日本の伝統的な握り寿司を食べさせてきました。
                 江戸前寿司は常に革新を続けており、伝統的な味わいの下で世界中のお客様の絶え間なく変化する味に応えています。
               </p>
@@ -106,7 +107,7 @@
                     alt="江戸前寿司"
                     class="w-100"
                     data-aos="fade-down"
-                    data-aos-delay="600"
+                    data-aos-delay="300"
                     data-aos-duration="1000"
                   />
                   <div class="about-icon">
@@ -126,11 +127,7 @@
     <!-- 商品 -->
     <div class="container pb-5 pt-lg-5">
       <div class="row pb-5 pt-lg-5">
-        <div
-          class="col-lg-6 offset-lg-3"
-          data-aos="fade-down"
-          data-aos-duration="1000"
-        >
+        <div class="col-lg-6 offset-lg-3">
           <h3 class="h2 text-center">人気が高い</h3>
           <p class="lh-lg mb-5">
             「江戸前寿司」で変わっていないのは、酢漬け、蒸し、茹で、広げなどの塩漬けや酢など、酢飯にかけられた具材が今でも手間がかかることです。これが最大の違いです今日の握り寿司と江戸前寿司の間。
@@ -176,6 +173,7 @@
                 class="w-100"
                 style="max-height: 636px; object-fit: cover"
                 data-aos="fade-down"
+                data-aos-delay="300"
                 data-aos-duration="1000"
               />
             </div>
@@ -211,6 +209,15 @@
           <p class="lh-lg mb-3">
             ミシュラン賞を受賞した江戸前寿司の作り方の細部は、すべてのシェフが真剣に取り組み、何年もの努力を要し、「1回のセッション、1回のセッション」でしか成功できないことを示しています。
           </p>
+        </div>
+        <div class="d-flex justify-content-end align-items-center fs-7">
+          <router-link
+            to="/products"
+            class="btn btn-link d-flex align-items-center"
+          >
+            もっと見る
+            <i class="bi bi-chevron-right ms-1"></i>
+          </router-link>
         </div>
         <SwiperComp></SwiperComp>
       </div>

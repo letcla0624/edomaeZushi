@@ -121,12 +121,12 @@ export default {
     }
   }
 }
-.swiper-button-prev {
-  right: 15px;
+.swiper-button-next {
+  right: 1.75rem;
 }
 .swiper-button-prev {
   left: auto !important;
-  right: 55px !important;
+  right: 4.6rem !important;
 }
 .swiper-button-next::after {
   content: "\F135" !important;

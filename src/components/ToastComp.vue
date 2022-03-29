@@ -77,12 +77,4 @@ export default {
   top: 100px;
   z-index: 100;
 }
-
-// @media (max-width: 575.98px) {
-//   .toast-container {
-//     padding: 0.5rem;
-//     top: auto;
-//     bottom: 0;
-//   }
-// }
 </style>

@@ -61,7 +61,7 @@
             <li class="nav-item" data-bs-dismiss="offcanvas">
               <router-link
                 to="/"
-                class="nav-link p-4"
+                class="nav-link px-3 py-4"
                 :class="{ 'text-white': detectWidth < 992 }"
               >
                 ホームページ
@@ -70,7 +70,7 @@
             <li class="nav-item" data-bs-dismiss="offcanvas">
               <router-link
                 to="/products"
-                class="nav-link p-4"
+                class="nav-link px-3 py-4"
                 :class="{ 'text-white': detectWidth < 992 }"
                 >寿司の種類
               </router-link>
@@ -78,7 +78,7 @@
             <li class="nav-item" data-bs-dismiss="offcanvas">
               <router-link
                 to="/favorite"
-                class="nav-link p-4"
+                class="nav-link px-3 py-4"
                 :class="{ 'text-white': detectWidth < 992 }"
               >
                 私のお気に入り
@@ -87,7 +87,7 @@
             <li class="nav-item" data-bs-dismiss="offcanvas">
               <router-link
                 to="/myOrders"
-                class="nav-link p-4"
+                class="nav-link px-3 py-4"
                 :class="{ 'text-white': detectWidth < 992 }"
               >
                 私の注文
@@ -99,7 +99,7 @@
             >
               <router-link
                 to="/cart"
-                class="nav-link p-4"
+                class="nav-link px-3 py-4"
                 :class="{ 'text-white': detectWidth < 992 }"
               >
                 ショッピングカート
