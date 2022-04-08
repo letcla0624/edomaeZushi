@@ -122,7 +122,7 @@
                           <button
                             type="button"
                             class="btn btn-sm"
-                            @click="add(item)"
+                            @click="addItem(item)"
                             :disabled="isLoading === item.id"
                           >
                             <i class="bi bi-plus-lg"></i>
