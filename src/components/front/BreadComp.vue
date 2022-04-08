@@ -1,6 +1,6 @@
 <template>
   <nav style="--bs-breadcrumb-divider: '／'" aria-label="breadcrumb">
-    <ol class="breadcrumb mb-5">
+    <ol class="breadcrumb mb-lg-5">
       <li
         v-for="(item, idx) in breadcrumbList"
         :key="idx + `_${item}`"

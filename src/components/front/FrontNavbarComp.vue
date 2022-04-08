@@ -6,15 +6,15 @@
     <div class="container">
       <LogoComp></LogoComp>
       <div class="d-flex d-lg-none">
-        <router-link to="/cart" class="btn me-2">
+        <RouterLink to="/cart" class="btn me-2">
           <i class="bi bi-basket text-dark position-relative fs-5">
             <span
               class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
               style="font-size: x-small"
-              >{{ cart.carts.length }}
+              >{{ cartsTotal }}
             </span>
           </i>
-        </router-link>
+        </RouterLink>
         <button
           class="navbar-toggler border-0 py-2"
           type="button"
@@ -24,10 +24,6 @@
           ref="offcanvas"
         >
           <ion-icon :icon="appsSharp" class="fs-4 mt-1 text-dark"></ion-icon>
-          <!-- <ion-icon
-            name="apps-sharp"
-            class="ion-grid fs-2 text-dark"
-          ></ion-icon> -->
         </button>
       </div>
       <div
@@ -59,45 +55,45 @@
         <div class="offcanvas-body">
           <ul class="navbar-nav ms-lg-auto mb-2 mb-lg-0">
             <li class="nav-item" data-bs-dismiss="offcanvas">
-              <router-link
+              <RouterLink
                 to="/"
                 class="nav-link px-3 py-4"
                 :class="{ 'text-white': detectWidth < 992 }"
               >
                 ホームページ
-              </router-link>
+              </RouterLink>
             </li>
             <li class="nav-item" data-bs-dismiss="offcanvas">
-              <router-link
+              <RouterLink
                 to="/products"
                 class="nav-link px-3 py-4"
                 :class="{ 'text-white': detectWidth < 992 }"
                 >寿司の種類
-              </router-link>
+              </RouterLink>
             </li>
             <li class="nav-item" data-bs-dismiss="offcanvas">
-              <router-link
+              <RouterLink
                 to="/favorite"
                 class="nav-link px-3 py-4"
                 :class="{ 'text-white': detectWidth < 992 }"
               >
                 私のお気に入り
-              </router-link>
+              </RouterLink>
             </li>
             <li class="nav-item" data-bs-dismiss="offcanvas">
-              <router-link
+              <RouterLink
                 to="/myOrders"
                 class="nav-link px-3 py-4"
                 :class="{ 'text-white': detectWidth < 992 }"
               >
                 私の注文
-              </router-link>
+              </RouterLink>
             </li>
             <li
               class="nav-item d-flex justify-content-center align-items-center"
               data-bs-dismiss="offcanvas"
             >
-              <router-link
+              <RouterLink
                 to="/cart"
                 class="nav-link px-3 py-4"
                 :class="{ 'text-white': detectWidth < 992 }"
@@ -109,35 +105,9 @@
                     >{{ cartsTotal }}
                   </span>
                 </i>
-              </router-link>
+              </RouterLink>
             </li>
           </ul>
-          <div class="offcanvas-social mt-5 d-lg-none">
-            <ul
-              class="list-unstyled d-flex justify-content-center justify-content-lg-end mb-lg-0"
-            >
-              <li class="mx-1">
-                <button type="button" class="btn btn-link">
-                  <i class="bi bi-facebook text-light"></i>
-                </button>
-              </li>
-              <li class="mx-1">
-                <button type="button" class="btn btn-link">
-                  <i class="bi bi-instagram text-light"></i>
-                </button>
-              </li>
-              <li class="mx-1">
-                <button type="button" class="btn btn-link">
-                  <i class="bi bi-line text-light"></i>
-                </button>
-              </li>
-              <li class="mx-1">
-                <button type="button" class="btn btn-link">
-                  <i class="bi bi-twitter text-light"></i>
-                </button>
-              </li>
-            </ul>
-          </div>
         </div>
       </div>
     </div>
@@ -146,8 +116,8 @@
 
 <script>
 import emitter from "@/utility/emitter.js";
-import LogoComp from "@/components/LogoComp";
-import LogoWhiteComp from "@/components/LogoWhiteComp";
+import LogoComp from "@/components/logo/LogoComp";
+import LogoWhiteComp from "@/components/logo/LogoWhiteComp";
 import { IonIcon } from "@ionic/vue";
 import { appsSharp } from "ionicons/icons";
 
@@ -194,6 +164,11 @@ export default {
       this.getCart();
     });
   },
+  unmounted() {
+    emitter.off("get-cart", () => {
+      this.getCart();
+    });
+  },
 };
 </script>
 
@@ -215,11 +190,6 @@ export default {
       .badge {
         font-size: small;
       }
-    }
-  }
-  .offcanvas-social {
-    .bi {
-      font-size: 32px;
     }
   }
 }

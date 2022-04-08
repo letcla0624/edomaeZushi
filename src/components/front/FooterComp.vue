@@ -52,38 +52,32 @@
               <h5 class="my-4">メンバーシップサービス</h5>
               <ul class="list-unstyled fs-7">
                 <li class="mb-3">
-                  <a href="#">
+                  <RouterLink to="/privacy">
                     <i class="bi bi-arrow-right-short me-2"></i>
                     プライバシーポリシー
-                  </a>
+                  </RouterLink>
                 </li>
                 <li class="mb-3">
-                  <a href="#">
+                  <RouterLink to="/service">
                     <i class="bi bi-arrow-right-short me-2"></i>
                     利用規約
-                  </a>
+                  </RouterLink>
                 </li>
                 <li class="mb-3">
-                  <a href="#"
-                    ><i class="bi bi-arrow-right-short me-2"></i>
-                    一般的な問題
-                  </a>
-                </li>
-                <li class="mb-3">
-                  <a href="#">
+                  <RouterLink to="/questions">
                     <i class="bi bi-arrow-right-short me-2"></i>
-                    返品情報
-                  </a>
+                    一般的な問題
+                  </RouterLink>
                 </li>
               </ul>
             </div>
             <div>
               <h5 class="my-4">スタッフエリア</h5>
               <ul class="list-unstyled fs-7">
-                <li class="">
-                  <router-link to="/admin" class="btn hvr-btn-outline-dark">
+                <li>
+                  <RouterLink to="/admin" class="btn hvr-btn-outline-dark">
                     バックグラウンドログイン
-                  </router-link>
+                  </RouterLink>
                 </li>
               </ul>
             </div>
@@ -102,17 +96,15 @@
             <ul
               class="list-unstyled d-flex justify-content-center justify-content-lg-end mb-lg-0"
             >
-              <li class="pe-3">
-                <a href="#"><i class="bi bi-facebook fs-4"></i></a>
-              </li>
               <li class="px-3">
-                <a href="#"><i class="bi bi-instagram fs-4"></i></a>
-              </li>
-              <li class="px-3">
-                <a href="#"><i class="bi bi-line fs-4"></i></a>
-              </li>
-              <li class="px-3">
-                <a href="#"><i class="bi bi-twitter fs-4"></i></a>
+                <a
+                  href="#"
+                  class="d-flex align-items-center"
+                  @click.prevent="BackToTop"
+                >
+                  <span class="fs-8">Back to Top</span>
+                  <i class="bi bi-arrow-up-circle-fill ms-2 fs-4"></i>
+                </a>
               </li>
             </ul>
           </div>
@@ -134,7 +126,7 @@ import copyText from "@/utility/copyText";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import icon from "@/assets/images/sushi.png";
-// leaflet 預設 icon
+// leaflet 預設 icon 寫法
 // import icon from "leaflet/dist/images/marker-icon.png";
 // import iconShadow from "leaflet/dist/images/marker-shadow.png";
 
@@ -160,6 +152,10 @@ export default {
         content: "割引コードがコピーされました",
       });
     },
+    BackToTop() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    },
   },
   mounted() {
     this.getDate();
@@ -179,7 +175,7 @@ export default {
       }
     ).addTo(map);
 
-    // leaflet 預設 icon
+    // leaflet 預設 icon 寫法
     // let DefaultIcon = L.icon({
     //   iconUrl: icon,
     //   shadowUrl: iconShadow,

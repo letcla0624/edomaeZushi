@@ -11,7 +11,12 @@
     ></div>
     <div class="bannerBg">
       <img
-        src="https://images.unsplash.com/photo-1627462133149-167e7e9a91b7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3960&q=80"
+        :src="
+          detectWidth > 992
+            ? 'https://storage.googleapis.com/vue-course-api.appspot.com/letcla/1649229907785.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=ELCp8vMIdmfZ%2BQe41jRlEdr%2Br09abtRf1Ba8zBLuXcRrVd5IiqLlku9g%2FbQcZNstfZkNupj3pwqLcx8TAAeFYgcU8%2BLpGYJ8PcmuDhLjXs2QPh%2BED4bvxAZJFgmLhMXVCB2VIjw2Ns%2F%2FL37aQQk2wkhFqGJyr5v4KyPaRITRbZPDXbAJIjM6Y2yi%2B9qGBej1YOxiSBDuakUlpyHWrBCCjkvRiOkCQGFlTf0KKgB0sN9k3w%2FImqtyK5PkFZvBcvcy6q6otQH08ZGkjD27hxvv8g4wYLFXUu2HUe2qMlSAXHzFycEluAdAK4OBGsNaGQNvXrsLLtB%2BSw8D%2Bcorz9Ebzw%3D%3D'
+            : 'https://storage.googleapis.com/vue-course-api.appspot.com/letcla/1649229601399.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=SF6%2B2zElrCr0y1Ir5XBc%2BZb%2FlX9Njym5jZPVwCx9W2voJRZQFX6T4EDXesHQIXrktf6FxnX%2B8J2OuzC%2Bj85WzlPjrrAa%2FkBj6F4DAP1UZnRbLUXdl1XmbGLDHSDsfp4DTm0Zhq%2BjipXignSqCYXqojnaOwXJzeV7KErMyHQPOhjJ3nhxuPbs3hNwSZ0PdVdyBbvBd9gFjfNUDmKAQxkPU5EPhAhWkx6LzY5l2wWjcXdtpwr%2F7xFK1XsRiSegkBUA%2BLkPiZt8Lt%2FccbT5UHOS6mxIvh4Cc72V3KntFh1jG6sqPwhcL2jMhl8q1aP1wFCoUvB9ijTCjRJ2WUWzHI7CYA%3D%3D'
+        "
+        alt="江戸前寿司"
       />
     </div>
     <div
@@ -42,7 +47,12 @@
     ></div>
     <div class="bannerBg">
       <img
-        src="https://images.unsplash.com/photo-1627462133149-167e7e9a91b7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3960&q=80"
+        :src="
+          detectWidth > 992
+            ? 'https://storage.googleapis.com/vue-course-api.appspot.com/letcla/1649229907785.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=ELCp8vMIdmfZ%2BQe41jRlEdr%2Br09abtRf1Ba8zBLuXcRrVd5IiqLlku9g%2FbQcZNstfZkNupj3pwqLcx8TAAeFYgcU8%2BLpGYJ8PcmuDhLjXs2QPh%2BED4bvxAZJFgmLhMXVCB2VIjw2Ns%2F%2FL37aQQk2wkhFqGJyr5v4KyPaRITRbZPDXbAJIjM6Y2yi%2B9qGBej1YOxiSBDuakUlpyHWrBCCjkvRiOkCQGFlTf0KKgB0sN9k3w%2FImqtyK5PkFZvBcvcy6q6otQH08ZGkjD27hxvv8g4wYLFXUu2HUe2qMlSAXHzFycEluAdAK4OBGsNaGQNvXrsLLtB%2BSw8D%2Bcorz9Ebzw%3D%3D'
+            : 'https://storage.googleapis.com/vue-course-api.appspot.com/letcla/1649229601399.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=SF6%2B2zElrCr0y1Ir5XBc%2BZb%2FlX9Njym5jZPVwCx9W2voJRZQFX6T4EDXesHQIXrktf6FxnX%2B8J2OuzC%2Bj85WzlPjrrAa%2FkBj6F4DAP1UZnRbLUXdl1XmbGLDHSDsfp4DTm0Zhq%2BjipXignSqCYXqojnaOwXJzeV7KErMyHQPOhjJ3nhxuPbs3hNwSZ0PdVdyBbvBd9gFjfNUDmKAQxkPU5EPhAhWkx6LzY5l2wWjcXdtpwr%2F7xFK1XsRiSegkBUA%2BLkPiZt8Lt%2FccbT5UHOS6mxIvh4Cc72V3KntFh1jG6sqPwhcL2jMhl8q1aP1wFCoUvB9ijTCjRJ2WUWzHI7CYA%3D%3D'
+        "
+        alt="江戸前寿司"
       />
     </div>
     <div class="box bg-transparent m-3 p-3" :style="{ opacity: logoOpacity }">
@@ -91,7 +101,7 @@
         <div class="row g-3 pt-5">
           <div class="col-md-6">
             <img
-              src="https://images.unsplash.com/photo-1621871908119-295c8ce5cee4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1587&q=80"
+              src="https://storage.googleapis.com/vue-course-api.appspot.com/letcla/1649227120236.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=WYdk6JtWKLl3%2FO34ZkZAsL89TidVbfdX9DHcZlESBOS7uYqRpK7RVV%2BE%2Blwzy5hEPX9dcKKymPqARNvBWjfhoL8hVmZMvoMJ24%2FZp%2BSoYc8SuRk92XIm8G%2FPe%2BvsmYq8bGyZIS4e1cbrV78frrZFiYLMYQ3DrotcVeT8n5bgCqhs0aquYoQPhaUDb1YdGGWL9YfVVwweHU2Q9e3Pyq6%2BbOVh7Q7EYrOpYHCXJhf32BtbrIV31ALPeFONVIyBxhCi63GtLe%2BLwLr1b%2Bs5jw5LBGpF6joem1FO%2BumONaKdo8QpPEf5RFPYjbJGiJkmZwjuKir5DXaBKHup2MiiHZTYbQ%3D%3D"
               alt="江戸前寿司"
               class="w-100"
               data-aos="fade-down"
@@ -103,7 +113,7 @@
               <div class="col-12">
                 <div class="position-relative">
                   <img
-                    src="https://images.unsplash.com/photo-1537154259951-00da64098b37?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3540&q=80"
+                    src="https://storage.googleapis.com/vue-course-api.appspot.com/letcla/1649226609041.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=jE9V8URiAgSz1%2Fg4nkKxi88KuXq4329CKgGQ4SlCA3xp9%2FJ2qX2AyhUCbqgtLdbnU8guw%2FFnRw%2BuSSWvEkV2hE2WlL3zKMhARRoTwTJo6TIZPb5gPNSUHW0d27hiqK2RTqhmeWQbFrOp%2BoPG16Op5QpXM3ILlr4CgEHTGnrOLptwG%2BSuWTsK2tvHovIg2ecBBcehmHW%2BBNwLy2hbCWiuJ26fbhjhru3wIJLT0E5aOI6v%2FHaDnecNNCtmebyIYy1Xg3r1cTL3mopQWktsjEc2rICc3oGUq4jVqdlfg3ScDrojhtTvgC%2FPsuT5TDJvOO1cs%2FYNkgL4WMD0fbCyo%2FeXjQ%3D%3D"
                     alt="江戸前寿司"
                     class="w-100"
                     data-aos="fade-down"
@@ -139,8 +149,8 @@
           <div class="row align-items-center g-4 pb-5 mb-5">
             <div class="col-md-6 order-md-1">
               <img
-                src="https://images.unsplash.com/photo-1635451778386-e5778e66f61e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1587&q=80"
-                alt=""
+                src="https://storage.googleapis.com/vue-course-api.appspot.com/letcla/1649228209978.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=WVqeh2gfKgWOmuEjLEa6lfzXj9EAwkcW07Fum7uqytnGtr7F2vQh9syzNESjbVWI%2BYS2YuxcLXf8wVjAkzrBOF0xjrCQD8dfofM%2FiDYSxdy5vH09VGKnNgJ9J%2BTF6tkauF8muFqJHGVefVKNDUZ4sFfwGZ6OjW%2FEP3xlpWIHKQR46rkR7ST6j9SUnN5IS5NGEZZnG4DS65FHmT%2BO6RNVvaJKXSAAxDhVc%2Fayv3c3IPWfj0irOBABmM01uySdidMTRpgrAQ46xRkBZDZUumdu%2BgflVeHXjr2j2aVeWOGBo8mZQilrc2ncvCfgoxfXOv%2FKcce3ICDEKJf52fgeQwTviw%3D%3D"
+                alt="トリュフとフォアグラのビーフ握り寿司"
                 class="w-100"
                 style="max-height: 636px; object-fit: cover"
                 data-aos="fade-down"
@@ -157,19 +167,19 @@
                   灼熱のフォアグラの香り、アンガスビーフの美味しさ、トリュフの装飾の3つの贅沢な食材を組み合わせた繊細なフォアグラは、一口でとても柔らかく滑らかな厚みのある滑らかな食感に変わります。
                 </p>
               </div>
-              <router-link
+              <RouterLink
                 :to="`/prod/-MxrMaWm-dDFXbAZI7Cz`"
                 class="btn hvr-btn-outline-dark w-100 d-flex justify-content-center align-items-center"
               >
                 詳しくはこちら
-              </router-link>
+              </RouterLink>
             </div>
           </div>
           <div class="row align-items-center g-4 pb-5 mb-5">
             <div class="col-md-6">
               <img
-                src="https://images.unsplash.com/photo-1635452273191-f08ce9934102?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDN8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
-                alt=""
+                src="https://storage.googleapis.com/vue-course-api.appspot.com/letcla/1649228244331.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=ddXIvreM60Zfc%2FePPs3va%2F0zSlMO0uxY5PTQyCq9%2FqrHjwu04jXMiWDcauDVxxySfwCpynohrsuTTlkjztizyY4OlLWzAtMAoMrVhlzDBu2e6qQyWjbESouJA9CssYgH0ws4yT7SKQ1fto%2BaFoix3rl0%2FFzWagLd%2FJb5E7PtsCUK3PVwEXE0rhkPWnjgsjX9DOndj%2FsE0IOVNPt4rkCh7Er0MrkB35qXG8KbyZTmYe2NpdoTfQetn2R7A7Mlr3cYNaJKIiWUSODce5TB2iWXcDyaM3hL%2Ftm%2FYcuIALELdVGCyBp7wV%2Bqd7Jc8bofKp3l2NJ4D2M3YBKXhcIK6%2BliBQ%3D%3D"
+                alt="黒マグロ握り寿司"
                 class="w-100"
                 style="max-height: 636px; object-fit: cover"
                 data-aos="fade-down"
@@ -191,12 +201,12 @@
                   肉は繊細で濃厚で、お腹のしっぽのさわやかな味わいにサクサク感があります。細かく刻んだ野菜、完璧な協奏曲が口の中に残ります。
                 </p>
               </div>
-              <router-link
+              <RouterLink
                 :to="`/prod/-MxrMxWZoPzUjz0al_K1`"
                 class="btn hvr-btn-outline-dark w-100 d-flex justify-content-center align-items-center"
               >
                 詳しくはこちら
-              </router-link>
+              </RouterLink>
             </div>
           </div>
         </div>
@@ -211,13 +221,13 @@
           </p>
         </div>
         <div class="d-flex justify-content-end align-items-center fs-7">
-          <router-link
+          <RouterLink
             to="/products"
             class="btn btn-link d-flex align-items-center"
           >
             もっと見る
             <i class="bi bi-chevron-right ms-1"></i>
-          </router-link>
+          </RouterLink>
         </div>
         <SwiperComp></SwiperComp>
       </div>
@@ -275,10 +285,10 @@
 </template>
 
 <script>
-import FrontNavbarComp from "@/components/FrontNavbarComp.vue";
-import LogoWhiteCubeComp from "@/components/LogoWhiteCubeComp.vue";
-import FooterComp from "@/components/FooterComp.vue";
-import SwiperComp from "@/components/SwiperComp.vue";
+import FrontNavbarComp from "@/components/front/FrontNavbarComp.vue";
+import LogoWhiteCubeComp from "@/components/logo/LogoWhiteCubeComp.vue";
+import FooterComp from "@/components/front/FooterComp.vue";
+import SwiperComp from "@/components/front/SwiperComp.vue";
 import emitter from "@/utility/emitter.js";
 import ToastComp from "@/components/ToastComp.vue";
 
@@ -407,7 +417,6 @@ export default {
 }
 // 滑鼠動畫
 .scrolling {
-  // position: absolute;
   z-index: 1;
   bottom: 1rem;
   .mouse {
@@ -460,7 +469,7 @@ export default {
   height: 300px;
 }
 .chief {
-  background: url("https://images.unsplash.com/photo-1502364271109-0a9a75a2a9df?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3570&q=80")
+  background: url("https://storage.googleapis.com/vue-course-api.appspot.com/letcla/1649344065919.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=pxbRWKYByjOp8LgggbrlreBa8MJfobj8G%2BuyDkN3Gxu4NlgtWi6L5gdATLSVcECPOqTA4oqfaRldoFOUixUaG5TV83um51qjbqQqlIV%2FOf6fkK9he%2BZ5lAmQ9Rkm6Kwbhiti33r6gTOxYaPDDAla2nkuNjYDKJVVcdlKdn2r3seTFYr%2Bx7d4D%2BYIv%2B0MjSxDjMAINLYiuZtbepuO8zsCO4DCuz6x1Ke%2BVeIdjivgfF2SxKUt2ULEmim0RJpuuj8U6FkdHob7rR9TIS76Cc36oKlElSjobIhwDylXHCUJrZqkPrt%2B9c9SxYYkH%2B%2BavRug2nJRX%2F8l9EnWgUghwwELng%3D%3D")
     center center no-repeat;
   height: 440px;
 }

@@ -177,8 +177,10 @@
 
 <script>
 import PageComp from "@/components/PageComp.vue";
-import EditOrderComp, { orderModal } from "@/components/EditOrderComp.vue";
-import DelAdminComp, { delModal } from "@/components/DelAdminComp.vue";
+import EditOrderComp, {
+  orderModal,
+} from "@/components/admin/EditOrderComp.vue";
+import DelAdminComp, { delModal } from "@/components/admin/DelAdminComp.vue";
 import DelAllModalComp, { delAllModal } from "@/components/DelAllModalComp.vue";
 
 export default {

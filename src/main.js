@@ -5,7 +5,6 @@ import router from "./router";
 // 引入 Bootstrap 5
 import * as bootstrap from "bootstrap";
 window.bootstrap = bootstrap;
-// import "bootstrap/scss/bootstrap.scss";
 import "@/assets/scss/all.scss";
 import "bootstrap-icons/font/bootstrap-icons.scss";
 
@@ -63,9 +62,6 @@ app.component("ErrorMessage", ErrorMessage);
 app.config.globalProperties.$filters = {
   // 金額加入日幣符號和千分位
   currencyJPY(value) {
-    // value = "¥ " + value;
-    // let comma = /\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g;
-    // return value.replace(comma, ",");
     let newVal = Number(parseFloat(value).toFixed(3)).toLocaleString("jp");
     return "¥ " + newVal;
   },

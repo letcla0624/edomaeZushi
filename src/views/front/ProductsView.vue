@@ -106,12 +106,12 @@
           >
             <div class="col" v-for="item in products" :key="item.id">
               <div class="card sushi-card">
-                <router-link :to="`/prod/${item.id}`">
+                <RouterLink :to="`/prod/${item.id}`">
                   <div class="img-cover text-center">
                     <img
                       :src="item.imageUrl"
+                      :alt="item.title"
                       class="card-img-top object-fit-cover w-75"
-                      alt="item.title"
                     />
                     <span
                       v-if="item.origin_price !== item.price"
@@ -129,7 +129,7 @@
                       {{ item.description }}
                     </p>
                   </div>
-                </router-link>
+                </RouterLink>
                 <div class="card-footer border-top-0 pb-3">
                   <div
                     class="d-flex justify-content-between align-items-center"
@@ -169,7 +169,8 @@
                         ></i>
                         <i v-else class="bi bi-balloon-heart fs-2"></i>
                       </button>
-                      <div
+                      <button
+                        type="button"
                         class="addToCart btn btn-dark rounded-circle text-white d-flex justify-content-center align-items-center"
                         style="width: 45px; height: 45px"
                         @click="addCart(item.id)"
@@ -183,7 +184,7 @@
                           <span class="visually-hidden">Loading...</span>
                         </div>
                         <i v-else class="bi bi-plus-lg fs-5"></i>
-                      </div>
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -335,8 +336,11 @@ export default {
 
 <style lang="scss" scoped>
 .sushi {
-  background: url("https://images.unsplash.com/photo-1617196034564-65baf56380ab?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3616&q=80")
+  background: var(--bs-dark)
+    url("https://storage.googleapis.com/vue-course-api.appspot.com/letcla/1649346684617.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=SBAv9%2Fi%2FHaLzpWANPp8rTBhLj1T9oTDdh59mm8TtKvBku10X6IYpY8lA0yNoPLOao%2BzQWgvXBkZY2gzhqcPFH0JQdKGjEpXJmVq1RsqEUvAgJOGazukv1O9iz9TneYZ%2FoBRNzBOoj3vgMBYytRxbK1TaNwM0A7jvu%2F9QRIBcF9LVkWs4aVpwF9oOj%2BMGqFexbmoav7%2F8PI%2BUbAFOfW%2FiLMnU9T9FHcDyhvDtK4M%2BMu3KTZt99w%2BSWgKI35%2Fq0FwLVP2hM89AUl4EK%2FqP8lHxtyZjhK9XtJ32LGuvL3p5KPGgwmmmy5NsyGGtPJI2aI2KSm1JWTFSF%2Bjx6AUPetnIsw%3D%3D")
     center center no-repeat;
+  background-attachment: fixed;
+  background-position: bottom;
   height: 440px;
 }
 

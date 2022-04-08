@@ -63,6 +63,10 @@ const routes = [
         },
       },
       {
+        path: "favorite",
+        component: () => import("@/views/front/FavoriteView.vue"),
+      },
+      {
         path: "cart",
         component: () => import("@/views/front/CartView.vue"),
         meta: {
@@ -78,8 +82,49 @@ const routes = [
         },
       },
       {
-        path: "favorite",
-        component: () => import("@/views/front/FavoriteView.vue"),
+        path: "privacy",
+        component: () => import("@/views/front/PrivacyView.vue"),
+        meta: {
+          breadcrumb: [
+            {
+              name: "ホームページ",
+              link: "/",
+            },
+            {
+              name: "プライバシーポリシー",
+            },
+          ],
+        },
+      },
+      {
+        path: "service",
+        component: () => import("@/views/front/ServiceView.vue"),
+        meta: {
+          breadcrumb: [
+            {
+              name: "ホームページ",
+              link: "/",
+            },
+            {
+              name: "利用規約",
+            },
+          ],
+        },
+      },
+      {
+        path: "questions",
+        component: () => import("@/views/front/QuestionsView.vue"),
+        meta: {
+          breadcrumb: [
+            {
+              name: "ホームページ",
+              link: "/",
+            },
+            {
+              name: "一般的な問題",
+            },
+          ],
+        },
       },
     ],
   },

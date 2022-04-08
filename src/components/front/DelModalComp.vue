@@ -42,6 +42,7 @@
             type="button"
             class="btn btn-outline-danger"
             @click="deleteItem(delItem.id)"
+            :disabled="isLoading === delItem.id"
           >
             <div
               v-if="isLoading === delItem.id"
@@ -87,7 +88,6 @@ export default {
         .catch((err) => {
           this.isLoading = "";
           delModal.hide();
-          // console.dir(err);
           alert(err.response.data.message);
         });
     },

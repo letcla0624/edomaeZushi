@@ -2,10 +2,10 @@
   <div class="text-start">
     <ul class="list-unstyled d-inline-block lh-lg gap-2 mb-5 check-flow">
       <li class="fs-7 fw-bold d-inline">
-        <router-link to="/cart">
+        <RouterLink to="/cart">
           <span class="badge rounded-pill bg-dark me-2"> 1 </span>
           カート
-        </router-link>
+        </RouterLink>
         <i class="bi bi-arrow-right ms-1 me-2 mx-md-3"></i>
       </li>
       <li class="fs-7 fw-bold d-inline">
@@ -60,7 +60,7 @@
           ></error-message>
         </div>
         <div class="col-12">
-          <label for="text" class="form-label fw-bold">
+          <label for="name" class="form-label fw-bold">
             <span class="text-deep-red">*</span>
             荷受人の名前</label
           >
@@ -82,21 +82,21 @@
         <div class="col-12">
           <label for="tel" class="form-label fw-bold">
             <span class="text-deep-red">*</span>
-            受信者の電話</label
+            受信者の携帯電話番号</label
           >
           <v-field
             id="tel"
-            name="受信者の電話"
+            name="受信者の携帯電話番号"
             type="tel"
             class="form-control"
-            :class="{ 'is-invalid': errors['受信者の電話'] }"
-            placeholder="最小 10 つの数字"
+            :class="{ 'is-invalid': errors['受信者の携帯電話番号'] }"
+            placeholder="09012345678"
             oninput="value=value.replace(/[^\d]/g,'')"
-            rules="required|min:10"
+            :rules="isPhone"
             v-model="form.user.tel"
           ></v-field>
           <error-message
-            name="受信者の電話"
+            name="受信者の携帯電話番号"
             class="invalid-feedback"
           ></error-message>
         </div>
@@ -124,7 +124,6 @@
           <div class="col-12">
             <label for="message" class="form-label fw-bold">メッセージ</label>
             <textarea
-              name=""
               id="message"
               class="form-control"
               placeholder="気をつけるべきことを言いたいですか？"
@@ -138,13 +137,13 @@
           <div
             class="d-grid gap-3 d-md-flex justify-content-md-between align-items-center mt-4 mt-md-3"
           >
-            <router-link
+            <RouterLink
               to="/cart"
               class="w-100 d-flex justify-content-center justify-content-md-start align-items-center"
             >
               <i class="bi bi-chevron-left me-1"></i>
-              購入を続ける</router-link
-            >
+              購入を続ける
+            </RouterLink>
             <button
               type="submit"
               class="btn hvr-btn-dark w-100 d-flex justify-content-center align-items-center"
@@ -184,7 +183,6 @@ export default {
         )
         .then((res) => {
           loader.hide();
-          // alert(res.data.message);
 
           this.$refs.form.resetForm();
           this.form.message = "";
@@ -195,6 +193,11 @@ export default {
           loader.hide();
           console.dir(err);
         });
+    },
+    // 手機驗證
+    isPhone(value) {
+      const phoneNumber = /0?[789](?:\d{8}|\d{9})$/;
+      return phoneNumber.test(value) ? true : "正しい携帯電話番号が必要";
     },
   },
 };

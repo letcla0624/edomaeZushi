@@ -3,12 +3,12 @@
     <div class="row">
       <div class="col-lg-6 bg-light shop-bg">
         <div class="container pt-3 pb-4 py-lg-5 px-0 px-md-3">
-          <router-view name="left" :detectWidth="detectWidth"></router-view>
+          <RouterView name="left" :detectWidth="detectWidth" />
         </div>
       </div>
       <div class="col-lg-6">
         <div class="container mt-3 py-5 px-0 px-md-3 user-form">
-          <router-view name="right"></router-view>
+          <RouterView name="right" />
         </div>
       </div>
     </div>

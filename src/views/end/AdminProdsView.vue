@@ -188,11 +188,13 @@
 </template>
 
 <script>
-import CreateProdComp, { prodModal } from "@/components/CreateProdComp.vue";
-import DelAdminComp, { delModal } from "@/components/DelAdminComp.vue";
+import CreateProdComp, {
+  prodModal,
+} from "@/components/admin/CreateProdComp.vue";
+import DelAdminComp, { delModal } from "@/components/admin/DelAdminComp.vue";
 import AdminProdViewComp, {
   showAdminProdModal,
-} from "@/components/AdminProdViewComp.vue";
+} from "@/components/admin/AdminProdViewComp.vue";
 
 export default {
   data() {

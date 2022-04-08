@@ -22,9 +22,9 @@
         >
           <i class="bi bi-basket-fill text-light-green fs-2"></i>
           <h3 class="h5 mt-2 mb-5">カートに商品は入っていません。</h3>
-          <router-link to="/products" class="btn hvr-btn-dark">
+          <RouterLink to="/products" class="btn hvr-btn-dark">
             ショッピングを続ける
-          </router-link>
+          </RouterLink>
         </div>
       </div>
       <div v-else class="row">
@@ -63,19 +63,19 @@
                   <div class="col-4 col-sm-3">
                     <img
                       :src="item.product.imageUrl"
+                      :alt="item.title"
                       class="img-fluid rounded-start w-100"
-                      alt="item.title"
                     />
                   </div>
                   <div class="col-8 col-sm-9">
                     <div class="cart-body ps-2 pe-0">
                       <div class="d-flex justify-content-between d-md-block">
                         <!-- 單一商品名稱 -->
-                        <router-link :to="`/prod/${item.product.id}`">
+                        <RouterLink :to="`/prod/${item.product.id}`">
                           <h5 class="cart-title h6 fw-bold me-4">
                             {{ item.product.title }}
                           </h5>
-                        </router-link>
+                        </RouterLink>
                         <!-- 桌機版單價 -->
                         <p class="text-secondary fs-7 mb-0 d-none d-md-block">
                           単価：{{ $filters.currencyJPY(item.product.price) }}
@@ -106,7 +106,7 @@
                           <button
                             type="button"
                             class="btn btn-sm"
-                            @click="minus(item)"
+                            @click="minusItem(item)"
                             :disabled="isLoading === item.id"
                           >
                             <i class="bi bi-dash-lg"></i>
@@ -134,6 +134,7 @@
                           class="btn"
                           style="width: 45px"
                           @click="openDelModal(item)"
+                          :disabled="isLoading === item.id"
                         >
                           <i class="bi bi-trash3 fs-5d5"></i>
                         </button>
@@ -149,7 +150,7 @@
                 <button
                   type="button"
                   class="btn"
-                  @click="minus(item)"
+                  @click="minusItem(item)"
                   :disabled="isLoading === item.id"
                 >
                   <i class="bi bi-dash-lg"></i>
@@ -165,7 +166,7 @@
                 <button
                   type="button"
                   class="btn"
-                  @click="add(item)"
+                  @click="addItem(item)"
                   :disabled="isLoading === item.id"
                 >
                   <i class="bi bi-plus-lg"></i>
@@ -207,20 +208,20 @@
             <div
               class="d-grid gap-3 col-md-12 col-lg-6 d-md-flex align-items-center ms-auto mt-4 mt-md-3"
             >
-              <router-link
+              <RouterLink
                 to="/products"
                 class="w-100 d-flex justify-content-center justify-content-md-start align-items-center"
               >
                 <i class="bi bi-chevron-left me-1"></i>
                 ショッピングを続ける
-              </router-link>
-              <router-link
+              </RouterLink>
+              <RouterLink
                 to="/checkout"
                 class="btn hvr-btn-dark w-100 d-flex justify-content-center align-items-center"
                 :class="{ disabled: cart.carts.length === 0 }"
               >
                 チェックアウト
-              </router-link>
+              </RouterLink>
             </div>
           </div>
         </div>
@@ -233,7 +234,7 @@
 
 <script>
 import emitter from "@/utility/emitter";
-import DelModalComp, { delModal } from "@/components/DelModalComp.vue";
+import DelModalComp, { delModal } from "@/components/front/DelModalComp.vue";
 import DelAllModalComp, { delAllModal } from "@/components/DelAllModalComp.vue";
 
 export default {
@@ -263,10 +264,8 @@ export default {
         .then((res) => {
           loader.hide();
           this.cart = res.data.data;
-
           // 給 navigation 選單用的
           emitter.emit("get-cart");
-
           // 當購物車清空時就移除之前填入的折扣碼
           if (this.cart.carts.length === 0) {
             localStorage.removeItem("code");
@@ -278,7 +277,7 @@ export default {
         });
     },
     // 增加數量
-    add(item) {
+    addItem(item) {
       this.isLoading = item.id;
       item.qty++;
       this.cartData = {
@@ -288,7 +287,7 @@ export default {
       this.updateCart(item);
     },
     // 減少數量
-    minus(item) {
+    minusItem(item) {
       item.qty--;
       if (item.qty < 1) {
         item.qty = 1;
@@ -311,9 +310,6 @@ export default {
         .then(() => {
           this.isLoading = "";
           this.getCart();
-          // setTimeout(() => {
-          //   alert(res.data.message);
-          // }, 600);
         })
         .catch((err) => {
           this.isLoading = "";

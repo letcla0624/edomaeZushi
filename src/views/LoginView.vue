@@ -62,8 +62,8 @@
                   登入<i class="bi bi-box-arrow-in-right ms-2"></i>
                 </button>
               </VForm>
-              <router-link to="/" class="btn btn-link mt-3"
-                >フロントページに戻る</router-link
+              <RouterLink to="/" class="btn btn-link mt-3"
+                >フロントページに戻る</RouterLink
               >
             </div>
           </div>
@@ -78,7 +78,7 @@
 </template>
 
 <script>
-import LogoComp from "@/components/LogoComp.vue";
+import LogoComp from "@/components/logo/LogoComp.vue";
 
 export default {
   data() {

@@ -19,8 +19,6 @@
 </template>
 
 <script>
-// import { Tooltip } from "bootstrap";
-
 export default {
   data() {
     return {

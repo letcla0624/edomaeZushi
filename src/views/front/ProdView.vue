@@ -4,13 +4,18 @@
       <BreadComp :prod-title="prod.title" class="pt-5"></BreadComp>
       <div class="row py-3 py-lg-5">
         <div class="col-xl-10 offset-xl-1">
-          <div class="row g-3">
-            <div class="col-lg-7 col-xl-8">
+          <div class="row align-items-center g-3">
+            <div class="col-lg-6">
               <div class="text-center">
-                <img :src="prod.imageUrl" :alt="prod.title" class="w-75" />
+                <img
+                  :src="prod.imageUrl"
+                  :alt="prod.title"
+                  class="w-75"
+                  style="max-width: 400px"
+                />
               </div>
             </div>
-            <div class="col-lg-5 col-xl-4">
+            <div class="col-lg-5">
               <div class="border-bottom pb-3">
                 <span class="badge rounded-pill bg-dark mb-2">
                   {{ prod.category }}
@@ -42,7 +47,12 @@
                   class="d-flex justify-content-between align-items-center mt-5"
                 >
                   <div class="d-inline-flex border">
-                    <button type="button" class="btn" @click="minus">
+                    <button
+                      type="button"
+                      class="btn"
+                      @click="minusItem"
+                      :disabled="isLoading === prod.id"
+                    >
                       <i class="bi bi-dash-lg"></i>
                     </button>
                     <input
@@ -53,7 +63,12 @@
                       style="width: 50px"
                       readonly
                     />
-                    <button type="button" class="btn" @click="add">
+                    <button
+                      type="button"
+                      class="btn"
+                      @click="addItem"
+                      :disabled="isLoading === prod.id"
+                    >
                       <i class="bi bi-plus-lg"></i>
                     </button>
                   </div>
@@ -97,9 +112,9 @@
 
 <script>
 import emitter from "@/utility/emitter.js";
-import BreadComp from "@/components/BreadComp";
-import SwiperComp from "@/components/SwiperComp";
-import FavoriteComp from "@/components/FavoriteComp";
+import BreadComp from "@/components/front/BreadComp";
+import SwiperComp from "@/components/front/SwiperComp";
+import FavoriteComp from "@/components/front/FavoriteComp";
 
 export default {
   data() {
@@ -128,8 +143,6 @@ export default {
         .then((res) => {
           loader.hide();
           this.prod = res.data.product;
-          // 將 imageUrl 增加到 imagesUrl 陣列的第一張
-          // this.prod.imagesUrl.unshift(this.prod.imageUrl);
         })
         .catch((err) => {
           loader.hide();
@@ -146,6 +159,7 @@ export default {
         .then((res) => {
           loader.hide();
           this.prod = res.data.product;
+          this.qty = 1;
         })
         .catch((err) => {
           loader.hide();
@@ -153,11 +167,11 @@ export default {
         });
     },
     // 增加數量
-    add() {
+    addItem() {
       this.qty++;
     },
     // 減少數量
-    minus() {
+    minusItem() {
       this.qty--;
       if (this.qty <= 1) {
         this.qty = 1;
@@ -186,7 +200,6 @@ export default {
         })
         .catch((err) => {
           this.isLoading = "";
-          // console.dir(err);
           this.emitter.emit("toast-message", {
             style: "error",
             content: err.response.data.message,

@@ -38,8 +38,16 @@
             type="button"
             class="btn btn-danger"
             @click="delProdBtn(delItem.id)"
+            :disabled="isLoading === delItem.id"
           >
-            <i class="bi bi-trash-fill me-1"></i>確定刪除
+            <div
+              v-if="isLoading === delItem.id"
+              class="spinner-border spinner-border-sm align-middle me-1"
+              role="status"
+            >
+              <span class="visually-hidden">Loading...</span>
+            </div>
+            <i v-else class="bi bi-trash-fill me-1"></i>確定刪除
           </button>
         </div>
       </div>
@@ -52,10 +60,16 @@
 
 export let delModal = null;
 export default {
+  data() {
+    return {
+      isLoading: "",
+    };
+  },
   props: ["delItem", "pageName"],
   methods: {
     // 刪除單一項目
     delProdBtn(id) {
+      this.isLoading = id;
       let url = "";
 
       if (this.pageName === "prodsList") {
@@ -69,6 +83,7 @@ export default {
       this.$http
         .delete(url)
         .then((res) => {
+          this.isLoading = "";
           this.$emit("get-item");
           delModal.hide();
           setTimeout(() => {
@@ -76,7 +91,7 @@ export default {
           }, 1000);
         })
         .catch((err) => {
-          console.dir(err.response);
+          this.isLoading = "";
           delModal.hide();
           alert(err.response.data.message);
         });

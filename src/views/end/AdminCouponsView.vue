@@ -166,8 +166,8 @@
 import PageComp from "@/components/PageComp.vue";
 import CreateCouponComp, {
   couponModal,
-} from "@/components/CreateCouponComp.vue";
-import DelAdminComp, { delModal } from "@/components/DelAdminComp.vue";
+} from "@/components/admin/CreateCouponComp.vue";
+import DelAdminComp, { delModal } from "@/components/admin/DelAdminComp.vue";
 export default {
   data() {
     return {

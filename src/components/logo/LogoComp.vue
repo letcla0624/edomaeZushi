@@ -1,5 +1,5 @@
 <template>
-  <router-link to="/" class="navbar-brand">
+  <RouterLink to="/" class="navbar-brand">
     <h1 class="logo mb-0">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -126,7 +126,7 @@
         </g>
       </svg>
     </h1>
-  </router-link>
+  </RouterLink>
 </template>
 
 <style scoped>

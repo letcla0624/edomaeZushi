@@ -175,7 +175,6 @@ export default {
         .then((res) => {
           loader.hide();
           this.order = res.data.order;
-          // alert(res.data.message);
         })
         .catch((err) => {
           loader.hide();

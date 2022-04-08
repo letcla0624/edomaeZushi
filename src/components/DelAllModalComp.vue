@@ -41,8 +41,16 @@
             type="button"
             class="btn btn-outline-danger"
             @click="deleteCarts"
+            :disabled="isLoading === 'cart'"
           >
-            <i class="bi bi-trash-fill me-1"></i>
+            <div
+              v-if="isLoading === 'cart'"
+              class="spinner-border spinner-border-sm align-middle"
+              role="status"
+            >
+              <span class="visually-hidden">Loading...</span>
+            </div>
+            <i v-else class="bi bi-trash-fill me-1"></i>
             削除を確認
           </button>
         </div>
@@ -56,10 +64,15 @@
 
 export let delAllModal = null;
 export default {
+  data() {
+    return {
+      isLoading: "",
+    };
+  },
   props: ["page"],
   methods: {
     deleteCarts() {
-      let loader = this.$loading.show();
+      this.isLoading = "cart";
       let url = "";
 
       if (this.page === "cart") {
@@ -71,12 +84,12 @@ export default {
       this.$http
         .delete(url)
         .then(() => {
-          loader.hide();
+          this.isLoading = "";
           this.$emit("get-item");
           delAllModal.hide();
         })
         .catch((err) => {
-          loader.hide();
+          this.isLoading = "";
           delAllModal.hide();
           alert(err.response.data.message);
         });

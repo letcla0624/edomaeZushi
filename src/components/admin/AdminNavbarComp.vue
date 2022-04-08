@@ -62,8 +62,8 @@
 </template>
 
 <script>
-import LogoWhiteComp from "./LogoWhiteComp.vue";
-import LogoWhiteCubeComp from "./LogoWhiteCubeComp.vue";
+import LogoWhiteComp from "../logo/LogoWhiteComp.vue";
+import LogoWhiteCubeComp from "../logo/LogoWhiteCubeComp.vue";
 
 export default {
   props: ["detectWidth"],

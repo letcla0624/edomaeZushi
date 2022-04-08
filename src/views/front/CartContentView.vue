@@ -148,7 +148,7 @@
 </template>
 
 <script>
-import LogoComp from "@/components/LogoComp";
+import LogoComp from "@/components/logo/LogoComp";
 
 export default {
   data() {

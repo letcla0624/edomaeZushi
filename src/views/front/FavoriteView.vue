@@ -40,8 +40,8 @@
               <div class="img-cover text-center">
                 <img
                   :src="item.imageUrl"
+                  :alt="item.title"
                   class="card-img-top object-fit-cover w-75"
-                  alt="item.title"
                 />
                 <span
                   v-if="item.origin_price !== item.price"

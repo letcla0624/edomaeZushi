@@ -3,6 +3,7 @@
 body {
   font-family: "Shippori Mincho", "Noto Serif JP", serif !important;
   -webkit-font-smoothing: antialiased;
+  font-display: fallback;
 }
 .navbar-toggler:focus {
   box-shadow: none !important;
@@ -33,7 +34,7 @@ img {
   writing-mode: vertical-rl;
 }
 .main {
-  min-height: calc(100vh - 587px - 82px);
+  min-height: calc(100vh - 582px - 74px);
 }
 .bg-size-cover {
   background-size: cover;

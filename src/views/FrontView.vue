@@ -1,13 +1,13 @@
 <template>
   <FrontNavbarComp :fixed="fixed" :detectWidth="detectWidth"></FrontNavbarComp>
-  <router-view :detectWidth="detectWidth" />
+  <RouterView :detectWidth="detectWidth" />
   <FooterComp></FooterComp>
   <ToastComp></ToastComp>
 </template>
 
 <script>
-import FrontNavbarComp from "@/components/FrontNavbarComp.vue";
-import FooterComp from "@/components/FooterComp.vue";
+import FrontNavbarComp from "@/components/front/FrontNavbarComp.vue";
+import FooterComp from "@/components/front/FooterComp.vue";
 import emitter from "@/utility/emitter.js";
 import ToastComp from "@/components/ToastComp.vue";
 

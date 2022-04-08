@@ -10,26 +10,7 @@
       <div class="col-10 col-md-9 col-lg-10 bg-light" style="min-height: 100vh">
         <div class="container my-3">
           <div class="row">
-            <!-- <div class="d-flex align-items-center justify-content-end my-3">
-              <div class="search ms-2">
-                <div class="input-group">
-                  <span class="input-group-text" id="search">
-                    <i class="bi bi-search text-secondary"></i>
-                  </span>
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="搜尋"
-                    aria-label="search"
-                    aria-describedby="search"
-                  />
-                </div>
-              </div>
-            </div> -->
-            <router-view
-              v-if="checkSuccess"
-              :detectWidth="detectWidth"
-            ></router-view>
+            <RouterView v-if="checkSuccess" :detectWidth="detectWidth" />
           </div>
         </div>
       </div>
@@ -39,7 +20,7 @@
 </template>
 
 <script>
-import AdminNavbarComp from "@/components/AdminNavbarComp.vue";
+import AdminNavbarComp from "@/components/admin/AdminNavbarComp.vue";
 import emitter from "@/utility/emitter.js";
 import ToastComp from "@/components/ToastComp.vue";
 
@@ -75,10 +56,6 @@ export default {
           })
           .then(() => {
             this.checkSuccess = true;
-            // console.log(res.data);
-            // if (res.data.success === true) {
-            //   alert("登入成功");
-            // }
           })
           .catch((err) => {
             alert(err.response.data.message);

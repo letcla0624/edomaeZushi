@@ -179,7 +179,11 @@
                   </button>
                 </div>
 
-                <img :src="tempProd.imageUrl" class="w-100" />
+                <img
+                  :src="tempProd.imageUrl"
+                  :alt="tempProd.title"
+                  class="w-100"
+                />
               </div>
               <h5 class="h5 mt-4">其餘圖片</h5>
               <!-- 如果有按下新增圖片或原本就有圖片的話 -->
@@ -212,7 +216,11 @@
                       </button>
                     </div>
                   </div>
-                  <img :src="otherPic" class="w-100" />
+                  <img
+                    :src="otherPic"
+                    :alt="tempProd.title_key"
+                    class="w-100"
+                  />
                 </div>
                 <div
                   v-if="

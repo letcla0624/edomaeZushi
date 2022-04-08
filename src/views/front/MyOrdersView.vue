@@ -65,6 +65,7 @@
                   <div v-if="item.is_paid">
                     <img
                       src="@/assets/images/pay.png"
+                      alt="既に支払いました"
                       class="card-img-top object-fit-cover mb-2 w-25"
                     />
                     <h3
@@ -77,6 +78,7 @@
                   <div v-else>
                     <img
                       src="@/assets/images/unpay.png"
+                      alt="注文は未払い"
                       class="card-img-top object-fit-cover mb-2 w-25"
                     />
                     <h3 class="h5 fw-bold text-deep-red text-truncate">
@@ -100,12 +102,12 @@
 
                 <div class="card-footer border-top-0 pb-3">
                   <div class="d-flex justify-content-center align-items-center">
-                    <router-link
+                    <RouterLink
                       :to="`/checkout/pay/${item.id}`"
                       class="btn hvr-btn-outline-dark"
                     >
                       詳しくはこちら
-                    </router-link>
+                    </RouterLink>
                   </div>
                 </div>
               </div>
@@ -118,18 +120,11 @@
           </div>
         </div>
       </div>
-      <!-- <PageComp
-        v-if="orders.length !== 0"
-        :pages="pagination"
-        @emit-page="getOrders"
-      ></PageComp> -->
     </div>
   </div>
 </template>
 
 <script>
-// import PageComp from "@/components/PageComp";
-
 export default {
   data() {
     return {
@@ -140,9 +135,6 @@ export default {
       isLoading: "",
     };
   },
-  // components: {
-  //   PageComp,
-  // },
   methods: {
     getOrders(page = 1) {
       let loader = this.$loading.show();

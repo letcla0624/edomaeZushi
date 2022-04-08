@@ -18,7 +18,7 @@
   >
     <swiper-slide v-for="item in tempProducts" :key="item.id">
       <div class="text-center">
-        <router-link
+        <RouterLink
           :to="`/prod/${item.id}`"
           class="sushiBtn btn my-5"
           style="width: -webkit-fill-available"
@@ -33,7 +33,7 @@
             {{ item.title }}
           </h6>
           <p>{{ $filters.currencyJPY(item.origin_price) }}</p>
-        </router-link>
+        </RouterLink>
       </div>
     </swiper-slide>
   </swiper>
