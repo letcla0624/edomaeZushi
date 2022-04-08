@@ -339,8 +339,6 @@ export default {
   background: var(--bs-dark)
     url("https://storage.googleapis.com/vue-course-api.appspot.com/letcla/1649346684617.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=SBAv9%2Fi%2FHaLzpWANPp8rTBhLj1T9oTDdh59mm8TtKvBku10X6IYpY8lA0yNoPLOao%2BzQWgvXBkZY2gzhqcPFH0JQdKGjEpXJmVq1RsqEUvAgJOGazukv1O9iz9TneYZ%2FoBRNzBOoj3vgMBYytRxbK1TaNwM0A7jvu%2F9QRIBcF9LVkWs4aVpwF9oOj%2BMGqFexbmoav7%2F8PI%2BUbAFOfW%2FiLMnU9T9FHcDyhvDtK4M%2BMu3KTZt99w%2BSWgKI35%2Fq0FwLVP2hM89AUl4EK%2FqP8lHxtyZjhK9XtJ32LGuvL3p5KPGgwmmmy5NsyGGtPJI2aI2KSm1JWTFSF%2Bjx6AUPetnIsw%3D%3D")
     center center no-repeat;
-  background-attachment: fixed;
-  background-position: bottom;
   height: 440px;
 }
 
