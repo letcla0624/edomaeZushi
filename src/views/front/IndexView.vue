@@ -305,6 +305,7 @@ export default {
       fixed: false,
       propsDetectWidth: 0,
       detectWidth: null,
+      loader: null,
     };
   },
   provide() {
@@ -324,7 +325,24 @@ export default {
       return this.progress > 1;
     },
   },
+  methods: {
+    getProducts(page = 1) {
+      let loader = this.$loading.show();
+      this.$http
+        .get(
+          `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/products?page=${page}`
+        )
+        .then(() => {
+          loader.hide();
+        })
+        .catch(() => {
+          loader.hide();
+        });
+    },
+  },
   mounted() {
+    this.getProducts();
+
     // 初判斷一進入的螢幕寬度
     this.detectWidth = window.innerWidth;
     // 螢幕寬度縮放
@@ -402,7 +420,13 @@ export default {
   img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    background-color: #060b07;
+  }
+  @media (max-width: 767.98px) {
+    img {
+      object-fit: cover;
+    }
   }
 }
 #banner1 {
