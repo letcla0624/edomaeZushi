@@ -423,7 +423,7 @@ export default {
     object-fit: contain;
     background-color: #060b07;
   }
-  @media (max-width: 767.98px) {
+  @media (max-width: 991.98px) {
     img {
       object-fit: cover;
     }
