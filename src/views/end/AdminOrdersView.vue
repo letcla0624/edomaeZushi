@@ -43,11 +43,8 @@
       <div
         class="row g-3 mx-1 d-none d-lg-flex pb-2 border-bottom border-2 border-dark"
       >
-        <div class="col-lg-2">
+        <div class="col-lg-4">
           <h3 class="h6 fw-bold">訂單</h3>
-        </div>
-        <div class="col-lg-3">
-          <h3 class="h6 fw-bold">留言</h3>
         </div>
         <div class="col-lg-4">
           <h3 class="h6 fw-bold">購買項目</h3>
@@ -55,7 +52,7 @@
         <div class="col-lg-2">
           <h3 class="h6 fw-bold">應收帳款</h3>
         </div>
-        <div class="col-lg-1">
+        <div class="col-lg-2">
           <h3 class="h6 fw-bold">編輯／刪除</h3>
         </div>
       </div>
@@ -64,7 +61,7 @@
         v-for="order in copyOrders"
         :key="order.id"
       >
-        <div class="col-lg-2">
+        <div class="col-lg-4">
           <div class="">
             <h3 class="h6 fw-bold d-lg-none">訂單編號</h3>
             <p
@@ -75,7 +72,7 @@
                 { 'text-light-green': order.is_paid === true },
                 { 'border-light-green': order.is_paid === true },
               ]"
-              style="word-break: break-all"
+              style="word-break: break-all; width: fit-content"
             >
               {{ order.id }}
             </p>
@@ -88,20 +85,37 @@
             </p>
           </div>
           <div class="mt-4 mt-lg-0">
-            <h3 class="h6 fw-bold d-lg-none">訂購人姓名</h3>
+            <h3 class="h6 fw-bold d-lg-none">收件人姓名</h3>
             <p class="">
-              <span class="d-none d-lg-inline">訂購人姓名：</span>
+              <span class="d-none d-lg-inline">收件人姓名：</span>
               {{ order.user.name }}
             </p>
           </div>
-        </div>
-        <div class="col-lg-3">
-          <h3 class="h6 fw-bold d-lg-none">留言</h3>
-          <p>{{ order.message }}</p>
+          <div class="mt-4 mt-lg-0">
+            <h3 class="h6 fw-bold d-lg-none">聯絡電話</h3>
+            <p class="">
+              <span class="d-none d-lg-inline">聯絡電話：</span>
+              {{ order.user.tel }}
+            </p>
+          </div>
+          <div class="mt-4 mt-lg-0">
+            <h3 class="h6 fw-bold d-lg-none">寄送地址</h3>
+            <p class="">
+              <span class="d-none d-lg-inline">寄送地址：</span>
+              {{ order.user.address }}
+            </p>
+          </div>
+          <div class="mt-4 mt-lg-0">
+            <h3 class="h6 fw-bold d-lg-none">留言</h3>
+            <p class="">
+              <span class="d-none d-lg-inline">留言：</span>
+              {{ order.message }}
+            </p>
+          </div>
         </div>
         <div class="col-lg-4">
           <h3 class="h6 fw-bold d-lg-none">購買項目</h3>
-          <ul class="list-unstyled">
+          <ol class="px-3">
             <li
               v-for="product in order.products"
               :key="product.id"
@@ -118,7 +132,7 @@
                 )
               </span>
             </li>
-          </ul>
+          </ol>
         </div>
         <div class="col-lg-2">
           <h3 class="h6 fw-bold d-lg-none">應收帳款</h3>
@@ -142,7 +156,7 @@
             </label>
           </div>
         </div>
-        <div class="col-lg-1">
+        <div class="col-lg-2">
           <h3 class="h6 fw-bold d-lg-none">編輯／刪除</h3>
           <div class="btn-group" role="group">
             <button

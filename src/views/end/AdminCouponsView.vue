@@ -65,6 +65,7 @@
             <h3 class="h6 fw-bold d-lg-none">折扣碼</h3>
             <p
               class="border border-dashed fw-bold p-2"
+              style="width: fit-content"
               :class="[
                 {
                   'border-light-green':

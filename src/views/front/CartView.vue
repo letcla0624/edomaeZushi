@@ -63,7 +63,7 @@
                   <div class="col-4 col-sm-3">
                     <img
                       :src="item.product.imageUrl"
-                      :alt="item.title"
+                      :alt="item.product.title"
                       class="img-fluid rounded-start w-100"
                     />
                   </div>
