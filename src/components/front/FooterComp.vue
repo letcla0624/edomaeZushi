@@ -126,7 +126,7 @@ import copyText from "@/utility/copyText";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import icon from "@/assets/images/sushi.png";
-// leaflet 預設 icon 寫法
+// 保留 leaflet 預設 icon 寫法
 // import icon from "leaflet/dist/images/marker-icon.png";
 // import iconShadow from "leaflet/dist/images/marker-shadow.png";
 
@@ -153,8 +153,7 @@ export default {
       });
     },
     BackToTop() {
-      document.body.scrollTop = 0;
-      document.documentElement.scrollTop = 0;
+      window.scroll({ top: 0, left: 0, behavior: "smooth" });
     },
   },
   mounted() {
@@ -175,7 +174,7 @@ export default {
       }
     ).addTo(map);
 
-    // leaflet 預設 icon 寫法
+    // 保留 leaflet 預設 icon 寫法
     // let DefaultIcon = L.icon({
     //   iconUrl: icon,
     //   shadowUrl: iconShadow,

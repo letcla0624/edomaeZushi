@@ -21,6 +21,10 @@ import "aos/dist/aos.css";
 import AOS from "aos";
 AOS.init();
 
+// 引入 smoothscroll
+import smoothscroll from "smoothscroll-polyfill";
+smoothscroll.polyfill();
+
 // 引入 Vee-Validate
 import { Form, Field, ErrorMessage, defineRule, configure } from "vee-validate";
 import AllRules from "@vee-validate/rules";
