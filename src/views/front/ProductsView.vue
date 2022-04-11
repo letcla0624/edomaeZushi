@@ -102,7 +102,7 @@
         </div>
         <div class="col-lg-9 detect-width">
           <div
-            class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 g-3 mb-5"
+            class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xxl-4 g-3 mb-5"
           >
             <div class="col" v-for="item in products" :key="item.id">
               <div class="card sushi-card">
@@ -296,11 +296,13 @@ export default {
     // 加入／取消 我的最愛
     toggleFavorite(id) {
       const itemIdx = this.favoriteProdId.findIndex((item) => item === id);
+
       if (itemIdx === -1) {
         this.favoriteProdId.push(id);
       } else {
         this.favoriteProdId.splice(itemIdx, 1);
       }
+
       // 存入 localStorage
       localStorage.setItem("itemId", JSON.stringify(this.favoriteProdId));
 

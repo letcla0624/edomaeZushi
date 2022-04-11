@@ -32,7 +32,7 @@
       </div>
       <div
         v-else
-        class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-3 mb-5"
+        class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 row-cols-xxl-5 g-3 mb-5"
       >
         <div class="col" v-for="item in products" :key="item.id">
           <div class="card sushi-card">

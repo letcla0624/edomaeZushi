@@ -37,8 +37,10 @@ export default {
         this.favoriteProdId.splice(itemIdx, 1);
       }
 
+      // 存入 localStorage
       localStorage.setItem("itemId", JSON.stringify(this.favoriteProdId));
 
+      // 點擊加入動畫
       this.$refs[`${id}`].classList.add("active");
       setTimeout(() => {
         this.$refs[`${id}`].classList.remove("active");

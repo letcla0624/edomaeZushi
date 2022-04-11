@@ -123,9 +123,19 @@ export default {
       qty: 1,
       isLoading: "",
       favoriteProdId: JSON.parse(localStorage.getItem("favoriteProdId")) || [],
+      pageId: this.$route.params.id,
     };
   },
   inject: ["emitter"],
+  watch: {
+    // 監聽動態路由 id，重新取得產品頁面
+    $route() {
+      this.pageId = this.$route.params.id;
+      if (this.pageId !== undefined) {
+        this.getProd();
+      }
+    },
+  },
   components: {
     BreadComp,
     SwiperComp,
@@ -134,11 +144,9 @@ export default {
   methods: {
     getProd() {
       let loader = this.$loading.show();
-      // 取得單一產品的路由 id
-      const { id } = this.$route.params;
       this.$http
         .get(
-          `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/product/${id}`
+          `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/product/${this.pageId}`
         )
         .then((res) => {
           loader.hide();
