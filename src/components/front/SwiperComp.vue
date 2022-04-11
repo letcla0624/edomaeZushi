@@ -26,7 +26,7 @@
         >
           <img
             :src="item.imageUrl"
-            alt="item.title"
+            :alt="item.title"
             class="w-75 object-fit-cover"
           />
           <h6 class="sushiTitle text-truncate w-75 mx-auto">
