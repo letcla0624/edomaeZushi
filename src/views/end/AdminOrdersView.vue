@@ -165,7 +165,7 @@
       <PageComp :pages="pagination" @emit-page="getOrders"></PageComp>
     </div>
 
-    <EditOrderComp :order="tempOrder" @update-pay="getOrders"></EditOrderComp>
+    <EditOrderComp :order="tempOrder" @update-order="getOrders"></EditOrderComp>
     <DelAdminComp
       :del-item="tempOrder"
       :page-name="pageName"
@@ -247,7 +247,6 @@ export default {
         });
     },
     openModal(txt, order) {
-      // console.log(txt, order);
       if (txt === "edit") {
         this.tempOrder = { ...order };
         orderModal.show();

@@ -82,21 +82,21 @@
         <div class="col-12">
           <label for="tel" class="form-label fw-bold">
             <span class="text-deep-red">*</span>
-            受信者の携帯電話番号</label
+            荷受人の携帯電話番号</label
           >
           <v-field
             id="tel"
-            name="受信者の携帯電話番号"
+            name="荷受人の携帯電話番号"
             type="tel"
             class="form-control"
-            :class="{ 'is-invalid': errors['受信者の携帯電話番号'] }"
+            :class="{ 'is-invalid': errors['荷受人の携帯電話番号'] }"
             placeholder="09012345678"
             oninput="value=value.replace(/[^\d]/g,'')"
             :rules="isPhone"
             v-model="form.user.tel"
           ></v-field>
           <error-message
-            name="受信者の携帯電話番号"
+            name="荷受人の携帯電話番号"
             class="invalid-feedback"
           ></error-message>
         </div>

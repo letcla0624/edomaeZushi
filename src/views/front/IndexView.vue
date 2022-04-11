@@ -12,7 +12,7 @@
     <div class="bannerBg">
       <img
         :src="
-          detectWidth > 992
+          detectWidth >= 992
             ? 'https://storage.googleapis.com/vue-course-api.appspot.com/letcla/1649229907785.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=ELCp8vMIdmfZ%2BQe41jRlEdr%2Br09abtRf1Ba8zBLuXcRrVd5IiqLlku9g%2FbQcZNstfZkNupj3pwqLcx8TAAeFYgcU8%2BLpGYJ8PcmuDhLjXs2QPh%2BED4bvxAZJFgmLhMXVCB2VIjw2Ns%2F%2FL37aQQk2wkhFqGJyr5v4KyPaRITRbZPDXbAJIjM6Y2yi%2B9qGBej1YOxiSBDuakUlpyHWrBCCjkvRiOkCQGFlTf0KKgB0sN9k3w%2FImqtyK5PkFZvBcvcy6q6otQH08ZGkjD27hxvv8g4wYLFXUu2HUe2qMlSAXHzFycEluAdAK4OBGsNaGQNvXrsLLtB%2BSw8D%2Bcorz9Ebzw%3D%3D'
             : 'https://storage.googleapis.com/vue-course-api.appspot.com/letcla/1649229601399.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=SF6%2B2zElrCr0y1Ir5XBc%2BZb%2FlX9Njym5jZPVwCx9W2voJRZQFX6T4EDXesHQIXrktf6FxnX%2B8J2OuzC%2Bj85WzlPjrrAa%2FkBj6F4DAP1UZnRbLUXdl1XmbGLDHSDsfp4DTm0Zhq%2BjipXignSqCYXqojnaOwXJzeV7KErMyHQPOhjJ3nhxuPbs3hNwSZ0PdVdyBbvBd9gFjfNUDmKAQxkPU5EPhAhWkx6LzY5l2wWjcXdtpwr%2F7xFK1XsRiSegkBUA%2BLkPiZt8Lt%2FccbT5UHOS6mxIvh4Cc72V3KntFh1jG6sqPwhcL2jMhl8q1aP1wFCoUvB9ijTCjRJ2WUWzHI7CYA%3D%3D'
         "
@@ -48,7 +48,7 @@
     <div class="bannerBg">
       <img
         :src="
-          detectWidth > 992
+          detectWidth >= 992
             ? 'https://storage.googleapis.com/vue-course-api.appspot.com/letcla/1649229907785.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=ELCp8vMIdmfZ%2BQe41jRlEdr%2Br09abtRf1Ba8zBLuXcRrVd5IiqLlku9g%2FbQcZNstfZkNupj3pwqLcx8TAAeFYgcU8%2BLpGYJ8PcmuDhLjXs2QPh%2BED4bvxAZJFgmLhMXVCB2VIjw2Ns%2F%2FL37aQQk2wkhFqGJyr5v4KyPaRITRbZPDXbAJIjM6Y2yi%2B9qGBej1YOxiSBDuakUlpyHWrBCCjkvRiOkCQGFlTf0KKgB0sN9k3w%2FImqtyK5PkFZvBcvcy6q6otQH08ZGkjD27hxvv8g4wYLFXUu2HUe2qMlSAXHzFycEluAdAK4OBGsNaGQNvXrsLLtB%2BSw8D%2Bcorz9Ebzw%3D%3D'
             : 'https://storage.googleapis.com/vue-course-api.appspot.com/letcla/1649229601399.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=SF6%2B2zElrCr0y1Ir5XBc%2BZb%2FlX9Njym5jZPVwCx9W2voJRZQFX6T4EDXesHQIXrktf6FxnX%2B8J2OuzC%2Bj85WzlPjrrAa%2FkBj6F4DAP1UZnRbLUXdl1XmbGLDHSDsfp4DTm0Zhq%2BjipXignSqCYXqojnaOwXJzeV7KErMyHQPOhjJ3nhxuPbs3hNwSZ0PdVdyBbvBd9gFjfNUDmKAQxkPU5EPhAhWkx6LzY5l2wWjcXdtpwr%2F7xFK1XsRiSegkBUA%2BLkPiZt8Lt%2FccbT5UHOS6mxIvh4Cc72V3KntFh1jG6sqPwhcL2jMhl8q1aP1wFCoUvB9ijTCjRJ2WUWzHI7CYA%3D%3D'
         "
@@ -73,8 +73,12 @@
         <div class="row">
           <div class="col-lg-12 col-xl-6 offset-xl-3">
             <article
-              class="py-4 py-lg-5 lh-xl mx-auto"
-              :class="{ 'vrl-text': detectWidth > 992 }"
+              class="py-4 py-lg-5 mx-auto"
+              :class="[
+                { 'vrl-text': detectWidth >= 992 },
+                { 'lh-xl': detectWidth >= 992 },
+                { 'lh-lg': detectWidth < 992 },
+              ]"
               data-aos="fade-down"
               data-aos-duration="1000"
             >
@@ -160,7 +164,7 @@
             <div class="col-md-6 order-md-6">
               <div
                 class="hot-text mx-auto"
-                :class="{ 'vrl-text': detectWidth > 992 }"
+                :class="{ 'vrl-text': detectWidth >= 992 }"
               >
                 <h4>トリュフとフォアグラのビーフ握り寿司</h4>
                 <p class="lh-lg mb-4">
@@ -190,7 +194,7 @@
             <div class="col-md-6">
               <div
                 class="hot-text mx-auto"
-                :class="{ 'vrl-text': detectWidth > 992 }"
+                :class="{ 'vrl-text': detectWidth >= 992 }"
               >
                 <span
                   class="badge rounded-pill bg-deep-red mb-3 px-lg-1 py-lg-2"

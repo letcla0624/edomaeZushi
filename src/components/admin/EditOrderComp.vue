@@ -21,13 +21,62 @@
           <div class="row">
             <div class="">
               <h5>訂購人資料</h5>
-              <ul class="list-unstyled">
-                <li>訂購人：{{ tempOrder.user?.name }}</li>
-                <li>訂單 Email：{{ tempOrder.user?.email }}</li>
-                <li>電話：{{ tempOrder.user?.tel }}</li>
-                <li>運送地址：{{ tempOrder.user?.address }}</li>
-                <li>留言：{{ tempOrder.message }}</li>
-              </ul>
+              <div class="">
+                <div class="row row-cols-lg-2 g-3">
+                  <div class="form-floating mb-3">
+                    <input
+                      type="text"
+                      class="form-control border-0 border-bottom rounded-0"
+                      id="email"
+                      placeholder="訂購人 Email"
+                      v-model="tempOrder.user.email"
+                    />
+                    <label for="email">訂購人 Email：</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input
+                      type="text"
+                      class="form-control border-0 border-bottom rounded-0"
+                      id="name"
+                      placeholder="收件人姓名"
+                      v-model="tempOrder.user.name"
+                    />
+                    <label for="name">收件人：</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input
+                      type="number"
+                      class="form-control border-0 border-bottom rounded-0"
+                      id="tel"
+                      placeholder="收件人電話"
+                      v-model.number="tempOrder.user.tel"
+                    />
+                    <label for="tel">收件人電話：</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input
+                      type="text"
+                      class="form-control border-0 border-bottom rounded-0"
+                      id="address"
+                      placeholder="收件人地址"
+                      v-model="tempOrder.user.address"
+                    />
+                    <label for="address">收件人地址：</label>
+                  </div>
+                </div>
+                <div class="row g-3 mt-1">
+                  <div class="form-floating mb-3">
+                    <input
+                      type="text"
+                      class="form-control border-0 border-bottom rounded-0"
+                      id="address"
+                      placeholder="留言"
+                      v-model="tempOrder.message"
+                    />
+                    <label for="address">留言：</label>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="">
               <h5>訂單資訊</h5>
@@ -96,9 +145,9 @@
           <button
             type="button"
             class="btn btn-light-green"
-            @click="updatePay(tempOrder)"
+            @click="updateOrder(tempOrder)"
           >
-            修改付款狀態
+            修改訂單
           </button>
         </div>
       </div>
@@ -126,25 +175,21 @@ export default {
     },
   },
   methods: {
-    // 修改訂單付款
-    updatePay(order) {
+    // 修改訂單
+    updateOrder(order) {
       let loader = this.$loading.show();
-      const data = {
-        is_paid: order.is_paid,
-      };
       this.$http
         .put(
           `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/admin/order/${order.id}`,
-          { data: data }
+          { data: this.tempOrder }
         )
         .then((res) => {
-          // console.log(res.data);
           loader.hide();
           orderModal.hide();
           setTimeout(() => {
             alert(res.data.message);
           }, 1000);
-          this.$emit("update-pay", order);
+          this.$emit("update-order", order);
         })
         .catch((err) => {
           console.dir(err.response);

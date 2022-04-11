@@ -264,7 +264,6 @@ export default {
         });
     },
     openModal(txt, adminProd) {
-      // console.log(txt, adminProd);
       if (txt === "new") {
         this.isNew = true;
         this.createProdTemp = {

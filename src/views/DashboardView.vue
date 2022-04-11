@@ -81,7 +81,7 @@ export default {
 
 <style lang="scss">
 // 手機版列表
-@media (max-width: 992px) {
+@media (max-width: 991.98px) {
   .customer-card {
     border: 1px solid var(--bs-dark) !important;
     padding: 1rem;

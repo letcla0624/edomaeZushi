@@ -36,7 +36,7 @@
             ref="collapseOne"
             :class="{
               collapse: detectWidth < 992,
-              show: detectWidth > 992,
+              show: detectWidth >= 992,
             }"
           >
             <div class="accordion-body pt-4">
