@@ -40,7 +40,7 @@
                     @click.prevent="copyTxt"
                     title="クリックしてコピー"
                   >
-                    <strong ref="copyText">peace2022</strong>
+                    <strong ref="copyText">EDOMAE10ALLDAY</strong>
                     <i class="bi bi-files ms-1"></i>
                   </a>
                 </div>
