@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-lg-10 offset-lg-2 col-xl-8 offset-xl-4">
       <!-- logo -->
-      <LogoComp></LogoComp>
+      <LogoComp />
       <!-- 折疊購物車 -->
       <div class="accordion">
         <div class="accordion-item border-0 bg-transparent">
@@ -121,10 +121,8 @@ export default {
     LogoComp,
   },
   methods: {
-    // 取得訂單
     getOrder() {
       let loader = this.$loading.show();
-
       this.$http
         .get(
           `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/order/${this.orderId.id}`
@@ -138,7 +136,6 @@ export default {
           alert(err.response.data.message);
         });
     },
-    // 展開變更文字
     collapseHasOpen() {
       this.collapseOpen = this.$refs.collapseOne.classList.toggle("open");
     },

@@ -25,9 +25,9 @@
           <h3 class="h5 mb-5">
             お気に入りとして追加すると、この画面に保存されます。
           </h3>
-          <router-link to="/products" class="btn hvr-btn-dark">
+          <RouterLink to="/products" class="btn hvr-btn-dark">
             今人気のアイテムを見る
-          </router-link>
+          </RouterLink>
         </div>
       </div>
       <div
@@ -36,7 +36,7 @@
       >
         <div class="col" v-for="item in products" :key="item.id">
           <div class="card sushi-card">
-            <router-link :to="`/prod/${item.id}`">
+            <RouterLink :to="`/prod/${item.id}`">
               <div class="img-cover text-center">
                 <img
                   :src="item.imageUrl"
@@ -59,7 +59,7 @@
                   {{ item.description }}
                 </p>
               </div>
-            </router-link>
+            </RouterLink>
             <div class="card-footer border-top-0 pb-3">
               <div class="d-flex justify-content-between align-items-center">
                 <p v-if="item.price === item.origin_price" class="mb-0">

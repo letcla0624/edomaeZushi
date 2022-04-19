@@ -142,7 +142,6 @@ export default {
       let date = new Date();
       this.year = date.getFullYear();
     },
-    // 複製文字
     copyTxt() {
       const txt = this.$refs.copyText.innerText;
       copyText(txt);
@@ -159,7 +158,6 @@ export default {
   mounted() {
     this.getDate();
 
-    // leaflet & mapbox
     var map = L.map("map").setView([43.054456, 141.354884], 17);
     L.tileLayer(
       "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",

@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-lg-10 offset-lg-2 col-xl-8 offset-xl-4">
       <!-- logo -->
-      <LogoComp></LogoComp>
+      <LogoComp />
       <!-- 折疊購物車 -->
       <div class="accordion">
         <div class="accordion-item border-0 bg-transparent">
@@ -186,8 +186,6 @@ export default {
         .then((res) => {
           loader.hide();
           this.cart = res.data.data;
-
-          // 折扣金額
           this.discount = -(this.cart.final_total - this.cart.total);
         })
         .catch((err) => {
@@ -195,7 +193,6 @@ export default {
           console.dir(err);
         });
     },
-    // 使用折扣碼
     useCoupon() {
       this.isLoading = "0";
       const data = {
@@ -208,8 +205,6 @@ export default {
         )
         .then(() => {
           this.isLoading = "";
-
-          // 淺拷貝折扣碼
           this.copyCode = { ...data };
           this.code = "";
           this.getCart();

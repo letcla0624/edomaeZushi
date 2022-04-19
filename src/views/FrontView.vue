@@ -1,8 +1,8 @@
 <template>
-  <FrontNavbarComp :fixed="fixed" :detectWidth="detectWidth"></FrontNavbarComp>
+  <FrontNavbarComp :fixed="fixed" :detectWidth="detectWidth" />
   <RouterView :detectWidth="detectWidth" />
-  <FooterComp></FooterComp>
-  <ToastComp></ToastComp>
+  <FooterComp />
+  <ToastComp />
 </template>
 
 <script>
@@ -29,9 +29,7 @@ export default {
     ToastComp,
   },
   mounted() {
-    // 初判斷一進入的螢幕寬度
     this.detectWidth = window.innerWidth;
-    // 螢幕寬度縮放
     window.addEventListener("resize", () => {
       this.detectWidth = window.innerWidth;
     });
@@ -40,7 +38,6 @@ export default {
 </script>
 
 <style lang="scss">
-// 壽司們
 .sushi-card {
   transition: all 0.4s;
   z-index: 2;
@@ -88,7 +85,6 @@ export default {
   }
 }
 
-// 彈跳動畫
 .favorite-btn.active {
   animation: jump 0.6s ease-in-out forwards;
 }

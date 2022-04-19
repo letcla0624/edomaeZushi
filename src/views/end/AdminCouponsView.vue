@@ -146,20 +146,20 @@
           </div>
         </div>
       </div>
-      <PageComp :pages="pagination" @emit-page="getCoupons"></PageComp>
+      <PageComp :pages="pagination" @emit-page="getCoupons" />
     </div>
 
     <CreateCouponComp
       :coupon="tempCoupon"
       :is-new="isNew"
       @update-coupons="getCoupons"
-    ></CreateCouponComp>
+    />
 
     <DelAdminComp
       :del-item="tempCoupon"
       :page-name="pageName"
       @get-item="getCoupons"
-    ></DelAdminComp>
+    />
   </div>
 </template>
 
@@ -226,7 +226,6 @@ export default {
         })
         .catch((err) => {
           loader.hide();
-          // console.dir(err.response);
           alert(err.response.data.message);
         });
     },
@@ -247,7 +246,6 @@ export default {
         delModal.show();
       }
     },
-    // 搜尋折扣碼
     filterSearch() {
       const newList = JSON.parse(JSON.stringify(this.coupons));
       const newArr = [];

@@ -13,7 +13,7 @@
       </div>
     </div>
   </div>
-  <ToastComp></ToastComp>
+  <ToastComp />
 </template>
 
 <script>
@@ -35,9 +35,7 @@ export default {
     ToastComp,
   },
   mounted() {
-    // 初判斷一進入的螢幕寬度
     this.detectWidth = window.innerWidth;
-    // 螢幕寬度縮放
     window.addEventListener("resize", () => {
       this.detectWidth = window.innerWidth;
     });

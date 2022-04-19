@@ -35,7 +35,7 @@
           <div class="mouse border border-dark">
             <div class="dot"></div>
           </div>
-          <p class="fw-bold mt-1 fs-8">下へスクロール</p>
+          <p class="fw-bold mt-1 fs-8">Scroll Down</p>
         </div>
       </div>
     </div>
@@ -57,7 +57,7 @@
     </div>
     <div class="box bg-transparent m-3 p-3" :style="{ opacity: logoOpacity }">
       <div class="logo">
-        <LogoWhiteCubeComp></LogoWhiteCubeComp>
+        <LogoWhiteCubeComp />
       </div>
     </div>
   </div>
@@ -84,7 +84,7 @@
             >
               <h3 class="h2 text-center mb-3">江戸前寿司について</h3>
               <p>
-                2021 年、24
+                2021 年、28
                 歳のウィル氏は、伝統的な握りスタイルで新鮮な寿司を提供する寿司レストランを開くことを夢見ていました。
                 同年 12
                 月、江戸前寿司の設立に成功し、夢を実現し、日本の伝統文化を新しい時代へと導きました。
@@ -233,7 +233,7 @@
             <i class="bi bi-chevron-right ms-1"></i>
           </RouterLink>
         </div>
-        <SwiperComp></SwiperComp>
+        <SwiperComp />
       </div>
     </div>
   </div>
@@ -284,8 +284,8 @@
     </div>
   </div>
 
-  <FooterComp></FooterComp>
-  <ToastComp></ToastComp>
+  <FooterComp />
+  <ToastComp />
 </template>
 
 <script>

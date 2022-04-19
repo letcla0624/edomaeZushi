@@ -33,18 +33,13 @@
           私書箱に入ると、注文はキャンセルされますのでご注意ください。
         </p>
       </div>
-      <v-form
-        v-slot="{ errors }"
-        class="row g-3"
-        ref="form"
-        @submit="sentOrder"
-      >
+      <VForm v-slot="{ errors }" class="row g-3" ref="form" @submit="sentOrder">
         <div class="col-12">
           <label for="email" class="form-label fw-bold">
             <span class="text-deep-red">*</span>
             購入者の電子メールアドレス</label
           >
-          <v-field
+          <VField
             id="email"
             name="電子メールアドレス"
             type="email"
@@ -53,18 +48,18 @@
             placeholder="service@adomesushi.co.jp"
             rules="required|email"
             v-model="form.user.email"
-          ></v-field>
-          <error-message
+          ></VField>
+          <ErrorMessage
             name="電子メールアドレス"
             class="invalid-feedback"
-          ></error-message>
+          ></ErrorMessage>
         </div>
         <div class="col-12">
           <label for="name" class="form-label fw-bold">
             <span class="text-deep-red">*</span>
             荷受人の名前</label
           >
-          <v-field
+          <VField
             id="name"
             name="荷受人の名前"
             type="text"
@@ -73,18 +68,18 @@
             placeholder="彩乃山屋"
             rules="required"
             v-model="form.user.name"
-          ></v-field>
-          <error-message
+          ></VField>
+          <ErrorMessage
             name="荷受人の名前"
             class="invalid-feedback"
-          ></error-message>
+          ></ErrorMessage>
         </div>
         <div class="col-12">
           <label for="tel" class="form-label fw-bold">
             <span class="text-deep-red">*</span>
             荷受人の携帯電話番号</label
           >
-          <v-field
+          <VField
             id="tel"
             name="荷受人の携帯電話番号"
             type="tel"
@@ -94,18 +89,18 @@
             oninput="value=value.replace(/[^\d]/g,'')"
             :rules="isPhone"
             v-model="form.user.tel"
-          ></v-field>
-          <error-message
+          ></VField>
+          <ErrorMessage
             name="荷受人の携帯電話番号"
             class="invalid-feedback"
-          ></error-message>
+          ></ErrorMessage>
         </div>
         <div class="col-12 mb-3">
           <label for="address" class="form-label fw-bold">
             <span class="text-deep-red">*</span>
             荷受人の住所</label
           >
-          <v-field
+          <VField
             id="address"
             name="荷受人の住所"
             type="text"
@@ -114,11 +109,11 @@
             placeholder="东京江东区有明3丁目21-1"
             rules="required"
             v-model="form.user.address"
-          ></v-field>
-          <error-message
+          ></VField>
+          <ErrorMessage
             name="荷受人の住所"
             class="invalid-feedback"
-          ></error-message>
+          ></ErrorMessage>
         </div>
         <div class="mt-4 pt-4 border-top">
           <div class="col-12">
@@ -152,7 +147,7 @@
             </button>
           </div>
         </div>
-      </v-form>
+      </VForm>
     </div>
   </div>
 </template>
@@ -173,7 +168,6 @@ export default {
     };
   },
   methods: {
-    // 送出訂單
     sentOrder() {
       let loader = this.$loading.show();
       this.$http
@@ -194,7 +188,6 @@ export default {
           console.dir(err);
         });
     },
-    // 手機驗證
     isPhone(value) {
       const phoneNumber = /0?[789](?:\d{8}|\d{9})$/;
       return phoneNumber.test(value) ? true : "正しい携帯電話番号が必要";

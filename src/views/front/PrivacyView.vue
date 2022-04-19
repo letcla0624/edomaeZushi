@@ -1,7 +1,7 @@
 <template>
   <div class="main">
     <div class="container">
-      <BreadComp class="pt-5"></BreadComp>
+      <BreadComp class="pt-5" />
       <div class="row py-3 pb-lg-5">
         <div class="col-lg-8 offset-lg-2">
           <h2 class="mb-5 py-3 border-bottom">プライバシーポリシー</h2>

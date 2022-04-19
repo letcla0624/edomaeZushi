@@ -276,7 +276,6 @@ export default {
           console.dir(err);
         });
     },
-    // 增加數量
     addItem(item) {
       this.isLoading = item.id;
       item.qty++;
@@ -286,7 +285,6 @@ export default {
       };
       this.updateCart(item);
     },
-    // 減少數量
     minusItem(item) {
       item.qty--;
       if (item.qty < 1) {
@@ -299,7 +297,6 @@ export default {
       };
       this.updateCart(item);
     },
-    // 更新購物車
     updateCart(item) {
       this.isLoading = item.id;
       this.$http
@@ -325,7 +322,6 @@ export default {
       this.page = page;
       delAllModal.show();
     },
-    // 回頂部
     toTop() {
       window.scrollTo({
         top: 0,

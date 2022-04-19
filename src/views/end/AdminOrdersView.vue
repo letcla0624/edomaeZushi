@@ -176,16 +176,16 @@
           </div>
         </div>
       </div>
-      <PageComp :pages="pagination" @emit-page="getOrders"></PageComp>
+      <PageComp :pages="pagination" @emit-page="getOrders" />
     </div>
 
-    <EditOrderComp :order="tempOrder" @update-order="getOrders"></EditOrderComp>
+    <EditOrderComp :order="tempOrder" @update-order="getOrders" />
     <DelAdminComp
       :del-item="tempOrder"
       :page-name="pageName"
       @get-item="getOrders"
-    ></DelAdminComp>
-    <DelAllModalComp :page="page" @get-item="getOrders"></DelAllModalComp>
+    />
+    <DelAllModalComp :page="page" @get-item="getOrders" />
   </div>
 </template>
 
@@ -273,7 +273,6 @@ export default {
       this.page = page;
       delAllModal.show();
     },
-    // 搜尋訂單
     filterSearch() {
       const newList = JSON.parse(JSON.stringify(this.orders));
       const newArr = [];

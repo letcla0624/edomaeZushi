@@ -67,7 +67,6 @@ export default {
   },
   props: ["delItem", "pageName"],
   methods: {
-    // 刪除單一項目
     delProdBtn(id) {
       this.isLoading = id;
       let url = "";

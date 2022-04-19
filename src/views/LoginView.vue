@@ -11,7 +11,7 @@
             style="max-width: 440px"
           >
             <div class="card-header py-5">
-              <LogoComp></LogoComp>
+              <LogoComp />
               <h2 class="card-title mb-0 mt-n3">スタッフログイン</h2>
             </div>
             <div class="card-body">
@@ -116,7 +116,6 @@ export default {
       let date = new Date();
       this.year = date.getFullYear();
     },
-    // 顯示 or 隱藏密碼
     showPwd() {
       this.pwd = !this.pwd;
     },

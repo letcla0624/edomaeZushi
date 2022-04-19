@@ -127,7 +127,6 @@ export default {
     },
   },
   methods: {
-    // 新增／更新按鈕
     updateCouponBtn() {
       let loader = this.$loading.show();
       let api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/admin/coupon`;

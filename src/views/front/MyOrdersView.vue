@@ -152,7 +152,6 @@ export default {
           alert(err.response.data.message);
         });
     },
-    // 搜尋訂單
     filterSearch() {
       this.isLoading = "0";
       const newList = JSON.parse(JSON.stringify(this.orders));

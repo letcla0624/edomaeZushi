@@ -294,7 +294,6 @@ export default {
     },
   },
   methods: {
-    // 新增／更新按鈕
     upProdBtn() {
       let loader = this.$loading.show();
       let api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/admin/product`;
@@ -319,11 +318,9 @@ export default {
           alert(err.response.data.message);
         });
     },
-    // modal 裡新增其餘圖片
     addPics() {
       this.tempProd.imagesUrl.push("");
     },
-    // modal 裡刪除其餘圖片
     delPics(key) {
       this.tempProd.imagesUrl.splice(key, 1);
     },

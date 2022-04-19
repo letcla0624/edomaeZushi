@@ -5,7 +5,7 @@
         class="col-2 col-md-3 col-lg-2 pe-0 bg-dark"
         style="min-height: 100vh"
       >
-        <AdminNavbarComp :detectWidth="detectWidth"></AdminNavbarComp>
+        <AdminNavbarComp :detectWidth="detectWidth" />
       </div>
       <div class="col-10 col-md-9 col-lg-10 bg-light" style="min-height: 100vh">
         <div class="container my-3">
@@ -15,7 +15,7 @@
         </div>
       </div>
     </div>
-    <ToastComp></ToastComp>
+    <ToastComp />
   </div>
 </template>
 
@@ -41,7 +41,6 @@ export default {
     ToastComp,
   },
   methods: {
-    //  檢查登入
     checkAdmin() {
       const token = document.cookie.replace(
         /(?:(?:^|.*;\s*)edomaezushitoken\s*=\s*([^;]*).*$)|^.*$/,
@@ -69,9 +68,7 @@ export default {
   mounted() {
     this.checkAdmin();
 
-    // 初判斷一進入的螢幕寬度
     this.detectWidth = window.innerWidth;
-    // 螢幕寬度縮放
     window.addEventListener("resize", () => {
       this.detectWidth = window.innerWidth;
     });
@@ -80,7 +77,6 @@ export default {
 </script>
 
 <style lang="scss">
-// 手機版列表
 @media (max-width: 991.98px) {
   .customer-card {
     border: 1px solid var(--bs-dark) !important;

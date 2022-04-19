@@ -106,28 +106,28 @@
             v-if="order.is_paid !== true"
             class="d-md-flex justify-content-md-between align-items-center"
           >
-            <router-link
+            <RouterLink
               to="/myOrders"
               class="btn btn-link w-100 mb-3 d-flex justify-content-center justify-content-md-start align-items-center"
             >
               <i class="bi bi-chevron-left me-1"></i>
               支払うのを待つ
-            </router-link>
-            <router-link
+            </RouterLink>
+            <RouterLink
               :to="`/finished/${order.id}`"
               class="btn hvr-btn-dark w-100 mb-3 d-flex justify-content-center align-items-center"
               @click="toPay"
             >
               支払いを確認する
-            </router-link>
+            </RouterLink>
           </div>
-          <router-link
+          <RouterLink
             v-else
             to="/myOrders"
             class="btn hvr-btn-dark mb-3 w-100 d-flex justify-content-center align-items-center"
           >
             注文に戻る
-          </router-link>
+          </RouterLink>
         </div>
       </div>
     </div>
@@ -148,7 +148,6 @@ export default {
   },
   inject: ["emitter"],
   methods: {
-    // 取得訂單
     getOrder() {
       let loader = this.$loading.show();
       this.$http
@@ -164,7 +163,6 @@ export default {
           alert(err.response.data.message);
         });
     },
-    // 付款
     toPay() {
       let loader = this.$loading.show();
 
@@ -181,7 +179,6 @@ export default {
           alert(err.response.data.message);
         });
     },
-    // 複製文字
     copyTxt() {
       const txt = this.$refs.copyText.innerText;
       copyText(txt);

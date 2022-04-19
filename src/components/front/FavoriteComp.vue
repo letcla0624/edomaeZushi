@@ -27,7 +27,6 @@ export default {
   },
   props: ["item"],
   methods: {
-    // 加入/取消我的最愛
     toggleFavorite(id) {
       const itemIdx = this.favoriteProdId.findIndex((item) => item === id);
 

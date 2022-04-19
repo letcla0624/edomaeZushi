@@ -1,7 +1,7 @@
 <template>
   <div class="main">
     <div class="container">
-      <BreadComp :prod-title="prod.title" class="pt-5"></BreadComp>
+      <BreadComp :prod-title="prod.title" class="pt-5" />
       <div class="row py-3 py-lg-5">
         <div class="col-xl-10 offset-xl-1">
           <div class="row align-items-center g-3">
@@ -72,7 +72,7 @@
                       <i class="bi bi-plus-lg"></i>
                     </button>
                   </div>
-                  <FavoriteComp :item="prod"></FavoriteComp>
+                  <FavoriteComp :item="prod" />
                 </div>
                 <div class="d-flex mt-3">
                   <button
@@ -100,11 +100,10 @@
           </div>
         </div>
       </div>
-
       <!-- Swiper -->
       <div class="row py-5 border-top">
         <h3 class="h4">他の人は食べる</h3>
-        <SwiperComp @emit-id="getProdIdFromComp"></SwiperComp>
+        <SwiperComp @emit-id="getProdIdFromComp" />
       </div>
     </div>
   </div>
@@ -174,11 +173,9 @@ export default {
           console.dir(err);
         });
     },
-    // 增加數量
     addItem() {
       this.qty++;
     },
-    // 減少數量
     minusItem() {
       this.qty--;
       if (this.qty <= 1) {

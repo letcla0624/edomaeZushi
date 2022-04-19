@@ -32,7 +32,17 @@
           <h6 class="sushiTitle text-truncate w-75 mx-auto">
             {{ item.title }}
           </h6>
-          <p>{{ $filters.currencyJPY(item.origin_price) }}</p>
+          <p v-if="item.price === item.origin_price">
+            {{ $filters.currencyJPY(item.origin_price) }}
+          </p>
+          <p v-else>
+            <b class="fw-bold text-danger me-2">
+              {{ $filters.currencyJPY(item.price) }}
+            </b>
+            <del class="fs-8 text-secondary">
+              {{ $filters.currencyJPY(item.origin_price) }}
+            </del>
+          </p>
         </RouterLink>
       </div>
     </swiper-slide>
@@ -100,7 +110,6 @@ export default {
     }
   }
 }
-// swiper
 .swiper-pagination {
   z-index: 0 !important;
 }
@@ -123,16 +132,16 @@ export default {
 }
 .swiper-button-next {
   right: 1.75rem;
+  &::after {
+    content: "\F135" !important;
+  }
 }
 .swiper-button-prev {
   left: auto !important;
   right: 4.6rem !important;
-}
-.swiper-button-next::after {
-  content: "\F135" !important;
-}
-.swiper-button-prev::after {
-  content: "\F12C" !important;
+  &::after {
+    content: "\F12C" !important;
+  }
 }
 @media (max-width: 414.98px) {
   .swiper-button-next,

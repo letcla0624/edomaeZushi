@@ -14,7 +14,7 @@
             <div class="order-finished-paper paper shadow-lg py-5 p-lg-5">
               <div class="card-head mt-3">
                 <div class="px-3">
-                  <LogoComp></LogoComp>
+                  <LogoComp />
                 </div>
                 <div class="text-center text-light-green mt-4">
                   <div class="sushi-man">
@@ -97,9 +97,9 @@
               </div>
               <div class="card-footer">
                 <div class="text-center">
-                  <router-link to="/myOrders" class="btn btn-dark">
+                  <RouterLink to="/myOrders" class="btn btn-dark">
                     確認後、注文に戻る
-                  </router-link>
+                  </RouterLink>
                 </div>
               </div>
             </div>
@@ -126,10 +126,8 @@ export default {
     LogoComp,
   },
   methods: {
-    // 取得訂單
     getOrder() {
       let loader = this.$loading.show();
-
       this.$http
         .get(
           `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/order/${this.orderId.id}`

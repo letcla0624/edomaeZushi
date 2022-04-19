@@ -8,44 +8,41 @@
         class="text-center my-3 my-md-5 pb-md-5"
         :class="{ 'text-center': detectWidth < 768 }"
       >
-        <router-link to="/">
-          <LogoWhiteComp v-if="detectWidth >= 768"></LogoWhiteComp>
-          <LogoWhiteCubeComp
-            v-else
-            style="max-width: 80px; width: 80%"
-          ></LogoWhiteCubeComp>
-        </router-link>
+        <RouterLink to="/">
+          <LogoWhiteComp v-if="detectWidth >= 768" />
+          <LogoWhiteCubeComp v-else style="max-width: 80px; width: 80%" />
+        </RouterLink>
       </h1>
       <ul class="navbar-nav list-unstyled">
         <li class="nav-item ms-1 ms-md-3 py-3">
-          <router-link
+          <RouterLink
             to="/admin"
             class="nav-link py-3"
             :class="{ 'text-center': detectWidth < 768 }"
           >
             <i class="bi bi-list-check mx-md-3"></i>
             <span v-if="detectWidth >= 768">產品列表</span>
-          </router-link>
+          </RouterLink>
         </li>
         <li class="nav-item ms-1 ms-md-3 py-3">
-          <router-link
+          <RouterLink
             to="/admin-orders"
             class="nav-link py-3"
             :class="{ 'text-center': detectWidth < 768 }"
           >
             <i class="bi bi-file-text mx-md-3"></i>
             <span v-if="detectWidth >= 768">顧客訂單</span>
-          </router-link>
+          </RouterLink>
         </li>
         <li class="nav-item ms-1 ms-md-3 py-3">
-          <router-link
+          <RouterLink
             to="/admin-coupons"
             class="nav-link py-3"
             :class="{ 'text-center': detectWidth < 768 }"
           >
             <i class="bi bi-percent mx-md-3"></i>
             <span v-if="detectWidth >= 768">折扣碼列表</span>
-          </router-link>
+          </RouterLink>
         </li>
       </ul>
     </div>

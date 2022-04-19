@@ -174,17 +174,17 @@
     </div>
   </div>
 
-  <AdminProdViewComp :show-prod="createProdTemp"></AdminProdViewComp>
+  <AdminProdViewComp :show-prod="createProdTemp" />
   <CreateProdComp
     :admin-prod="createProdTemp"
     :is-new="isNew"
     @get-adminprods="getAdminProds"
-  ></CreateProdComp>
+  />
   <DelAdminComp
     :del-item="createProdTemp"
     :page-name="pageName"
     @get-item="getAdminProds"
-  ></DelAdminComp>
+  />
 </template>
 
 <script>
@@ -284,7 +284,6 @@ export default {
         showAdminProdModal.show();
       }
     },
-    // 搜尋名稱
     filterSearch() {
       const newList = JSON.parse(JSON.stringify(this.adminProds));
       const newArr = [];

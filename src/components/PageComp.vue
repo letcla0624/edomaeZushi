@@ -8,7 +8,9 @@
           aria-label="Previous"
           @click.prevent="emitPage(pages.current_page - 1)"
         >
-          <span aria-hidden="true"><i class="bi bi-arrow-left-short"></i></span>
+          <span aria-hidden="true">
+            <i class="bi bi-arrow-left-short"></i>
+          </span>
         </a>
       </li>
       <li
@@ -17,9 +19,9 @@
         :key="idx"
         :class="{ active: page === pages.current_page }"
       >
-        <a class="page-link" href="#" @click.prevent="emitPage(page)">{{
-          page
-        }}</a>
+        <a class="page-link" href="#" @click.prevent="emitPage(page)">
+          {{ page }}
+        </a>
       </li>
       <li
         class="page-item"
@@ -31,9 +33,9 @@
           aria-label="Next"
           @click.prevent="emitPage(pages.current_page + 1)"
         >
-          <span aria-hidden="true"
-            ><i class="bi bi-arrow-right-short"></i
-          ></span>
+          <span aria-hidden="true">
+            <i class="bi bi-arrow-right-short"></i>
+          </span>
         </a>
       </li>
     </ul>

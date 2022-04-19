@@ -195,7 +195,7 @@
             v-if="categoryName !== '特別価格'"
             :pages="pagination"
             @emit-page="getProducts(categoryName, $event), toTop(440)"
-          ></PageComp>
+          />
         </div>
       </div>
     </div>
@@ -237,7 +237,6 @@ export default {
         .then((res) => {
           loader.hide();
           this.products = res.data.products;
-          // 分頁
           this.pagination = res.data.pagination;
         })
         .catch((err) => {
@@ -245,7 +244,6 @@ export default {
           console.dir(err);
         });
     },
-    // 取得特價商品
     getSpecialPrice() {
       let loader = this.$loading.show();
       this.$http
@@ -261,7 +259,6 @@ export default {
           this.categoryName = "特別価格";
         });
     },
-    // 加入購物車
     addCart(id, qty = 1) {
       this.isLoading = id;
       const data = {
@@ -285,7 +282,6 @@ export default {
           });
         })
         .catch((err) => {
-          // console.dir(err);
           this.isLoading = "";
           this.emitter.emit("toast-message", {
             style: "error",
@@ -293,7 +289,6 @@ export default {
           });
         });
     },
-    // 加入／取消 我的最愛
     toggleFavorite(id) {
       const itemIdx = this.favoriteProdId.findIndex((item) => item === id);
 
@@ -312,7 +307,6 @@ export default {
         this.$refs[`${id}`][0].classList.remove("active");
       }, 600);
     },
-    // 回壽司頂部
     toTop(val = 0) {
       window.scrollTo({
         top: val,

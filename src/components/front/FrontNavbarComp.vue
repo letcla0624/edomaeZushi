@@ -4,7 +4,7 @@
     :class="{ 'sticky-top': fixed }"
   >
     <div class="container">
-      <LogoComp></LogoComp>
+      <LogoComp />
       <div class="d-flex d-lg-none">
         <RouterLink to="/cart" class="btn me-2">
           <i class="bi bi-basket text-dark position-relative fs-5">
@@ -23,7 +23,7 @@
           aria-controls="offcanvasNavbar"
           ref="offcanvas"
         >
-          <ion-icon :icon="appsSharp" class="fs-4 mt-1 text-dark"></ion-icon>
+          <IonIcon :icon="appsSharp" class="fs-4 mt-1 text-dark" />
         </button>
       </div>
       <div
@@ -42,7 +42,7 @@
             id="offcanvasNavbarLabel"
             :class="{ 'text-white': detectWidth < 992 }"
           >
-            <LogoWhiteComp></LogoWhiteComp>
+            <LogoWhiteComp />
           </div>
           <button
             type="button"
@@ -149,7 +149,6 @@ export default {
           console.dir(err);
         });
     },
-    // 購物車數量加總
     sumCartsTotal(arr) {
       let sum = 0;
       arr.forEach(function (item) {
@@ -165,9 +164,7 @@ export default {
     });
   },
   unmounted() {
-    emitter.off("get-cart", () => {
-      this.getCart();
-    });
+    emitter.off("get-cart");
   },
 };
 </script>

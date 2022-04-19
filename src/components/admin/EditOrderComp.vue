@@ -175,7 +175,6 @@ export default {
     },
   },
   methods: {
-    // 修改訂單
     updateOrder(order) {
       let loader = this.$loading.show();
       this.$http
