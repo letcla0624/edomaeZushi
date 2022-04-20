@@ -9,7 +9,10 @@
       >
         {{ item.name }}
       </li>
-      <li v-if="prodTitle"><b class="px-2">／</b>{{ prodTitle }}</li>
+      <li v-if="prodTitle" class="fs-7">
+        <span class="px-2">／</span>
+        {{ prodTitle }}
+      </li>
     </ol>
   </nav>
 </template>

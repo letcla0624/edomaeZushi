@@ -107,18 +107,18 @@
             class="d-md-flex justify-content-md-between align-items-center"
           >
             <RouterLink
-              to="/myOrders"
-              class="btn btn-link w-100 mb-3 d-flex justify-content-center justify-content-md-start align-items-center"
-            >
-              <i class="bi bi-chevron-left me-1"></i>
-              支払うのを待つ
-            </RouterLink>
-            <RouterLink
               :to="`/finished/${order.id}`"
-              class="btn hvr-btn-dark w-100 mb-3 d-flex justify-content-center align-items-center"
+              class="btn hvr-btn-dark w-100 mb-3 d-flex justify-content-center align-items-center order-1"
               @click="toPay"
             >
               支払いを確認する
+            </RouterLink>
+            <RouterLink
+              to="/myOrders"
+              class="btn btn-link ps-0 w-100 mb-3 d-flex justify-content-center justify-content-md-start align-items-center order-6"
+            >
+              <i class="bi bi-chevron-left me-1"></i>
+              支払うのを待つ
             </RouterLink>
           </div>
           <RouterLink

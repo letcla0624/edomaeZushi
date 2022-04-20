@@ -132,19 +132,19 @@
           <div
             class="d-grid gap-3 d-md-flex justify-content-md-between align-items-center mt-4 mt-md-3"
           >
+            <button
+              type="submit"
+              class="btn hvr-btn-dark w-100 d-flex justify-content-center align-items-center my-1 order-md-1"
+            >
+              チェックアウト
+            </button>
             <RouterLink
               to="/cart"
-              class="w-100 d-flex justify-content-center justify-content-md-start align-items-center"
+              class="btn btn-link ps-0 w-100 d-flex justify-content-center justify-content-md-start align-items-center my-1 order-md-6"
             >
               <i class="bi bi-chevron-left me-1"></i>
               購入を続ける
             </RouterLink>
-            <button
-              type="submit"
-              class="btn hvr-btn-dark w-100 d-flex justify-content-center align-items-center"
-            >
-              チェックアウト
-            </button>
           </div>
         </div>
       </VForm>

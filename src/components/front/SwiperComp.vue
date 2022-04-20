@@ -35,7 +35,7 @@
           <p v-if="item.price === item.origin_price">
             {{ $filters.currencyJPY(item.origin_price) }}
           </p>
-          <p v-else>
+          <p v-else class="text-nowrap">
             <b class="fw-bold text-danger me-2">
               {{ $filters.currencyJPY(item.price) }}
             </b>

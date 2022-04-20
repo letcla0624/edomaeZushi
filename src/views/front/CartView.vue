@@ -209,18 +209,18 @@
               class="d-grid gap-3 col-md-12 col-lg-6 d-md-flex align-items-center ms-auto mt-4 mt-md-3"
             >
               <RouterLink
-                to="/products"
-                class="w-100 d-flex justify-content-center justify-content-md-start align-items-center"
-              >
-                <i class="bi bi-chevron-left me-1"></i>
-                ショッピングを続ける
-              </RouterLink>
-              <RouterLink
                 to="/checkout"
-                class="btn hvr-btn-dark w-100 d-flex justify-content-center align-items-center"
+                class="btn hvr-btn-dark w-100 d-flex justify-content-center align-items-center my-1 order-md-1"
                 :class="{ disabled: cart.carts.length === 0 }"
               >
                 チェックアウト
+              </RouterLink>
+              <RouterLink
+                to="/products"
+                class="btn btn-link ps-0 w-100 d-flex justify-content-center justify-content-md-start align-items-center my-1 order-md-6"
+              >
+                <i class="bi bi-chevron-left me-1"></i>
+                ショッピングを続ける
               </RouterLink>
             </div>
           </div>
