@@ -28,7 +28,7 @@
               <li class="mb-3">
                 <div class="d-flex align-items-start">
                   <i class="bi bi-alarm me-2"></i>
-                  <span>月曜日～土曜日 15：00〜22：00 日曜日定休</span>
+                  <span>月曜日～土曜日 15：00〜22：00、日曜日定休</span>
                 </div>
               </li>
               <li class="mb-3">
@@ -40,7 +40,7 @@
                     @click.prevent="copyTxt"
                     title="クリックしてコピー"
                   >
-                    <strong ref="copyText">EDOMAE10ALLDAY</strong>
+                    <strong ref="copyText">EDOMAE10ALL</strong>
                     <i class="bi bi-files ms-1"></i>
                   </a>
                 </div>
