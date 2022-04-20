@@ -61,7 +61,7 @@
         </div>
         <div class="row g-2 my-3">
           <div class="col-sm-4"><b>注文番号：</b></div>
-          <div class="col-sm-8">
+          <div class="col-sm-8 mt-4 mb-3 my-sm-2">
             <a
               href="#"
               @click.prevent="copyTxt"
