@@ -62,7 +62,14 @@ export default {
     return {
       tempProducts: {},
       modules: [FreeMode, Pagination, Navigation],
+      itemId: this.$route.params.id,
     };
+  },
+  watch: {
+    $route() {
+      this.itemId = this.$route.params.id;
+      this.getProducts();
+    },
   },
   components: {
     Swiper,
@@ -75,7 +82,12 @@ export default {
           `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/products/all`
         )
         .then((res) => {
-          this.tempProducts = res.data.products;
+          let toRemoveId = this.itemId;
+          // 移除相同產品
+          this.tempProducts = res.data.products.filter(function (item) {
+            return item.id !== toRemoveId;
+          });
+
           // 隨機亂數排列
           this.tempProducts.sort(() => {
             return 0.5 - Math.random();
