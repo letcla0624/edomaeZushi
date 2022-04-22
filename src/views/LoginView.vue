@@ -67,7 +67,7 @@
               >
             </div>
           </div>
-          <p class="fs-7 my-3 text-muted">
+          <p class="fs-8 my-3 text-muted">
             &copy; {{ year }} <strong>edomaezushi.</strong> All Rights Reserved.
             Designed by Will Wu.
           </p>
