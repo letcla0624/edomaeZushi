@@ -45,7 +45,7 @@
             type="email"
             class="form-control"
             :class="{ 'is-invalid': errors['電子メールアドレス'] }"
-            placeholder="service@adomesushi.co.jp"
+            placeholder="service@edomaezushi.co.jp"
             rules="required|email"
             v-model="form.user.email"
           ></VField>
