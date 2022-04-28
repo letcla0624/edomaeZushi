@@ -59,7 +59,7 @@
                   </span>
                 </div>
                 <button class="btn btn-dark w-100 mt-5" type="submit">
-                  登入<i class="bi bi-box-arrow-in-right ms-2"></i>
+                  ログインする<i class="bi bi-box-arrow-in-right ms-2"></i>
                 </button>
               </VForm>
               <RouterLink to="/" class="btn btn-link mt-3"
