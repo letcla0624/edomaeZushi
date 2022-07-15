@@ -125,6 +125,7 @@
           />
         </g>
       </svg>
+      江戸前寿司
     </h1>
   </RouterLink>
 </template>
