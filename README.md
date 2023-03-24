@@ -2,7 +2,7 @@
 
 ## Demo
 
-https://letcla0624.github.io/edomaeZushi/#/
+https://letcla0624.github.io/edomaeZushi
 
 ## Introduction
 
