@@ -1,24 +1,34 @@
 # edomaezushi
 
-## Project setup
-```
-npm install
-```
+## Demo
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+https://letcla0624.github.io/edomaezushi/
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## Introduction
 
-### Lints and fixes files
-```
-npm run lint
-```
+使用 Vue 3 Options API + Vue CLI + Bootstrap 5 實作 edomaezushi 壽司網站。
+本網站僅作為個人作品用，並無任何營利行為。
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Project Description
+
+- npm install
+- npm run serve
+
+## Use Technology & Library
+
+- Vue 3
+- Vue CLI
+- Vue Router
+- Mitt
+- ESLint
+- SCSS
+- Bootstrap 5
+- Bootstrap Icon
+- Vue Loading Overlay
+- AOS
+- Swiper
+- VeeValidate
+- Leaftlet
+- Animate
+- Axios
+- Restful API
