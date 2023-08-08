@@ -12,7 +12,7 @@
           >
             <div class="card-header py-5">
               <LogoComp />
-              <h2 class="card-title mb-0 mt-n3">スタッフログイン</h2>
+              <h2 class="card-title mb-0 mt-3">スタッフログイン</h2>
             </div>
             <div class="card-body">
               <VForm v-slot="{ errors }" ref="form" @submit="login">
