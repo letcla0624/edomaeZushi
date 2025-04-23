@@ -89,6 +89,9 @@ export default {
 
 <style lang="scss" scoped>
 .admin-nav {
+  .nav-link {
+    color: #fff;
+  }
   .nav-link.active {
     position: relative;
     height: 100%;
