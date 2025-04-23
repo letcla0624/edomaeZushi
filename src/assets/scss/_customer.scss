@@ -79,6 +79,9 @@ input[type="number"] {
     color: #fff !important;
   }
 }
+.btn:first-child:active {
+  border-color: transparent;
+}
 // btn dark hover
 @mixin hvr-before {
   position: absolute;

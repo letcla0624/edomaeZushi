@@ -1,7 +1,7 @@
 <template>
   <button
     type="button"
-    class="btn py-0 favorite-btn"
+    class="btn py-0 favorite-btn border-0"
     :ref="item.id"
     :title="
       favoriteProdId.includes(item.id)

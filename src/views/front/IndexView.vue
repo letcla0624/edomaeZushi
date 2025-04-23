@@ -13,8 +13,8 @@
       <img
         :src="
           detectWidth >= 992
-            ? 'https://storage.googleapis.com/vue-course-api.appspot.com/letcla/1649229907785.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=ELCp8vMIdmfZ%2BQe41jRlEdr%2Br09abtRf1Ba8zBLuXcRrVd5IiqLlku9g%2FbQcZNstfZkNupj3pwqLcx8TAAeFYgcU8%2BLpGYJ8PcmuDhLjXs2QPh%2BED4bvxAZJFgmLhMXVCB2VIjw2Ns%2F%2FL37aQQk2wkhFqGJyr5v4KyPaRITRbZPDXbAJIjM6Y2yi%2B9qGBej1YOxiSBDuakUlpyHWrBCCjkvRiOkCQGFlTf0KKgB0sN9k3w%2FImqtyK5PkFZvBcvcy6q6otQH08ZGkjD27hxvv8g4wYLFXUu2HUe2qMlSAXHzFycEluAdAK4OBGsNaGQNvXrsLLtB%2BSw8D%2Bcorz9Ebzw%3D%3D'
-            : 'https://storage.googleapis.com/vue-course-api.appspot.com/letcla/1649229601399.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=SF6%2B2zElrCr0y1Ir5XBc%2BZb%2FlX9Njym5jZPVwCx9W2voJRZQFX6T4EDXesHQIXrktf6FxnX%2B8J2OuzC%2Bj85WzlPjrrAa%2FkBj6F4DAP1UZnRbLUXdl1XmbGLDHSDsfp4DTm0Zhq%2BjipXignSqCYXqojnaOwXJzeV7KErMyHQPOhjJ3nhxuPbs3hNwSZ0PdVdyBbvBd9gFjfNUDmKAQxkPU5EPhAhWkx6LzY5l2wWjcXdtpwr%2F7xFK1XsRiSegkBUA%2BLkPiZt8Lt%2FccbT5UHOS6mxIvh4Cc72V3KntFh1jG6sqPwhcL2jMhl8q1aP1wFCoUvB9ijTCjRJ2WUWzHI7CYA%3D%3D'
+            ? 'https://storage.googleapis.com/vue-course-api.appspot.com/letcla/1649229907785.jpg'
+            : 'https://storage.googleapis.com/vue-course-api.appspot.com/letcla/1649229601399.jpg'
         "
         alt="江戸前寿司"
       />
@@ -49,8 +49,8 @@
       <img
         :src="
           detectWidth >= 992
-            ? 'https://storage.googleapis.com/vue-course-api.appspot.com/letcla/1649229907785.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=ELCp8vMIdmfZ%2BQe41jRlEdr%2Br09abtRf1Ba8zBLuXcRrVd5IiqLlku9g%2FbQcZNstfZkNupj3pwqLcx8TAAeFYgcU8%2BLpGYJ8PcmuDhLjXs2QPh%2BED4bvxAZJFgmLhMXVCB2VIjw2Ns%2F%2FL37aQQk2wkhFqGJyr5v4KyPaRITRbZPDXbAJIjM6Y2yi%2B9qGBej1YOxiSBDuakUlpyHWrBCCjkvRiOkCQGFlTf0KKgB0sN9k3w%2FImqtyK5PkFZvBcvcy6q6otQH08ZGkjD27hxvv8g4wYLFXUu2HUe2qMlSAXHzFycEluAdAK4OBGsNaGQNvXrsLLtB%2BSw8D%2Bcorz9Ebzw%3D%3D'
-            : 'https://storage.googleapis.com/vue-course-api.appspot.com/letcla/1649229601399.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=SF6%2B2zElrCr0y1Ir5XBc%2BZb%2FlX9Njym5jZPVwCx9W2voJRZQFX6T4EDXesHQIXrktf6FxnX%2B8J2OuzC%2Bj85WzlPjrrAa%2FkBj6F4DAP1UZnRbLUXdl1XmbGLDHSDsfp4DTm0Zhq%2BjipXignSqCYXqojnaOwXJzeV7KErMyHQPOhjJ3nhxuPbs3hNwSZ0PdVdyBbvBd9gFjfNUDmKAQxkPU5EPhAhWkx6LzY5l2wWjcXdtpwr%2F7xFK1XsRiSegkBUA%2BLkPiZt8Lt%2FccbT5UHOS6mxIvh4Cc72V3KntFh1jG6sqPwhcL2jMhl8q1aP1wFCoUvB9ijTCjRJ2WUWzHI7CYA%3D%3D'
+            ? 'https://storage.googleapis.com/vue-course-api.appspot.com/letcla/1649229907785.jpg'
+            : 'https://storage.googleapis.com/vue-course-api.appspot.com/letcla/1649229601399.jpg'
         "
         alt="江戸前寿司"
       />
@@ -105,7 +105,7 @@
         <div class="row g-3 pt-5">
           <div class="col-md-6">
             <img
-              src="https://storage.googleapis.com/vue-course-api.appspot.com/letcla/1649227120236.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=WYdk6JtWKLl3%2FO34ZkZAsL89TidVbfdX9DHcZlESBOS7uYqRpK7RVV%2BE%2Blwzy5hEPX9dcKKymPqARNvBWjfhoL8hVmZMvoMJ24%2FZp%2BSoYc8SuRk92XIm8G%2FPe%2BvsmYq8bGyZIS4e1cbrV78frrZFiYLMYQ3DrotcVeT8n5bgCqhs0aquYoQPhaUDb1YdGGWL9YfVVwweHU2Q9e3Pyq6%2BbOVh7Q7EYrOpYHCXJhf32BtbrIV31ALPeFONVIyBxhCi63GtLe%2BLwLr1b%2Bs5jw5LBGpF6joem1FO%2BumONaKdo8QpPEf5RFPYjbJGiJkmZwjuKir5DXaBKHup2MiiHZTYbQ%3D%3D"
+              src="https://storage.googleapis.com/vue-course-api.appspot.com/letcla/1649227120236.jpg"
               alt="江戸前寿司"
               class="w-100"
               data-aos="fade-down"
@@ -117,7 +117,7 @@
               <div class="col-12">
                 <div class="position-relative">
                   <img
-                    src="https://storage.googleapis.com/vue-course-api.appspot.com/letcla/1649689962907.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=RJaHps7Jg5nuSqt%2FszeNBVOIfCA%2BkoqNjHbDnssR2oToGDyHrgwQEMyEo6GLJTdZm%2BdLzliYlYI9kkiMNKeM68g8fce8Xim9%2FKmVDpQeOD6fyDq1wxrsfrw%2BjP2Qm1FcwM%2FISiKyTAgLfmwBumu3LuzBG7XUsJl3f1ZTOWcEnrENb8RJxrcyjv8TAYUBQNofJNckriREmLq%2BwfRVAZBI6zArhpW%2FI2oITmNo9KY6KFB3Lwcrh%2Bpk6TJ07%2FR%2BqrGb0DzYE89tZflpK1kishBENEtYrhitVokQ1xB1UoSCI%2Fs5K0bLdqzrRzAiUoY1Oh%2BPnfHnysdL0Z61WN%2BYMeZIag%3D%3D"
+                    src="https://storage.googleapis.com/vue-course-api.appspot.com/letcla/1649689962907.jpg"
                     alt="江戸前寿司"
                     class="w-100"
                     data-aos="fade-down"
@@ -153,7 +153,7 @@
           <div class="row align-items-center g-4 pb-5 mb-5">
             <div class="col-md-6 order-md-1">
               <img
-                src="https://storage.googleapis.com/vue-course-api.appspot.com/letcla/1649228209978.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=WVqeh2gfKgWOmuEjLEa6lfzXj9EAwkcW07Fum7uqytnGtr7F2vQh9syzNESjbVWI%2BYS2YuxcLXf8wVjAkzrBOF0xjrCQD8dfofM%2FiDYSxdy5vH09VGKnNgJ9J%2BTF6tkauF8muFqJHGVefVKNDUZ4sFfwGZ6OjW%2FEP3xlpWIHKQR46rkR7ST6j9SUnN5IS5NGEZZnG4DS65FHmT%2BO6RNVvaJKXSAAxDhVc%2Fayv3c3IPWfj0irOBABmM01uySdidMTRpgrAQ46xRkBZDZUumdu%2BgflVeHXjr2j2aVeWOGBo8mZQilrc2ncvCfgoxfXOv%2FKcce3ICDEKJf52fgeQwTviw%3D%3D"
+                src="https://storage.googleapis.com/vue-course-api.appspot.com/letcla/1649228209978.jpg"
                 alt="トリュフとフォアグラのビーフ握り寿司"
                 class="w-100"
                 style="max-height: 636px; object-fit: cover"
@@ -182,7 +182,7 @@
           <div class="row align-items-center g-4 pb-5 mb-5">
             <div class="col-md-6">
               <img
-                src="https://storage.googleapis.com/vue-course-api.appspot.com/letcla/1649228244331.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=ddXIvreM60Zfc%2FePPs3va%2F0zSlMO0uxY5PTQyCq9%2FqrHjwu04jXMiWDcauDVxxySfwCpynohrsuTTlkjztizyY4OlLWzAtMAoMrVhlzDBu2e6qQyWjbESouJA9CssYgH0ws4yT7SKQ1fto%2BaFoix3rl0%2FFzWagLd%2FJb5E7PtsCUK3PVwEXE0rhkPWnjgsjX9DOndj%2FsE0IOVNPt4rkCh7Er0MrkB35qXG8KbyZTmYe2NpdoTfQetn2R7A7Mlr3cYNaJKIiWUSODce5TB2iWXcDyaM3hL%2Ftm%2FYcuIALELdVGCyBp7wV%2Bqd7Jc8bofKp3l2NJ4D2M3YBKXhcIK6%2BliBQ%3D%3D"
+                src="https://storage.googleapis.com/vue-course-api.appspot.com/letcla/1649228244331.jpg"
                 alt="黒マグロ握り寿司"
                 class="w-100"
                 style="max-height: 636px; object-fit: cover"
@@ -289,12 +289,12 @@
 </template>
 
 <script>
-import FrontNavbarComp from "@/components/front/FrontNavbarComp.vue";
-import LogoWhiteCubeComp from "@/components/logo/LogoWhiteCubeComp.vue";
 import FooterComp from "@/components/front/FooterComp.vue";
+import FrontNavbarComp from "@/components/front/FrontNavbarComp.vue";
 import SwiperComp from "@/components/front/SwiperComp.vue";
-import emitter from "@/utility/emitter.js";
+import LogoWhiteCubeComp from "@/components/logo/LogoWhiteCubeComp.vue";
 import ToastComp from "@/components/ToastComp.vue";
+import emitter from "@/utility/emitter.js";
 
 export default {
   data() {
@@ -497,7 +497,7 @@ export default {
   height: 300px;
 }
 .chief {
-  background: url("https://storage.googleapis.com/vue-course-api.appspot.com/letcla/1649344065919.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=pxbRWKYByjOp8LgggbrlreBa8MJfobj8G%2BuyDkN3Gxu4NlgtWi6L5gdATLSVcECPOqTA4oqfaRldoFOUixUaG5TV83um51qjbqQqlIV%2FOf6fkK9he%2BZ5lAmQ9Rkm6Kwbhiti33r6gTOxYaPDDAla2nkuNjYDKJVVcdlKdn2r3seTFYr%2Bx7d4D%2BYIv%2B0MjSxDjMAINLYiuZtbepuO8zsCO4DCuz6x1Ke%2BVeIdjivgfF2SxKUt2ULEmim0RJpuuj8U6FkdHob7rR9TIS76Cc36oKlElSjobIhwDylXHCUJrZqkPrt%2B9c9SxYYkH%2B%2BavRug2nJRX%2F8l9EnWgUghwwELng%3D%3D")
+  background: url("https://storage.googleapis.com/vue-course-api.appspot.com/letcla/1649344065919.jpg")
     center center no-repeat;
   height: 440px;
 }

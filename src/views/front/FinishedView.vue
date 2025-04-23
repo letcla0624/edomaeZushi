@@ -151,7 +151,7 @@ export default {
 <style lang="scss">
 .finished-bg {
   background: var(--bs-dark)
-    url("https://storage.googleapis.com/vue-course-api.appspot.com/letcla/1649230939689.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=kxfKl0Z19FBLgCpCCKsg%2BpkbUcty%2FnVX7suwQTY6kiF1gG2sDjAmkgF60OmdgFBbZelQSIj6fCjUr8l565dBYPA%2FOeqcdpuqCAp8rc%2F5aX68d5zOKhxVcZvlf3HM2HUR1sSJXu%2BLLSaxZAQ78lD0XxxyxK4Mt4XybALm7ciW4KeUTcT%2Foic4fRcddk2AdEq58Pncl9Ho5aPnDOyOqb7O0jt5nlAuGbAbdtU5xY1L3wJ8vMyml02xssi6hPjBAflg%2BkhcyFIxzl03%2BNg%2B7Hu8JIYK2Kx6ZSAEXtxl3El3ZJk4%2BLwetO8%2BRhug5GmWXKsCL6b%2FNEzwtFa80NFSSzcFVQ%3D%3D")
+    url("https://storage.googleapis.com/vue-course-api.appspot.com/letcla/1649230939689.jpg")
     50% 50% no-repeat;
   background-size: cover;
 }
