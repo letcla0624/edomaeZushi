@@ -16,6 +16,9 @@ git init
 git add -A
 git commit -m 'deploy'
 
+# 強制將本地分支命名為 master (這樣下一句 push master 才會成功)
+git branch -M master
+
 # if you are deploying to https://<USERNAME>.github.io
 # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git main
 
