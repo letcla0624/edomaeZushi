@@ -8,12 +8,12 @@
       </li>
       <li class="fs-7 fw-bold d-inline">
         <span class="badge rounded-pill bg-dark me-2"> 2 </span>
-        注文を作成する
+        ご注文内容の確認
         <i class="bi bi-arrow-right ms-1 me-2 mx-md-3"></i>
       </li>
       <li class="fs-7 fw-bold d-inline">
         <span class="badge rounded-pill bg-dark me-2"> 3 </span>
-        支払い
+        お支払い
         <i class="bi bi-arrow-right ms-1 me-2 mx-md-3"></i>
       </li>
       <li
@@ -21,28 +21,28 @@
         :class="{ 'opacity-25': order.is_paid !== true }"
       >
         <span class="badge rounded-pill bg-dark me-2"> 4 </span>
-        終了した
+        ご注文完了
       </li>
     </ul>
   </div>
   <div class="row">
     <div class="col-lg-11 col-xl-10 col-xxl-8">
       <div class="mb-5">
-        <h2 class="h5 fw-bold">購入情報</h2>
+        <h2 class="h5 fw-bold">ご購入情報</h2>
         <ol class="ps-3">
           <li>
             <p class="fw-bold">
-              * [私の注文]
-              ページで検索または支払いを行うために、注文番号をコピーするか覚えておいてください。
+              *
+              注文番号を控えるか、コピーして保存してください。「注文履歴」ページでの照会やお支払いに必要となります。
             </p>
           </li>
           <li>
-            <p>未払いの注文は、後で [私の注文] で確認できます。</p>
+            <p>未払いのご注文は、後ほど「注文履歴」よりご確認いただけます。</p>
           </li>
 
           <li>
             <p>
-              現在の出来事による当社の運送業者からの制約により、出荷が遅れたり、在庫が制限されたりする場合があります。
+              物流の混雑や情勢の影響により、配送の遅延や在庫の制限が発生する場合がございます。あらかじめご了承ください。
             </p>
           </li>
         </ol>
@@ -54,9 +54,9 @@
               v-if="order.is_paid === true"
               class="text-light-green fw-bold fs-4 mb-0"
             >
-              既に支払いました
+              支払い済み
             </p>
-            <p v-else class="text-deep-red fw-bold fs-3 mb-0">注文は未払い</p>
+            <p v-else class="text-deep-red fw-bold fs-3 mb-0">支払い待ち</p>
           </div>
         </div>
         <div class="row g-2 my-3">
@@ -74,7 +74,7 @@
           </div>
         </div>
         <div class="row g-2 my-3">
-          <div class="col-sm-4"><b>注文時間：</b></div>
+          <div class="col-sm-4"><b>注文日時：</b></div>
           <div class="col-sm-8">
             {{ new Date(order.create_at * 1000).toLocaleString("ja-JP") }}
           </div>
@@ -84,19 +84,19 @@
           <div class="col-sm-8">{{ order.user.email }}</div>
         </div>
         <div class="row g-2 my-3">
-          <div class="col-sm-4"><b>荷受人の名前：</b></div>
+          <div class="col-sm-4"><b>受取人氏名：</b></div>
           <div class="col-sm-8">{{ order.user.name }}</div>
         </div>
         <div class="row g-2 my-3">
-          <div class="col-sm-4"><b>連絡先番号：</b></div>
+          <div class="col-sm-4"><b>電話番号：</b></div>
           <div class="col-sm-8">{{ order.user.tel }}</div>
         </div>
         <div class="row g-2 my-3">
-          <div class="col-sm-4"><b>お届け先の住所：</b></div>
+          <div class="col-sm-4"><b>お届け先住所：</b></div>
           <div class="col-sm-8">{{ order.user.address }}</div>
         </div>
         <div v-if="order.message" class="row g-2 my-3">
-          <div class="col-sm-4"><b>言いたいです：</b></div>
+          <div class="col-sm-4"><b>備考事項：</b></div>
           <div class="col-sm-8">{{ order.message }}</div>
         </div>
       </div>
@@ -111,14 +111,14 @@
               class="btn hvr-btn-dark w-100 mb-3 d-flex justify-content-center align-items-center order-1"
               @click="toPay"
             >
-              支払いを確認する
+              お支払いへ進む
             </RouterLink>
             <RouterLink
               to="/myOrders"
               class="btn btn-link ps-0 w-100 mb-3 d-flex justify-content-center justify-content-md-start align-items-center order-6"
             >
               <i class="bi bi-chevron-left me-1"></i>
-              支払うのを待つ
+              戻る
             </RouterLink>
           </div>
           <RouterLink
@@ -126,7 +126,7 @@
             to="/myOrders"
             class="btn hvr-btn-dark mb-3 w-100 d-flex justify-content-center align-items-center"
           >
-            注文に戻る
+            注文履歴に戻る
           </RouterLink>
         </div>
       </div>
@@ -141,9 +141,9 @@ export default {
   data() {
     return {
       order: {
-        user: {},
+        user: {}
       },
-      orderId: this.$route.params,
+      orderId: this.$route.params
     };
   },
   inject: ["emitter"],
@@ -185,12 +185,12 @@ export default {
       // 全域的 emitter
       this.emitter.emit("toast-message", {
         style: "success",
-        content: "コピーされた注文番号",
+        content: "コピーされた注文番号"
       });
-    },
+    }
   },
   mounted() {
     this.getOrder();
-  },
+  }
 };
 </script>

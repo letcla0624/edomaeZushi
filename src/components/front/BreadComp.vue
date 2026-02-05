@@ -21,14 +21,14 @@
 export default {
   data() {
     return {
-      breadcrumbList: [],
+      breadcrumbList: []
     };
   },
   props: ["prodTitle"],
   watch: {
     $route() {
       this.nowBreadcrumb();
-    },
+    }
   },
   methods: {
     nowBreadcrumb() {
@@ -38,11 +38,11 @@ export default {
       if (this.breadcrumbList[idx].link) {
         this.$router.push(this.breadcrumbList[idx].link);
       }
-    },
+    }
   },
   mounted() {
     this.nowBreadcrumb();
-  },
+  }
 };
 </script>
 

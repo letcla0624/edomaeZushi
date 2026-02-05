@@ -10,7 +10,7 @@
             @click="deleteFavorite"
             :disabled="favoriteProdId.length === 0"
           >
-            <i class="bi bi-trash3 me-1"></i>すべて削除する
+            <i class="bi bi-trash3 me-1"></i>お気に入りから削除
           </button>
         </div>
       </div>
@@ -23,10 +23,10 @@
         >
           <i class="bi bi-balloon-heart-fill text-danger fs-2"></i>
           <h3 class="h5 mb-5">
-            お気に入りとして追加すると、この画面に保存されます。
+            お気に入りに追加すると、この画面に保存されます。
           </h3>
           <RouterLink to="/products" class="btn hvr-btn-dark">
-            今人気のアイテムを見る
+            お寿司のメニューを見る
           </RouterLink>
         </div>
       </div>
@@ -48,7 +48,7 @@
                   class="badge rounded-pill bg-deep-red px-1 py-2 position-absolute vrl-text ls-xl"
                   style="height: auto; left: 1rem; top: 1rem"
                 >
-                  特別価格
+                  お得なセット
                 </span>
               </div>
               <div class="card-body">
@@ -86,8 +86,8 @@
                     :ref="item.id"
                     :title="
                       favoriteProdId.includes(item.id)
-                        ? '私のお気に入りの解除する'
-                        : '私のお気に入りに追加'
+                        ? 'お気に入りから削除'
+                        : 'お気に入りに追加'
                     "
                     @click="toggleFavorite(item.id)"
                   >
@@ -130,7 +130,7 @@ export default {
     return {
       products: [],
       isLoading: "",
-      favoriteProdId: JSON.parse(localStorage.getItem("itemId")) || [],
+      favoriteProdId: JSON.parse(localStorage.getItem("itemId")) || []
     };
   },
   inject: ["emitter"],
@@ -173,7 +173,7 @@ export default {
       this.isLoading = id;
       const data = {
         product_id: id,
-        qty,
+        qty
       };
       this.$http
         .post(
@@ -187,24 +187,24 @@ export default {
           // 全域的 emitter
           this.emitter.emit("toast-message", {
             style: "success",
-            content: res.data.message,
+            content: res.data.message
           });
         })
         .catch((err) => {
           this.isLoading = "";
           this.emitter.emit("toast-message", {
             style: "error",
-            content: err.response.data.message,
+            content: err.response.data.message
           });
         });
     },
     deleteFavorite() {
       this.favoriteProdId = localStorage.removeItem("itemId") || [];
       this.getProducts();
-    },
+    }
   },
   mounted() {
     this.getProducts();
-  },
+  }
 };
 </script>

@@ -62,7 +62,7 @@ export let delModal = null;
 export default {
   data() {
     return {
-      isLoading: "",
+      isLoading: ""
     };
   },
   props: ["delItem", "pageName"],
@@ -94,12 +94,12 @@ export default {
           delModal.hide();
           alert(err.response.data.message);
         });
-    },
+    }
   },
   mounted() {
     delModal = new bootstrap.Modal(this.$refs.delModal, {
-      keyboard: false,
+      keyboard: false
     });
-  },
+  }
 };
 </script>

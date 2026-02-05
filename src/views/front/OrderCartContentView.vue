@@ -36,7 +36,7 @@
             ref="collapseOne"
             :class="{
               collapse: detectWidth < 992,
-              show: detectWidth >= 992,
+              show: detectWidth >= 992
             }"
           >
             <div class="accordion-body pt-4">
@@ -110,15 +110,15 @@ export default {
   data() {
     return {
       order: {
-        user: {},
+        user: {}
       },
       collapseOpen: false,
-      orderId: this.$route.params,
+      orderId: this.$route.params
     };
   },
   props: ["detectWidth"],
   components: {
-    LogoComp,
+    LogoComp
   },
   methods: {
     getOrder() {
@@ -138,11 +138,11 @@ export default {
     },
     collapseHasOpen() {
       this.collapseOpen = this.$refs.collapseOne.classList.toggle("open");
-    },
+    }
   },
   mounted() {
     this.getOrder();
-  },
+  }
 };
 </script>
 

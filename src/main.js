@@ -3,10 +3,10 @@ import App from "./App.vue";
 import router from "./router";
 
 // 引入 Bootstrap 5
-import * as bootstrap from "bootstrap";
-window.bootstrap = bootstrap;
 import "@/assets/scss/all.scss";
+import * as bootstrap from "bootstrap";
 import "bootstrap-icons/font/bootstrap-icons.scss";
+window.bootstrap = bootstrap;
 
 // 引入 Axios
 import axios from "axios";
@@ -17,8 +17,8 @@ import VueLoading from "vue-loading-overlay";
 import "vue-loading-overlay/dist/vue-loading.css";
 
 // 引入 aos
-import "aos/dist/aos.css";
 import AOS from "aos";
+import "aos/dist/aos.css";
 AOS.init();
 
 // 引入 smoothscroll
@@ -26,10 +26,10 @@ import smoothscroll from "smoothscroll-polyfill";
 smoothscroll.polyfill();
 
 // 引入 Vee-Validate
-import { Form, Field, ErrorMessage, defineRule, configure } from "vee-validate";
-import AllRules from "@vee-validate/rules";
 import { localize, setLocale } from "@vee-validate/i18n";
 import ja from "@vee-validate/i18n/dist/locale/ja.json";
+import AllRules from "@vee-validate/rules";
+import { ErrorMessage, Field, Form, configure, defineRule } from "vee-validate";
 
 // 加入全部規則
 Object.keys(AllRules).forEach((rule) => {
@@ -39,7 +39,7 @@ Object.keys(AllRules).forEach((rule) => {
 // 設定 Vee-Validate
 configure({
   generateMessage: localize({ ja: ja }),
-  validateOnInput: true,
+  validateOnInput: true
 });
 
 // 設定預設日本語系
@@ -54,7 +54,7 @@ app.use(VueAxios, axios);
 // 使用 VueLoading plugin
 app.use(VueLoading, {
   color: "var(--bs-success)",
-  loader: "dots",
+  loader: "dots"
 });
 
 // 加入 Vee-Validate 元件
@@ -73,7 +73,7 @@ app.config.globalProperties.$filters = {
   thousandths(value) {
     let newVal = Number(parseFloat(value).toFixed(3)).toLocaleString("jp");
     return "" + newVal;
-  },
+  }
 };
 
 app.mount("#app");

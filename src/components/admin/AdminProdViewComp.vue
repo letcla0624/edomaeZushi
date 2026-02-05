@@ -33,7 +33,7 @@
                     :class="{
                       border: pics == showProd.imageUrl,
                       'border-danger': pics == showProd.imageUrl,
-                      'border-2': pics == showProd.imageUrl,
+                      'border-2': pics == showProd.imageUrl
                     }"
                   />
                 </template>
@@ -98,9 +98,9 @@ export default {
   props: ["showProd"],
   mounted() {
     showAdminProdModal = new bootstrap.Modal(this.$refs.showAdminProdModal, {
-      keyboard: false,
+      keyboard: false
     });
-  },
+  }
 };
 </script>
 

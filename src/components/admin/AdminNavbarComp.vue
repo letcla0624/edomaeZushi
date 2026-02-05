@@ -66,7 +66,7 @@ export default {
   props: ["detectWidth"],
   components: {
     LogoWhiteComp,
-    LogoWhiteCubeComp,
+    LogoWhiteCubeComp
   },
   methods: {
     logOut() {
@@ -82,8 +82,8 @@ export default {
           loader.hide();
           alert(err.response.message);
         });
-    },
-  },
+    }
+  }
 };
 </script>
 

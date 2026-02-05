@@ -42,7 +42,7 @@
               <div class="py-3">
                 <p>{{ prod.description }}</p>
                 <p class="fs-7 mt-3 mb-1">食材：{{ prod.ingredients }}</p>
-                <p class="fs-7">{{ prod.content }}／1 {{ prod.unit }}</p>
+                <p class="fs-7">{{ prod.content }}／一 {{ prod.unit }}</p>
                 <div
                   class="d-flex justify-content-between align-items-center mt-5"
                 >
@@ -89,11 +89,12 @@
                       <span class="visually-hidden">Loading...</span>
                     </div>
                     <i v-else class="bi bi-basket me-1"></i>
-                    カートに入れる
+                    カート
                   </button>
                 </div>
                 <p class="fs-8 text-secondary mt-2">
-                  * 写真はカルテからのもので、作品としてのみ使用されています
+                  *
+                  掲載されている写真はすべてインターネット上のものを使用しており、本作品の紹介目的のみに限定されています。
                 </p>
               </div>
             </div>
@@ -110,10 +111,10 @@
 </template>
 
 <script>
-import emitter from "@/utility/emitter.js";
 import BreadComp from "@/components/front/BreadComp";
-import SwiperComp from "@/components/front/SwiperComp";
 import FavoriteComp from "@/components/front/FavoriteComp";
+import SwiperComp from "@/components/front/SwiperComp";
+import emitter from "@/utility/emitter.js";
 
 export default {
   data() {
@@ -122,7 +123,7 @@ export default {
       qty: 1,
       isLoading: "",
       favoriteProdId: JSON.parse(localStorage.getItem("favoriteProdId")) || [],
-      pageId: this.$route.params.id,
+      pageId: this.$route.params.id
     };
   },
   inject: ["emitter"],
@@ -133,12 +134,12 @@ export default {
       if (this.pageId !== undefined) {
         this.getProd();
       }
-    },
+    }
   },
   components: {
     BreadComp,
     SwiperComp,
-    FavoriteComp,
+    FavoriteComp
   },
   methods: {
     getProd() {
@@ -186,7 +187,7 @@ export default {
       this.isLoading = id;
       const data = {
         product_id: id,
-        qty,
+        qty
       };
       this.$http
         .post(
@@ -200,20 +201,20 @@ export default {
           // 全域的 emitter
           this.emitter.emit("toast-message", {
             style: "success",
-            content: res.data.message,
+            content: res.data.message
           });
         })
         .catch((err) => {
           this.isLoading = "";
           this.emitter.emit("toast-message", {
             style: "error",
-            content: err.response.data.message,
+            content: err.response.data.message
           });
         });
-    },
+    }
   },
   mounted() {
     this.getProd();
-  },
+  }
 };
 </script>

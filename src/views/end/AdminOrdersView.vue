@@ -70,7 +70,7 @@
                 { 'text-danger': order.is_paid !== true },
                 { 'border-danger': order.is_paid !== true },
                 { 'text-light-green': order.is_paid === true },
-                { 'border-light-green': order.is_paid === true },
+                { 'border-light-green': order.is_paid === true }
               ]"
               style="word-break: break-all; width: fit-content"
             >
@@ -190,12 +190,12 @@
 </template>
 
 <script>
-import PageComp from "@/components/PageComp.vue";
-import EditOrderComp, {
-  orderModal,
-} from "@/components/admin/EditOrderComp.vue";
 import DelAdminComp, { delModal } from "@/components/admin/DelAdminComp.vue";
+import EditOrderComp, {
+  orderModal
+} from "@/components/admin/EditOrderComp.vue";
 import DelAllModalComp, { delAllModal } from "@/components/DelAllModalComp.vue";
+import PageComp from "@/components/PageComp.vue";
 
 export default {
   data() {
@@ -206,19 +206,19 @@ export default {
       tempOrder: {},
       pageName: "orders",
       searchItem: "",
-      page: "",
+      page: ""
     };
   },
   watch: {
     searchItem() {
       this.filterSearch();
-    },
+    }
   },
   components: {
     PageComp,
     EditOrderComp,
     DelAdminComp,
-    DelAllModalComp,
+    DelAllModalComp
   },
   methods: {
     getOrders(page = 1) {
@@ -288,10 +288,10 @@ export default {
         }
       });
       this.copyOrders = newArr;
-    },
+    }
   },
   mounted() {
     this.getOrders();
-  },
+  }
 };
 </script>

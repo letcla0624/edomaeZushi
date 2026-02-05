@@ -85,14 +85,14 @@ export default {
     return {
       user: {
         username: "",
-        password: "",
+        password: ""
       },
       year: null,
-      pwd: 1,
+      pwd: 1
     };
   },
   components: {
-    LogoComp,
+    LogoComp
   },
   methods: {
     login() {
@@ -118,11 +118,11 @@ export default {
     },
     showPwd() {
       this.pwd = !this.pwd;
-    },
+    }
   },
   mounted() {
     this.getDate();
-  },
+  }
 };
 </script>
 

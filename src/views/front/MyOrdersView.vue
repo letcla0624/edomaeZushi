@@ -6,8 +6,7 @@
           <div class="text-center py-5">
             <h2 class="display-6">私の注文</h2>
             <p class="text-secondary">
-              過去の取引からの注文がここに表示されます。3
-              時間以上チェックアウトしない場合、注文はキャンセルされます。
+              お客様の過去の取引履歴がこちらに表示されます。ご購入から3時間以内にお支払いが確認できない場合、ご注文は自動的にキャンセルとなりますのでご注意ください。
             </p>
           </div>
         </div>
@@ -65,24 +64,24 @@
                   <div v-if="item.is_paid">
                     <img
                       src="@/assets/images/pay.png"
-                      alt="既に支払いました"
+                      alt="支払い済み"
                       class="card-img-top object-fit-cover mb-2 w-25"
                     />
                     <h3
                       v-if="item.is_paid"
                       class="h5 fw-bold text-light-green text-truncate"
                     >
-                      既に支払いました
+                      支払い済み
                     </h3>
                   </div>
                   <div v-else>
                     <img
                       src="@/assets/images/unpay.png"
-                      alt="注文は未払い"
+                      alt="未支払い"
                       class="card-img-top object-fit-cover mb-2 w-25"
                     />
                     <h3 class="h5 fw-bold text-deep-red text-truncate">
-                      注文は未払い
+                      未支払い
                     </h3>
                   </div>
                 </div>
@@ -106,7 +105,7 @@
                       :to="`/checkout/pay/${item.id}`"
                       class="btn hvr-btn-outline-dark"
                     >
-                      詳しくはこちら
+                      詳しく見る
                     </RouterLink>
                   </div>
                 </div>
@@ -116,7 +115,9 @@
         </div>
         <div v-else>
           <div class="text-center mt-5">
-            <p>注文はありません。注文が正しいか確認してください。</p>
+            <p>
+              ご注文が見つかりませんでした。入力された注文番号が正しいかご確認ください。
+            </p>
           </div>
         </div>
       </div>
@@ -132,7 +133,7 @@ export default {
       copyOrders: {},
       pagination: {},
       searchItem: "",
-      isLoading: "",
+      isLoading: ""
     };
   },
   methods: {
@@ -175,11 +176,11 @@ export default {
     cleanText() {
       this.searchItem = "";
       this.isLoading = "";
-    },
+    }
   },
   mounted() {
     this.getOrders();
-  },
+  }
 };
 </script>
 

@@ -246,8 +246,8 @@ import BreadComp from "@/components/front/BreadComp";
 
 export default {
   components: {
-    BreadComp,
-  },
+    BreadComp
+  }
 };
 </script>
 

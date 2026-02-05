@@ -165,14 +165,14 @@ export default {
     return {
       tempOrder: {
         products: {},
-        user: {},
-      },
+        user: {}
+      }
     };
   },
   watch: {
     order() {
       this.tempOrder = this.order;
-    },
+    }
   },
   methods: {
     updateOrder(order) {
@@ -198,13 +198,13 @@ export default {
             alert(err.response.data.message);
           }, 1000);
         });
-    },
+    }
   },
   mounted() {
     orderModal = new bootstrap.Modal(this.$refs.orderModal, {
       backdrop: "static",
-      keyboard: false,
+      keyboard: false
     });
-  },
+  }
 };
 </script>

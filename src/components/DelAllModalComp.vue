@@ -24,7 +24,7 @@
           </div>
           <h5 class="modal-title text-center">
             <span class="text-danger fw-bold mx-1">
-              すべて削除してもよろしいですか？
+              カート内の商品をすべて削除しますか？
             </span>
           </h5>
         </div>
@@ -51,7 +51,7 @@
               <span class="visually-hidden">Loading...</span>
             </div>
             <i v-else class="bi bi-trash-fill me-1"></i>
-            削除を確認
+            削除する
           </button>
         </div>
       </div>
@@ -66,7 +66,7 @@ export let delAllModal = null;
 export default {
   data() {
     return {
-      isLoading: "",
+      isLoading: ""
     };
   },
   props: ["page"],
@@ -93,12 +93,12 @@ export default {
           delAllModal.hide();
           alert(err.response.data.message);
         });
-    },
+    }
   },
   mounted() {
     delAllModal = new bootstrap.Modal(this.$refs.delAllModal, {
-      keyboard: false,
+      keyboard: false
     });
-  },
+  }
 };
 </script>

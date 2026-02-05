@@ -22,7 +22,7 @@
 export default {
   data() {
     return {
-      favoriteProdId: JSON.parse(localStorage.getItem("itemId")) || [],
+      favoriteProdId: JSON.parse(localStorage.getItem("itemId")) || []
     };
   },
   props: ["item"],
@@ -44,7 +44,7 @@ export default {
       setTimeout(() => {
         this.$refs[`${id}`].classList.remove("active");
       }, 600);
-    },
-  },
+    }
+  }
 };
 </script>

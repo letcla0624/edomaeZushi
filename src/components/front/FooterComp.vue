@@ -28,13 +28,13 @@
               <li class="mb-3">
                 <div class="d-flex align-items-start">
                   <i class="bi bi-alarm me-2"></i>
-                  <span>月曜日～土曜日 15：00〜22：00、日曜日定休</span>
+                  <span>月〜土 15:00-22:00（日曜定休）</span>
                 </div>
               </li>
               <li class="mb-3">
                 <div class="d-flex align-items-start">
                   <i class="bi bi-percent me-2"></i>
-                  <span>今月の割引コード：</span>
+                  <span>今月のクーポンコード：</span>
                   <a
                     href="#"
                     @click.prevent="copyTxt"
@@ -49,7 +49,7 @@
           </div>
           <div class="col-lg-4">
             <div>
-              <h5 class="my-4">メンバーシップサービス</h5>
+              <h5 class="my-4">会員サービス</h5>
               <ul class="list-unstyled fs-7">
                 <li class="mb-3">
                   <RouterLink to="/privacy">
@@ -66,24 +66,24 @@
                 <li class="mb-3">
                   <RouterLink to="/questions">
                     <i class="bi bi-arrow-right-short me-2"></i>
-                    一般的な問題
+                    よくあるご質問
                   </RouterLink>
                 </li>
               </ul>
             </div>
             <div>
-              <h5 class="my-4">スタッフエリア</h5>
+              <h5 class="my-4">スタッフ専用</h5>
               <ul class="list-unstyled fs-7">
                 <li>
                   <RouterLink to="/admin" class="btn hvr-btn-outline-dark">
-                    バックグラウンドログイン
+                    管理者ログイン
                   </RouterLink>
                 </li>
               </ul>
             </div>
           </div>
           <div class="col-lg-4">
-            <h5 class="my-4">地図</h5>
+            <h5 class="my-4">アクセス</h5>
             <div id="map"></div>
           </div>
         </div>
@@ -110,9 +110,9 @@
           </div>
           <div class="col-lg-8 order-lg-6">
             <p class="mb-0 fs-8 text-lg-start">
-              &copy; {{ year }} <strong>edomaezushi.</strong> All Rights
+              Copyright &copy; {{ year }} <strong>江戸前寿司</strong> All Rights
               Reserved. Designed by Will Wu.
-              このウェブサイトは個人的な使用のみを目的としており、商用目的ではありません。
+              本サイトの内容は、個人利用および非営利目的に限定されています。
             </p>
           </div>
         </div>
@@ -122,10 +122,10 @@
 </template>
 
 <script>
-import copyText from "@/utility/copyText";
-import "leaflet/dist/leaflet.css";
-import L from "leaflet";
 import icon from "@/assets/images/sushi.png";
+import copyText from "@/utility/copyText";
+import L from "leaflet";
+import "leaflet/dist/leaflet.css";
 // 保留 leaflet 預設 icon 寫法
 // import icon from "leaflet/dist/images/marker-icon.png";
 // import iconShadow from "leaflet/dist/images/marker-shadow.png";
@@ -133,7 +133,7 @@ import icon from "@/assets/images/sushi.png";
 export default {
   data() {
     return {
-      year: null,
+      year: null
     };
   },
   inject: ["emitter"],
@@ -148,12 +148,12 @@ export default {
       // 全域的 emitter
       this.emitter.emit("toast-message", {
         style: "success",
-        content: "割引コードがコピーされました",
+        content: "クーポンコードをコピーしました"
       });
     },
     BackToTop() {
       window.scroll({ top: 0, left: 0, behavior: "smooth" });
-    },
+    }
   },
   mounted() {
     this.getDate();
@@ -168,7 +168,7 @@ export default {
         id: "mapbox/light-v10",
         tileSize: 512,
         zoomOffset: -1,
-        accessToken: `${process.env.VUE_APP_ACCESSTOKEN}`,
+        accessToken: `${process.env.VUE_APP_ACCESSTOKEN}`
       }
     ).addTo(map);
 
@@ -181,14 +181,14 @@ export default {
 
     const customerIcon = L.icon({
       iconUrl: icon,
-      iconSize: [36, 36],
+      iconSize: [36, 36]
     });
 
     L.marker([43.054456, 141.354884], { icon: customerIcon })
       .addTo(map)
       .bindPopup("<strong class='fs-7'>江戸前寿司</strong>")
       .openPopup();
-  },
+  }
 };
 </script>
 

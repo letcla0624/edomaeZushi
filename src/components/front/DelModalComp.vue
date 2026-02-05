@@ -23,10 +23,10 @@
             />
           </div>
           <h5 class="modal-title">
-            <span class="text-danger fw-bold mx-1">
-              {{ delItem.product.title }}
+            <span class="text-danger fw-bold">
+              「{{ delItem.product.title }}」
             </span>
-            を削除してもよろしいですか？食べない心はありますか？
+            を削除しますか？ この至福の味わいを諦めてもよろしいですか？
           </h5>
         </div>
         <div class="modal-footer border-top-0 justify-content-center mb-4">
@@ -52,7 +52,7 @@
               <span class="visually-hidden">Loading...</span>
             </div>
             <i v-else class="bi bi-trash-fill me-1"></i>
-            削除を確認
+            削除する
           </button>
         </div>
       </div>
@@ -68,7 +68,7 @@ export default {
   data() {
     return {
       isLoading: "",
-      message: "",
+      message: ""
     };
   },
   props: ["delItem"],
@@ -90,12 +90,12 @@ export default {
           delModal.hide();
           alert(err.response.data.message);
         });
-    },
+    }
   },
   mounted() {
     delModal = new bootstrap.Modal(this.$refs.delModal, {
-      keyboard: false,
+      keyboard: false
     });
-  },
+  }
 };
 </script>

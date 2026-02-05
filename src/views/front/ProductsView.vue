@@ -45,9 +45,9 @@
               />
             </svg>
           </div>
-          <h3 class="h2">寿司を浸すためのヒント</h3>
+          <h3 class="h2">醤油をつける際のマナー（小技）</h3>
           <p class="mb-0">
-            まず寿司を少し逆さまにしてから、具材の先を使って少量の醤油をつけます。
+            まず、お寿司を少し横に倒し、ネタの先端に少量の醤油をつけます。
           </p>
         </div>
       </div>
@@ -55,7 +55,7 @@
     <div
       :class="{
         container: detectWidth >= 992,
-        'container-fluid': detectWidth < 992,
+        'container-fluid': detectWidth < 992
       }"
     >
       <div class="row py-lg-5">
@@ -65,7 +65,7 @@
               class="nav nav-pills flex-nowrap bg-dark"
               :class="{
                 'flex-column': detectWidth >= 992,
-                'w-max-content': detectWidth < 992,
+                'w-max-content': detectWidth < 992
               }"
             >
               <button
@@ -74,7 +74,7 @@
                 data-bs-toggle="pill"
                 @click="getProducts('', 1)"
               >
-                ぜんぴん
+                すべて
               </button>
               <button
                 type="button"
@@ -92,11 +92,12 @@
                 data-bs-toggle="pill"
                 @click="getSpecialPrice"
               >
-                特別価格
+                お得なセット
               </button>
             </div>
             <p class="fs-8 text-secondary mt-2 d-none d-lg-block">
-              * 写真はカルテからのもので、作品としてのみ使用されています
+              *
+              掲載されている写真はすべてインターネット上のものを使用しており、本作品の紹介目的のみに限定されています。
             </p>
           </div>
         </div>
@@ -118,7 +119,7 @@
                       class="badge rounded-pill bg-deep-red px-1 py-2 position-absolute vrl-text ls-xl"
                       style="height: auto; left: 1rem; top: 1rem"
                     >
-                      特別価格
+                      お得なセット
                     </span>
                   </div>
                   <div class="card-body">
@@ -158,8 +159,8 @@
                         :ref="item.id"
                         :title="
                           favoriteProdId.includes(item.id)
-                            ? '私のお気に入りの解除する'
-                            : '私のお気に入りに追加'
+                            ? 'お気に入りから削除'
+                            : 'お気に入りに追加'
                         "
                         @click="toggleFavorite(item.id)"
                       >
@@ -192,7 +193,7 @@
             </div>
           </div>
           <PageComp
-            v-if="categoryName !== '特別価格'"
+            v-if="categoryName !== 'お得なセット'"
             :pages="pagination"
             @emit-page="getProducts(categoryName, $event), toTop(440)"
           />
@@ -211,17 +212,17 @@ export default {
     return {
       products: [],
       tempProducts: [],
-      categories: ["握り寿司", "海苔巻き", "裏巻き", "刺身"],
+      categories: ["握り寿司", "巻き寿司", "カリフォルニアロール", "お刺身"],
       categoryName: "",
       pagination: {},
       isLoading: "",
-      favoriteProdId: JSON.parse(localStorage.getItem("itemId")) || [],
+      favoriteProdId: JSON.parse(localStorage.getItem("itemId")) || []
     };
   },
   props: ["detectWidth"],
   inject: ["emitter"],
   components: {
-    PageComp,
+    PageComp
   },
   methods: {
     getProducts(category, page = 1) {
@@ -256,14 +257,14 @@ export default {
           this.products = this.tempProducts.filter(
             (item) => item.price !== item.origin_price
           );
-          this.categoryName = "特別価格";
+          this.categoryName = "お得なセット";
         });
     },
     addCart(id, qty = 1) {
       this.isLoading = id;
       const data = {
         product_id: id,
-        qty,
+        qty
       };
       this.$http
         .post(
@@ -278,14 +279,14 @@ export default {
           // 全域的 emitter
           this.emitter.emit("toast-message", {
             style: "success",
-            content: res.data.message,
+            content: res.data.message
           });
         })
         .catch((err) => {
           this.isLoading = "";
           this.emitter.emit("toast-message", {
             style: "error",
-            content: err.response.data.message,
+            content: err.response.data.message
           });
         });
     },
@@ -310,9 +311,9 @@ export default {
     toTop(val = 0) {
       window.scrollTo({
         top: val,
-        behavior: "smooth",
+        behavior: "smooth"
       });
-    },
+    }
   },
   mounted() {
     this.getProducts();
@@ -326,7 +327,7 @@ export default {
         }, 200);
       });
     });
-  },
+  }
 };
 </script>
 

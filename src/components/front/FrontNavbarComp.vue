@@ -60,7 +60,7 @@
                 class="nav-link px-3 py-4"
                 :class="{ 'text-white': detectWidth < 992 }"
               >
-                ホームページ
+                ホーム
               </RouterLink>
             </li>
             <li class="nav-item" data-bs-dismiss="offcanvas">
@@ -68,7 +68,7 @@
                 to="/products"
                 class="nav-link px-3 py-4"
                 :class="{ 'text-white': detectWidth < 992 }"
-                >寿司の種類
+                >お寿司のメニュー
               </RouterLink>
             </li>
             <li class="nav-item" data-bs-dismiss="offcanvas">
@@ -77,7 +77,7 @@
                 class="nav-link px-3 py-4"
                 :class="{ 'text-white': detectWidth < 992 }"
               >
-                私のお気に入り
+                お気に入り
               </RouterLink>
             </li>
             <li class="nav-item" data-bs-dismiss="offcanvas">
@@ -86,7 +86,7 @@
                 class="nav-link px-3 py-4"
                 :class="{ 'text-white': detectWidth < 992 }"
               >
-                私の注文
+                注文履歴
               </RouterLink>
             </li>
             <li
@@ -98,7 +98,7 @@
                 class="nav-link px-3 py-4"
                 :class="{ 'text-white': detectWidth < 992 }"
               >
-                ショッピングカート
+                カート
                 <i class="bi bi-basket position-relative">
                   <span
                     class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
@@ -115,9 +115,9 @@
 </template>
 
 <script>
-import emitter from "@/utility/emitter.js";
 import LogoComp from "@/components/logo/LogoComp";
 import LogoWhiteComp from "@/components/logo/LogoWhiteComp";
+import emitter from "@/utility/emitter.js";
 import { IonIcon } from "@ionic/vue";
 import { appsSharp } from "ionicons/icons";
 
@@ -126,16 +126,16 @@ export default {
   data() {
     return {
       cart: {
-        carts: [],
+        carts: []
       },
       cartsTotal: 0,
-      appsSharp,
+      appsSharp
     };
   },
   components: {
     LogoComp,
     LogoWhiteComp,
-    IonIcon,
+    IonIcon
   },
   methods: {
     getCart() {
@@ -155,7 +155,7 @@ export default {
         sum += item.qty;
       });
       return sum;
-    },
+    }
   },
   mounted() {
     this.getCart();
@@ -165,7 +165,7 @@ export default {
   },
   unmounted() {
     emitter.off("get-cart");
-  },
+  }
 };
 </script>
 

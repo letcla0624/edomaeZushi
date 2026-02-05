@@ -6,11 +6,11 @@
       '@0.25': { slidesPerView: 2, spaceBetween: 15, slidesPerGroup: 2 },
       '@0.50': { slidesPerView: 3, spaceBetween: 20, slidesPerGroup: 3 },
       '@0.75': { slidesPerView: 4, spaceBetween: 30, slidesPerGroup: 4 },
-      '@1.00': { slidesPerView: 5, spaceBetween: 30, slidesPerGroup: 5 },
+      '@1.00': { slidesPerView: 5, spaceBetween: 30, slidesPerGroup: 5 }
     }"
     :freeMode="false"
     :pagination="{
-      type: 'fraction',
+      type: 'fraction'
     }"
     :navigation="true"
     :modules="modules"
@@ -50,30 +50,30 @@
 </template>
 
 <script>
-import { Swiper, SwiperSlide } from "swiper/vue";
-import { FreeMode, Pagination, Navigation } from "swiper";
+import { FreeMode, Navigation, Pagination } from "swiper";
 import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
 import "swiper/css/free-mode";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Swiper, SwiperSlide } from "swiper/vue";
 
 export default {
   data() {
     return {
       tempProducts: {},
       modules: [FreeMode, Pagination, Navigation],
-      itemId: this.$route.params.id,
+      itemId: this.$route.params.id
     };
   },
   watch: {
     $route() {
       this.itemId = this.$route.params.id;
       this.getProducts();
-    },
+    }
   },
   components: {
     Swiper,
-    SwiperSlide,
+    SwiperSlide
   },
   methods: {
     getProducts() {
@@ -100,11 +100,11 @@ export default {
     },
     emitProdId(id) {
       this.$emit("emit-id", id);
-    },
+    }
   },
   mounted() {
     this.getProducts();
-  },
+  }
 };
 </script>
 

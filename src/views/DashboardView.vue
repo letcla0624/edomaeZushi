@@ -21,24 +21,24 @@
 
 <script>
 import AdminNavbarComp from "@/components/admin/AdminNavbarComp.vue";
-import emitter from "@/utility/emitter.js";
 import ToastComp from "@/components/ToastComp.vue";
+import emitter from "@/utility/emitter.js";
 
 export default {
   data() {
     return {
       checkSuccess: false,
-      detectWidth: null,
+      detectWidth: null
     };
   },
   provide() {
     return {
-      emitter,
+      emitter
     };
   },
   components: {
     AdminNavbarComp,
-    ToastComp,
+    ToastComp
   },
   methods: {
     checkAdmin() {
@@ -51,7 +51,7 @@ export default {
         this.$http.defaults.headers.common.Authorization = token;
         this.$http
           .post(`${process.env.VUE_APP_API}/api/user/check`, {
-            api_token: this.token,
+            api_token: this.token
           })
           .then(() => {
             this.checkSuccess = true;
@@ -63,7 +63,7 @@ export default {
       } else {
         this.$router.push("/login");
       }
-    },
+    }
   },
   mounted() {
     this.checkAdmin();
@@ -72,7 +72,7 @@ export default {
     window.addEventListener("resize", () => {
       this.detectWidth = window.innerWidth;
     });
-  },
+  }
 };
 </script>
 

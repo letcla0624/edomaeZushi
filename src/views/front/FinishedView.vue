@@ -20,25 +20,25 @@
                   <div class="sushi-man">
                     <img src="@/assets/images/sushi.png" alt="sushi man" />
                   </div>
-                  <h3>既に支払いました</h3>
+                  <h3>支払い済み</h3>
                 </div>
               </div>
               <div class="card-body my-5">
                 <article class="lh-lg">
                   <p>
-                    大切なお客様 <b>{{ order.user.name }}</b> こんにちは：
+                    大切なお客様 <b>{{ order.user.name }}</b> 様：
                   </p>
                   <p>
                     <b>{{
                       new Date(order.create_at * 1000).toLocaleString("ja-JP")
                     }}</b>
-                    にご注文を承りましたので、
-                    <b :title="order.user.tel"> 連絡先番号 </b>
-                    にご注意ください。
-                    <b :title="order.user.email">メールボックス</b
-                    >、冷蔵に新鮮な寿司をお届けします
-                    <b :title="order.user.address">自宅の住所</b
-                    >、私たちの製品を愛してくれてありがとう、私たちはより注意深くよりおいしい寿司を作りますので、お楽しみに。
+                    にご注文を承りました。商品の到着まで、ご
+                    <b :title="order.user.tel">登録の連絡 </b>
+                    先および
+                    <b :title="order.user.email">メール</b>
+                    の通知にご注意ください。
+                    鮮度を保った状態でお届けいたしますので、到着後は速やかに冷蔵保存をお願いいたします。
+                    この度は江戸前寿司をご利用いただき、誠にありがとうございます。これからも皆様に愛される、より一層美味しい寿司をお届けしてまいります。どうぞご期待ください。
                   </p>
                   <div class="text-end mt-5">
                     <p class="mb-0">江戸前寿司 － ウィル氏は</p>
@@ -98,7 +98,7 @@
               <div class="card-footer">
                 <div class="text-center">
                   <RouterLink to="/myOrders" class="btn btn-dark">
-                    確認後、注文に戻る
+                    確認して注文履歴に戻る
                   </RouterLink>
                 </div>
               </div>
@@ -117,13 +117,13 @@ export default {
   data() {
     return {
       order: {
-        user: {},
+        user: {}
       },
-      orderId: this.$route.params,
+      orderId: this.$route.params
     };
   },
   components: {
-    LogoComp,
+    LogoComp
   },
   methods: {
     getOrder() {
@@ -140,11 +140,11 @@ export default {
           loader.hide();
           alert(err.response.data.message);
         });
-    },
+    }
   },
   mounted() {
     this.getOrder();
-  },
+  }
 };
 </script>
 

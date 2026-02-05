@@ -110,7 +110,7 @@ export default {
   data() {
     return {
       tempCoupon: {},
-      due_date: "",
+      due_date: ""
     };
   },
   props: ["coupon", "isNew"],
@@ -124,7 +124,7 @@ export default {
     },
     due_date() {
       this.tempCoupon.due_date = Math.floor(new Date(this.due_date) / 1000);
-    },
+    }
   },
   methods: {
     updateCouponBtn() {
@@ -151,12 +151,12 @@ export default {
           console.dir(err.response);
           alert(err.response.data.message);
         });
-    },
+    }
   },
   mounted() {
     couponModal = new bootstrap.Modal(this.$refs.couponModal, {
-      keyboard: false,
+      keyboard: false
     });
-  },
+  }
 };
 </script>

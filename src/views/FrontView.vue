@@ -6,34 +6,34 @@
 </template>
 
 <script>
-import FrontNavbarComp from "@/components/front/FrontNavbarComp.vue";
 import FooterComp from "@/components/front/FooterComp.vue";
-import emitter from "@/utility/emitter.js";
+import FrontNavbarComp from "@/components/front/FrontNavbarComp.vue";
 import ToastComp from "@/components/ToastComp.vue";
+import emitter from "@/utility/emitter.js";
 
 export default {
   data() {
     return {
       fixed: true,
-      detectWidth: null,
+      detectWidth: null
     };
   },
   provide() {
     return {
-      emitter,
+      emitter
     };
   },
   components: {
     FrontNavbarComp,
     FooterComp,
-    ToastComp,
+    ToastComp
   },
   mounted() {
     this.detectWidth = window.innerWidth;
     window.addEventListener("resize", () => {
       this.detectWidth = window.innerWidth;
     });
-  },
+  }
 };
 </script>
 

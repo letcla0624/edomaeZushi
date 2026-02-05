@@ -17,29 +17,29 @@
 </template>
 
 <script>
-import emitter from "@/utility/emitter.js";
 import ToastComp from "@/components/ToastComp.vue";
+import emitter from "@/utility/emitter.js";
 
 export default {
   data() {
     return {
-      detectWidth: null,
+      detectWidth: null
     };
   },
   provide() {
     return {
-      emitter,
+      emitter
     };
   },
   components: {
-    ToastComp,
+    ToastComp
   },
   mounted() {
     this.detectWidth = window.innerWidth;
     window.addEventListener("resize", () => {
       this.detectWidth = window.innerWidth;
     });
-  },
+  }
 };
 </script>
 

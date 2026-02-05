@@ -48,7 +48,7 @@ export default {
   methods: {
     emitPage(page) {
       this.$emit("emit-page", page);
-    },
-  },
+    }
+  }
 };
 </script>

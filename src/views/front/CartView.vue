@@ -10,7 +10,7 @@
           @click="openDelAllModal('cart')"
           :disabled="cart.carts.length === 0"
         >
-          <i class="bi bi-trash3 me-1"></i>カートを削除する
+          <i class="bi bi-trash3 me-1"></i>カートを空にする
         </button>
       </div>
       <div v-if="cart.carts.length === 0" class="row">
@@ -21,9 +21,9 @@
           data-aos-duration="1000"
         >
           <i class="bi bi-basket-fill text-light-green fs-2"></i>
-          <h3 class="h5 mt-2 mb-5">カートに商品は入っていません。</h3>
+          <h3 class="h5 mt-2 mb-5">カートに商品が入っていません。</h3>
           <RouterLink to="/products" class="btn hvr-btn-dark">
-            ショッピングを続ける
+            買い物を続ける
           </RouterLink>
         </div>
       </div>
@@ -197,10 +197,10 @@
           <div class="row border-top border-dark py-3">
             <div class="text-end">
               <h5 class="fs-5d5 fw-bold">
-                総費用：<strong>{{ $filters.currencyJPY(cart.total) }}</strong>
+                合計：<strong>{{ $filters.currencyJPY(cart.total) }}</strong>
               </h5>
               <p class="fs-8 text-secondary">
-                チェックアウト時に計算された送料と税金
+                送料および手数料は決済時に計算されます。
               </p>
             </div>
           </div>
@@ -213,14 +213,14 @@
                 class="btn hvr-btn-dark w-100 d-flex justify-content-center align-items-center my-1 order-md-1"
                 :class="{ disabled: cart.carts.length === 0 }"
               >
-                チェックアウト
+                次へ
               </RouterLink>
               <RouterLink
                 to="/products"
                 class="btn btn-link ps-0 w-100 d-flex justify-content-center justify-content-md-start align-items-center my-1 order-md-6"
               >
                 <i class="bi bi-chevron-left me-1"></i>
-                ショッピングを続ける
+                買い物を続ける
               </RouterLink>
             </div>
           </div>
@@ -233,28 +233,28 @@
 </template>
 
 <script>
-import emitter from "@/utility/emitter";
-import DelModalComp, { delModal } from "@/components/front/DelModalComp.vue";
 import DelAllModalComp, { delAllModal } from "@/components/DelAllModalComp.vue";
+import DelModalComp, { delModal } from "@/components/front/DelModalComp.vue";
+import emitter from "@/utility/emitter";
 
 export default {
   data() {
     return {
       cart: {
-        carts: [],
+        carts: []
       },
       isLoading: "",
       cartData: {},
       tempCart: {
-        product: {},
+        product: {}
       },
       length: 0,
-      page: "",
+      page: ""
     };
   },
   components: {
     DelModalComp,
-    DelAllModalComp,
+    DelAllModalComp
   },
   methods: {
     getCart() {
@@ -281,7 +281,7 @@ export default {
       item.qty++;
       this.cartData = {
         product_id: item.product_id,
-        qty: item.qty,
+        qty: item.qty
       };
       this.updateCart(item);
     },
@@ -293,7 +293,7 @@ export default {
       }
       this.cartData = {
         product_id: item.product_id,
-        qty: item.qty,
+        qty: item.qty
       };
       this.updateCart(item);
     },
@@ -325,13 +325,13 @@ export default {
     toTop() {
       window.scrollTo({
         top: 0,
-        behavior: "smooth",
+        behavior: "smooth"
       });
-    },
+    }
   },
   mounted() {
     this.getCart();
     this.toTop();
-  },
+  }
 };
 </script>

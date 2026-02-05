@@ -81,11 +81,11 @@
               {
                 'text-danger':
                   adminProd.origin_price !== adminProd.price &&
-                  adminProd.is_enabled === 1,
+                  adminProd.is_enabled === 1
               },
               {
-                'text-gray-500': adminProd.is_enabled !== 1,
-              },
+                'text-gray-500': adminProd.is_enabled !== 1
+              }
             ]"
             @click="openModal('detail', adminProd)"
           >
@@ -102,11 +102,11 @@
               class="fw-bold mb-3"
               :class="[
                 {
-                  'text-danger': adminProd.is_enabled === 1,
+                  'text-danger': adminProd.is_enabled === 1
                 },
                 {
-                  'text-gray-500': adminProd.is_enabled !== 1,
-                },
+                  'text-gray-500': adminProd.is_enabled !== 1
+                }
               ]"
             >
               售價：{{ $filters.currencyJPY(adminProd.price) }}
@@ -117,11 +117,11 @@
               class="fw-bold mb-3"
               :class="[
                 {
-                  'text-light-green': adminProd.is_enabled === 1,
+                  'text-light-green': adminProd.is_enabled === 1
                 },
                 {
-                  'text-gray-500': adminProd.is_enabled !== 1,
-                },
+                  'text-gray-500': adminProd.is_enabled !== 1
+                }
               ]"
             >
               售價：{{ $filters.currencyJPY(adminProd.price) }}
@@ -188,13 +188,13 @@
 </template>
 
 <script>
+import AdminProdViewComp, {
+  showAdminProdModal
+} from "@/components/admin/AdminProdViewComp.vue";
 import CreateProdComp, {
-  prodModal,
+  prodModal
 } from "@/components/admin/CreateProdComp.vue";
 import DelAdminComp, { delModal } from "@/components/admin/DelAdminComp.vue";
-import AdminProdViewComp, {
-  showAdminProdModal,
-} from "@/components/admin/AdminProdViewComp.vue";
 
 export default {
   data() {
@@ -206,21 +206,21 @@ export default {
       isNew: true,
       pageName: "prodsList",
       createProdTemp: {
-        imagesUrl: [],
+        imagesUrl: []
       },
-      searchItem: "",
+      searchItem: ""
     };
   },
   props: ["detectWidth"],
   watch: {
     searchItem() {
       this.filterSearch();
-    },
+    }
   },
   components: {
     CreateProdComp,
     DelAdminComp,
-    AdminProdViewComp,
+    AdminProdViewComp
   },
   methods: {
     getAdminProds() {
@@ -267,7 +267,7 @@ export default {
       if (txt === "new") {
         this.isNew = true;
         this.createProdTemp = {
-          imagesUrl: [],
+          imagesUrl: []
         };
         prodModal.show();
       } else if (txt === "edit") {
@@ -296,10 +296,10 @@ export default {
         }
       });
       this.copyProds = newArr;
-    },
+    }
   },
   mounted() {
     this.getAdminProds();
-  },
+  }
 };
 </script>

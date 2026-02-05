@@ -36,7 +36,7 @@
             ref="collapseOne"
             :class="{
               collapse: detectWidth < 992,
-              show: detectWidth >= 992,
+              show: detectWidth >= 992
             }"
           >
             <div class="accordion-body pt-4">
@@ -154,20 +154,20 @@ export default {
   data() {
     return {
       cart: {
-        carts: [],
+        carts: []
       },
       code: "",
       copyCode: {
-        code: localStorage.getItem("code"),
+        code: localStorage.getItem("code")
       },
       isLoading: "",
       discount: 0,
-      collapseOpen: false,
+      collapseOpen: false
     };
   },
   props: ["detectWidth"],
   components: {
-    LogoComp,
+    LogoComp
   },
   watch: {
     // 監聽折扣碼改變就寫入 localStorage
@@ -175,8 +175,8 @@ export default {
       handler() {
         localStorage.setItem("code", this.copyCode.code);
       },
-      deep: false,
-    },
+      deep: false
+    }
   },
   methods: {
     getCart() {
@@ -196,7 +196,7 @@ export default {
     useCoupon() {
       this.isLoading = "0";
       const data = {
-        code: this.code,
+        code: this.code
       };
       this.$http
         .post(
@@ -218,11 +218,11 @@ export default {
     // 展開變更文字
     collapseHasOpen() {
       this.collapseOpen = this.$refs.collapseOne.classList.toggle("open");
-    },
+    }
   },
   mounted() {
     this.getCart();
-  },
+  }
 };
 </script>
 

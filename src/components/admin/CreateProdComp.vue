@@ -284,14 +284,14 @@ export default {
   data() {
     return {
       tempProd: {},
-      categories: ["握り寿司", "裏巻き", "海苔巻き", "刺身"],
+      categories: ["握り寿司", "巻き寿司", "カリフォルニアロール", "お刺身"]
     };
   },
   props: ["adminProd", "isNew"],
   watch: {
     adminProd() {
       this.tempProd = this.adminProd;
-    },
+    }
   },
   methods: {
     upProdBtn() {
@@ -326,13 +326,13 @@ export default {
     },
     clear() {
       this.tempProd.imageUrl = "";
-    },
+    }
   },
   mounted() {
     prodModal = new bootstrap.Modal(this.$refs.prodModal, {
       backdrop: "static",
-      keyboard: false,
+      keyboard: false
     });
-  },
+  }
 };
 </script>

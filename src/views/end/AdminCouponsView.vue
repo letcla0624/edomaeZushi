@@ -79,8 +79,8 @@
                     new Date(coupon.due_date * 1000).getTime(),
                   'text-danger':
                     new Date().getTime() >
-                    new Date(coupon.due_date * 1000).getTime(),
-                },
+                    new Date(coupon.due_date * 1000).getTime()
+                }
               ]"
             >
               {{ coupon.code }}
@@ -166,7 +166,7 @@
 <script>
 import PageComp from "@/components/PageComp.vue";
 import CreateCouponComp, {
-  couponModal,
+  couponModal
 } from "@/components/admin/CreateCouponComp.vue";
 import DelAdminComp, { delModal } from "@/components/admin/DelAdminComp.vue";
 export default {
@@ -175,23 +175,23 @@ export default {
       coupons: {},
       copyCoupons: {},
       tempCoupon: {
-        is_enabled: 0,
+        is_enabled: 0
       },
       pageName: "coupons",
       pagination: {},
       isNew: true,
-      searchItem: "",
+      searchItem: ""
     };
   },
   watch: {
     searchItem() {
       this.filterSearch();
-    },
+    }
   },
   components: {
     PageComp,
     CreateCouponComp,
-    DelAdminComp,
+    DelAdminComp
   },
   methods: {
     getCoupons(page = 1) {
@@ -232,7 +232,7 @@ export default {
     openModal(txt, coupon) {
       if (txt === "new") {
         this.tempCoupon = {
-          due_date: new Date().getTime() / 1000,
+          due_date: new Date().getTime() / 1000
         };
         this.isNew = true;
         couponModal.show();
@@ -258,10 +258,10 @@ export default {
         }
       });
       this.copyCoupons = newArr;
-    },
+    }
   },
   mounted() {
     this.getCoupons();
-  },
+  }
 };
 </script>

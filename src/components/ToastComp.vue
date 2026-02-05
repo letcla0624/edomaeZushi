@@ -12,7 +12,7 @@
         class="toast-header bg-transparent"
         :class="{
           'text-dark': msg.style === 'success',
-          'text-danger': msg.style === 'error',
+          'text-danger': msg.style === 'error'
         }"
       >
         <img
@@ -30,17 +30,18 @@
           style="width: 32px"
         />
         <strong class="me-auto">
-          <span v-if="msg.content === '已加入購物車'"
-            >ショッピングカートに追加</span
-          >
-          <span>{{ msg.content }}</span>
+          <!-- 從 API 返回的訊息 -->
+          <span v-if="msg.content === '已加入購物車'">
+            カートに追加しました
+          </span>
+          <span v-else>{{ msg.content }}</span>
         </strong>
         <button
           type="button"
           class="btn-close me-2 m-auto"
           data-bs-dismiss="toast"
           aria-label="Close"
-        ></button>
+        />
       </div>
     </div>
   </div>
@@ -50,7 +51,7 @@
 export default {
   data() {
     return {
-      messages: [],
+      messages: []
     };
   },
   inject: ["emitter"],
@@ -59,7 +60,7 @@ export default {
       setTimeout(() => {
         this.messages.shift();
       }, 3000);
-    },
+    }
   },
   mounted() {
     this.emitter.on("toast-message", (msg) => {
@@ -67,7 +68,7 @@ export default {
       this.messages.push({ style, title, content });
       this.toastShow();
     });
-  },
+  }
 };
 </script>
 

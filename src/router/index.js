@@ -7,10 +7,10 @@ const routes = [
     meta: {
       breadcrumb: [
         {
-          name: "ホームページ",
-        },
-      ],
-    },
+          name: "ホーム"
+        }
+      ]
+    }
   },
   {
     path: "/",
@@ -22,14 +22,14 @@ const routes = [
         meta: {
           breadcrumb: [
             {
-              name: "ホームページ",
-              link: "/",
+              name: "ホーム",
+              link: "/"
             },
             {
-              name: "お寿司",
-            },
-          ],
-        },
+              name: "お寿司のメニュー"
+            }
+          ]
+        }
       },
       {
         path: "prod/:id",
@@ -37,15 +37,15 @@ const routes = [
         meta: {
           breadcrumb: [
             {
-              name: "ホームページ",
-              link: "/",
+              name: "ホーム",
+              link: "/"
             },
             {
-              name: "お寿司",
-              link: "/products",
-            },
-          ],
-        },
+              name: "お寿司のメニュー",
+              link: "/products"
+            }
+          ]
+        }
       },
       {
         path: "myOrders",
@@ -53,18 +53,18 @@ const routes = [
         meta: {
           breadcrumb: [
             {
-              name: "ホームページ",
-              link: "/",
+              name: "ホーム",
+              link: "/"
             },
             {
-              name: "私の注文",
-            },
-          ],
-        },
+              name: "注文履歴"
+            }
+          ]
+        }
       },
       {
         path: "favorite",
-        component: () => import("@/views/front/FavoriteView.vue"),
+        component: () => import("@/views/front/FavoriteView.vue")
       },
       {
         path: "cart",
@@ -72,14 +72,14 @@ const routes = [
         meta: {
           breadcrumb: [
             {
-              name: "ホームページ",
-              link: "/",
+              name: "ホーム",
+              link: "/"
             },
             {
-              name: "ショッピングカート",
-            },
-          ],
-        },
+              name: "カート"
+            }
+          ]
+        }
       },
       {
         path: "privacy",
@@ -87,14 +87,14 @@ const routes = [
         meta: {
           breadcrumb: [
             {
-              name: "ホームページ",
-              link: "/",
+              name: "ホーム",
+              link: "/"
             },
             {
-              name: "プライバシーポリシー",
-            },
-          ],
-        },
+              name: "プライバシーポリシー"
+            }
+          ]
+        }
       },
       {
         path: "service",
@@ -102,14 +102,14 @@ const routes = [
         meta: {
           breadcrumb: [
             {
-              name: "ホームページ",
-              link: "/",
+              name: "ホーム",
+              link: "/"
             },
             {
-              name: "利用規約",
-            },
-          ],
-        },
+              name: "利用規約"
+            }
+          ]
+        }
       },
       {
         path: "questions",
@@ -117,16 +117,16 @@ const routes = [
         meta: {
           breadcrumb: [
             {
-              name: "ホームページ",
-              link: "/",
+              name: "ホーム",
+              link: "/"
             },
             {
-              name: "一般的な問題",
-            },
-          ],
-        },
-      },
-    ],
+              name: "よくあるご質問"
+            }
+          ]
+        }
+      }
+    ]
   },
   {
     path: "/checkout",
@@ -136,29 +136,29 @@ const routes = [
         path: "",
         components: {
           left: () => import("@/views/front/CartContentView.vue"),
-          right: () => import("@/views/front/FormView.vue"),
-        },
+          right: () => import("@/views/front/FormView.vue")
+        }
       },
       {
         path: "pay/:id",
         components: {
           left: () => import("@/views/front/OrderCartContentView.vue"),
-          right: () => import("@/views/front/ConfirmFormView.vue"),
-        },
-      },
-    ],
+          right: () => import("@/views/front/ConfirmFormView.vue")
+        }
+      }
+    ]
   },
   {
     path: "/finished/:id",
-    component: () => import("@/views/front/FinishedView.vue"),
+    component: () => import("@/views/front/FinishedView.vue")
   },
   {
     path: "/:pathMatch(.*)*",
-    component: () => import("@/views/NotFound.vue"),
+    component: () => import("@/views/NotFound.vue")
   },
   {
     path: "/login",
-    component: () => import("@/views/LoginView.vue"),
+    component: () => import("@/views/LoginView.vue")
   },
   {
     path: "/admin",
@@ -166,18 +166,18 @@ const routes = [
     children: [
       {
         path: "",
-        component: () => import("@/views/end/AdminProdsView.vue"),
+        component: () => import("@/views/end/AdminProdsView.vue")
       },
       {
         path: "/admin-orders",
-        component: () => import("@/views/end/AdminOrdersView.vue"),
+        component: () => import("@/views/end/AdminOrdersView.vue")
       },
       {
         path: "/admin-coupons",
-        component: () => import("@/views/end/AdminCouponsView.vue"),
-      },
-    ],
-  },
+        component: () => import("@/views/end/AdminCouponsView.vue")
+      }
+    ]
+  }
 ];
 
 const router = createRouter({
@@ -191,7 +191,7 @@ const router = createRouter({
     } else {
       return { left: 0, top: to.meta.savedPosition || 0 };
     }
-  },
+  }
 });
 
 export default router;

@@ -28,7 +28,7 @@
         <div class="mt-3 mb-5">
           <h2>没入型の寿司</h2>
           <p class="lh-base py-3">
-            日本の大正時代には、美学、色彩芸術、そしてシェフの精神が守られていました。伝統的な日本料理を食べても、スタイリッシュに食べる必要があります。
+            美意識と色彩の妙、そして職人の矜持が尊ばれた大正の世。伝統の膳を囲む際も、その所作には厳格さが求められたのです。
           </p>
         </div>
         <div class="scrolling text-center">
@@ -77,27 +77,20 @@
               :class="[
                 { 'vrl-text': detectWidth >= 992 },
                 { 'lh-xl': detectWidth >= 992 },
-                { 'lh-lg': detectWidth < 992 },
+                { 'lh-lg': detectWidth < 992 }
               ]"
               data-aos="fade-down"
               data-aos-duration="1000"
             >
-              <h3 class="h2 text-center mb-3">江戸前寿司について</h3>
+              <h3 class="h2 text-center mb-3">「江戸前寿司」について</h3>
               <p>
-                2021 年、28
-                歳のウィル氏は、伝統的な握りスタイルで新鮮な寿司を提供する寿司レストランを開くことを夢見ていました。
-                同年 12
-                月、江戸前寿司の設立に成功し、夢を実現し、日本の伝統文化を新しい時代へと導きました。
+                2021年、当時28歳のウィルは、新鮮で伝統的な握り寿司を提供する店を開くという夢を抱いていました。同年12月、彼はその夢を具現化した「江戸前寿司」を創業。日本の伝統文化を新しい時代へと繋ぐ一歩を踏み出したのです。
               </p>
               <p>
-                ウィル氏のリーダーシップのもと、2022
-                年に江戸前寿司が正式に設立され、一瞬にして高品質な寿司のシンボルとなった新鮮な寿司のブランド名が付けられました。
-                3
-                年後、台湾、日本、香港、中国、オーストラリアなどの海外に事業を拡大しました。
+                ウィルのリーダーシップのもと、2022年に法人として正式に設立された「江戸前寿司」は、その鮮度の高い品質から、瞬く間に「ハイクオリティな寿司」の象徴となりました。創業からわずか3年で、その事業は台湾、日本、香港、中国大陸、そしてオーストラリアへと拡大し、世界進出を果たしました。
               </p>
               <p>
-                江戸前寿司は、日本の伝統的な寿司文化を継承し、国境を越え、世界に日本の伝統的な握り寿司を食べさせてきました。
-                江戸前寿司は常に革新を続けており、伝統的な味わいの下で世界中のお客様の絶え間なく変化する味に応えています。
+                「江戸前寿司」は、日本の伝統的な寿司文化を継承しながら、世界各地へとその魅力を発信し続けています。伝統的な握り寿司の技法を守りつつも、絶えず革新を追求し、世界中のお客様の多様なニーズに応えることで、伝統の味を次世代、そして世界へと繋いでいます。
               </p>
             </article>
           </div>
@@ -142,9 +135,9 @@
     <div class="container pb-5 pt-lg-5">
       <div class="row pb-5 pt-lg-5">
         <div class="col-lg-6 offset-lg-3">
-          <h3 class="h2 text-center">人気が高い</h3>
+          <h3 class="h2 text-center">圧倒的な人気の理由</h3>
           <p class="lh-lg mb-5">
-            「江戸前寿司」で変わっていないのは、酢漬け、蒸し、茹で、広げなどの塩漬けや酢など、酢飯にかけられた具材が今でも手間がかかることです。これが最大の違いです今日の握り寿司と江戸前寿司の間。
+            「江戸前寿司」の不変のこだわりは、シャリに乗せるネタに施される繊細な仕込みにあります。漬ける、蒸す、煮る、あるいはタレを塗る、塩や酢で締める。こうした一手間かける丁寧な仕事こそが、現代の一般的な握り寿司と「江戸前寿司」を分かつ最大の懸隔なのです。
           </p>
         </div>
       </div>
@@ -154,7 +147,7 @@
             <div class="col-md-6 order-md-1">
               <img
                 src="https://storage.googleapis.com/vue-course-api.appspot.com/letcla/1649228209978.jpg"
-                alt="トリュフとフォアグラのビーフ握り寿司"
+                alt="トリュフとフォアグラの牛握り"
                 class="w-100"
                 style="max-height: 636px; object-fit: cover"
                 data-aos="fade-down"
@@ -166,16 +159,16 @@
                 class="hot-text mx-auto"
                 :class="{ 'vrl-text': detectWidth >= 992 }"
               >
-                <h4>トリュフとフォアグラのビーフ握り寿司</h4>
+                <h4>トリュフとフォアグラの牛握り</h4>
                 <p class="lh-lg mb-4">
-                  灼熱のフォアグラの香り、アンガスビーフの美味しさ、トリュフの装飾の3つの贅沢な食材を組み合わせた繊細なフォアグラは、一口でとても柔らかく滑らかな厚みのある滑らかな食感に変わります。
+                  三つの贅沢な食材—フォアグラの芳醇な薫り、アンガス牛の濃厚な旨味、そしてトリュフのアクセントが完璧に融合。口にした瞬間、驚くほど滑らかに溶け出し、ひと口でそのシルクのような柔らかな口当たりに魅了されます。
                 </p>
               </div>
               <RouterLink
                 :to="`/prod/-MxrMaWm-dDFXbAZI7Cz`"
                 class="btn hvr-btn-outline-dark w-100 d-flex justify-content-center align-items-center"
               >
-                詳しくはこちら
+                詳しく見る
               </RouterLink>
             </div>
           </div>
@@ -183,7 +176,7 @@
             <div class="col-md-6">
               <img
                 src="https://storage.googleapis.com/vue-course-api.appspot.com/letcla/1649228244331.jpg"
-                alt="黒マグロ握り寿司"
+                alt="本マグロの握り"
                 class="w-100"
                 style="max-height: 636px; object-fit: cover"
                 data-aos="fade-down"
@@ -198,18 +191,19 @@
               >
                 <span
                   class="badge rounded-pill bg-deep-red mb-3 px-lg-1 py-lg-2"
-                  >シーズン限定</span
                 >
-                <h4 class="me-lg-2">黒マグロ握り寿司</h4>
+                  季節限定
+                </span>
+                <h4 class="me-lg-2">本マグロの握り</h4>
                 <p class="lh-lg mb-4">
-                  肉は繊細で濃厚で、お腹のしっぽのさわやかな味わいにサクサク感があります。細かく刻んだ野菜、完璧な協奏曲が口の中に残ります。
+                  鮮度抜群でジューシーな身質、そしてマグロの希少部位である「砂ずり（大トロのさらに脂が乗った部位）」の清涼感のある後味。丁寧に刻まれた薬味の野菜がネタの脂の甘みと見事に融合し、口の中で至福のハーモニーを奏でます。
                 </p>
               </div>
               <RouterLink
                 :to="`/prod/-MxrMxWZoPzUjz0al_K1`"
                 class="btn hvr-btn-outline-dark w-100 d-flex justify-content-center align-items-center"
               >
-                詳しくはこちら
+                詳しく見る
               </RouterLink>
             </div>
           </div>
@@ -219,9 +213,9 @@
       <!-- Swiper -->
       <div class="row py-5">
         <div class="col-lg-6 offset-lg-3">
-          <h3 class="h2 text-center">ランダムな推奨</h3>
+          <h3 class="h2 text-center">おすすめ（ランダム）</h3>
           <p class="lh-lg mb-3">
-            ミシュラン賞を受賞した江戸前寿司の作り方の細部は、すべてのシェフが真剣に取り組み、何年もの努力を要し、「1回のセッション、1回のセッション」でしか成功できないことを示しています。
+            ミシュランの星を冠する「江戸前寿司」。その細部に宿るこだわりは、長年にわたる研鑽と、料理人一人ひとりの献身的な精神の賜物です。それは、妥協を許さない「一期一会」の真剣勝負を通じてのみ、到達できる境地なのです。
           </p>
         </div>
         <div class="d-flex justify-content-end align-items-center fs-7">
@@ -229,7 +223,7 @@
             to="/products"
             class="btn btn-link d-flex align-items-center"
           >
-            もっと見る
+            さらに表示
             <i class="bi bi-chevron-right ms-1"></i>
           </RouterLink>
         </div>
@@ -278,8 +272,8 @@
             />
           </svg>
         </div>
-        <h3 class="h2">最もオーソドックスな方法</h3>
-        <p class="mb-0">インスタントで新鮮で速い寿司</p>
+        <h3 class="h2">伝統の製法</h3>
+        <p class="mb-0">鮮度そのまま、粋に味わう。</p>
       </div>
     </div>
   </div>
@@ -305,12 +299,12 @@ export default {
       fixed: false,
       propsDetectWidth: 0,
       detectWidth: null,
-      loader: null,
+      loader: null
     };
   },
   provide() {
     return {
-      emitter,
+      emitter
     };
   },
   components: {
@@ -318,12 +312,12 @@ export default {
     LogoWhiteCubeComp,
     FooterComp,
     SwiperComp,
-    ToastComp,
+    ToastComp
   },
   computed: {
     fixClass() {
       return this.progress > 1;
-    },
+    }
   },
   methods: {
     getProducts(page = 1) {
@@ -338,7 +332,7 @@ export default {
         .catch(() => {
           loader.hide();
         });
-    },
+    }
   },
   mounted() {
     this.getProducts();
@@ -382,7 +376,7 @@ export default {
         return (this.fixed = false);
       }
     });
-  },
+  }
 };
 </script>
 
